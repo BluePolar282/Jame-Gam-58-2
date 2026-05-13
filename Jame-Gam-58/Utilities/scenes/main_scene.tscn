@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://jr7qfsc0uhdv"]
+
+[ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
+[ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
+[ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
+
+[node name="main scene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.585, 0.585)
+
+[node name="spawner-container2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bullet-spawner1" parent="spawner-container2" groups=["Right Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(500, 0)
+rotation = -3.14159
+
+[node name="bullet-spawner2" parent="spawner-container2" groups=["Top Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(0, -500)
+rotation = -1.5708
+
+[node name="bullet-spawner3" parent="spawner-container2" groups=["Left Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(-500, 0)
+
+[node name="bullet-spawner4" parent="spawner-container2" groups=["Bottom Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(0, 500)
+rotation = -1.5708
+
+[node name="tower" parent="." instance=ExtResource("2_7mml0")]
+
+[node name="shield" parent="." instance=ExtResource("3_gvl8j")]
