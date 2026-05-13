@@ -7,7 +7,8 @@
 [node name="main scene" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.585, 0.585)
+position = Vector2(0, -69.34)
+zoom = Vector2(1.245, 1.245)
 
 [node name="spawner-container2" type="Control" parent="."]
 layout_mode = 3

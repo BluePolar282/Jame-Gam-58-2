@@ -4,12 +4,10 @@ extends Area2D
 var bullet = preload("res://Jame-Gam-58/Objects/scenes/bullet.tscn")
 
 var delay := false
-var current_dir = Globals.current_dir
-
 
 func _on_timer_timeout() -> void:
 	set_bullet_spawner()
-	$Timer.wait_time = randf_range(0.25, 1.5)
+	$Timer.wait_time = randf_range(0.25, 0.5)
 	$Timer.start()
 
 func spawn_bullet():
@@ -35,32 +33,32 @@ func spawn_bullet():
 	#---------------------------------------------------
 	delay = true
 	await get_tree().create_timer(0.5).timeout
-	current_dir = "."
+	Globals.current_dir = "."
 	delay = false
 
 func set_bullet_spawner():
-	if current_dir != ".":
+	if Globals.current_dir != ".":
 		return
 	
 	var random = randi_range(1, 5)
 	
 	if random == 1:
 		if is_in_group("Left Spawner"):
-			current_dir = "left"
+			Globals.current_dir = "left"
 			spawn_bullet()
 	if random == 2:
 		if is_in_group("Top Left Spawner"):
-			current_dir = "top left"
+			Globals.current_dir = "top left"
 			spawn_bullet()
 	if random == 3:
 		if is_in_group("Top Spawner"):
-			current_dir = "top"
+			Globals.current_dir = "top"
 			spawn_bullet()
 	if random == 4:
 		if is_in_group("Top Right Spawner"):
-			current_dir = "top right"
+			Globals.current_dir = "top right"
 			spawn_bullet()
 	if random == 5:
 		if is_in_group("Right Spawner"):
-			current_dir = "right"
+			Globals.current_dir = "right"
 			spawn_bullet()

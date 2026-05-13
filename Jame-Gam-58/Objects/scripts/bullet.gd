@@ -1,7 +1,13 @@
 extends CharacterBody2D
 
-var SPEED = 300
+var SPEED = randf_range(250, 450)
 
+func _ready():
+	if randf() < 0.01:
+		SPEED = 100
+	else:
+		SPEED = randf_range(250, 450)
+		
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 
