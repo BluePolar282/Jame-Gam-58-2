@@ -1,8 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://jr7qfsc0uhdv"]
+[gd_scene load_steps=8 format=3 uid="uid://jr7qfsc0uhdv"]
 
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
 [ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
+[ext_resource type="Texture2D" uid="uid://dhn3k3wsjbk7a" path="res://Jame-Gam-58/Utilities/earlyAssets/earlyBar.png" id="4_yabch"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/balanceBar.gd" id="5_5dlt0"]
+[ext_resource type="Texture2D" uid="uid://bgh7qhcb4kh4u" path="res://Jame-Gam-58/Objects/earlyAssets/earlyHead.png" id="5_15ev6"]
+
+[sub_resource type="GDScript" id="GDScript_155vj"]
+script/source = "extends Sprite2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [node name="main scene" type="Node2D"]
 
@@ -33,3 +50,13 @@ rotation = -1.5708
 [node name="tower" parent="." instance=ExtResource("2_7mml0")]
 
 [node name="shield" parent="." instance=ExtResource("3_gvl8j")]
+
+[node name="balanceBar" type="Sprite2D" parent="."]
+position = Vector2(0, 534.775)
+texture = ExtResource("4_yabch")
+offset = Vector2(0, 0.91)
+script = ExtResource("5_5dlt0")
+
+[node name="earlyHead" type="Sprite2D" parent="balanceBar"]
+texture = ExtResource("5_15ev6")
+script = SubResource("GDScript_155vj")
