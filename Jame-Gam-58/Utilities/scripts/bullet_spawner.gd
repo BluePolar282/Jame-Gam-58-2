@@ -1,7 +1,11 @@
 extends Area2D
 
 var bullet = preload("res://Jame-Gam-58/Objects/scenes/bullet.tscn")
-var repeats := 10
+var repeats := 50
+var delay := false
+
+func _physics_process(delta: float) -> void:
+	set_bullet_delay()
 
 func _on_timer_timeout() -> void:
 	if repeats > 0:
@@ -11,8 +15,9 @@ func _on_timer_timeout() -> void:
 func spawn_bullet():
 	var spawned_bullet = bullet.instantiate()
 	
-	add_child(spawned_bullet)
-	
+	if delay == false:
+		add_child(spawned_bullet)
+	#---------------------------------------------------
 	if is_in_group("Top Spawner"):
 		spawned_bullet.add_to_group("Top Spawner")
 		
@@ -24,6 +29,10 @@ func spawn_bullet():
 		
 	if is_in_group("Left Spawner"):
 		spawned_bullet.add_to_group("Left Spawner")
+	#---------------------------------------------------
+	delay = true
+	await get_tree().create_timer(0.5).timeout
+	delay = false
 
 func set_bullet_amount(number1, number2, number3, number4):
 	
@@ -43,8 +52,8 @@ func set_bullet_amount(number1, number2, number3, number4):
 		print(number4)
 		
 func set_bullet_delay():
-	var random = randi_range(1, 4)
-	set_bullet_amount(random, random, random, random)
+	if delay == true:
+		bullet.queue_free()
 
 func set_bullet_speed():
 	pass
