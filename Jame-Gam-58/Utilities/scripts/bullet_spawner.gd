@@ -9,7 +9,7 @@ var current_dir = Globals.current_dir
 
 func _on_timer_timeout() -> void:
 	set_bullet_spawner()
-	$Timer.wait_time = randf_range(0.5, 2)
+	$Timer.wait_time = randf_range(0.25, 1.5)
 	$Timer.start()
 
 func spawn_bullet():
@@ -18,17 +18,20 @@ func spawn_bullet():
 	if delay == false:
 		add_child(spawned_bullet)
 	#---------------------------------------------------
+	if is_in_group("Left Spawner"):
+		spawned_bullet.add_to_group("Left Spawner")
+		
+	if is_in_group("Top Left Spawner"):
+		spawned_bullet.add_to_group("Top Left Spawner")
+		
 	if is_in_group("Top Spawner"):
 		spawned_bullet.add_to_group("Top Spawner")
 		
+	if is_in_group("Top Right Spawner"):
+		spawned_bullet.add_to_group("Top Right Spawner")
+		
 	if is_in_group("Right Spawner"):
 		spawned_bullet.add_to_group("Right Spawner")
-		
-	if is_in_group("Bottom Spawner"):
-		spawned_bullet.add_to_group("Bottom Spawner")
-		
-	if is_in_group("Left Spawner"):
-		spawned_bullet.add_to_group("Left Spawner")
 	#---------------------------------------------------
 	delay = true
 	await get_tree().create_timer(0.5).timeout
@@ -39,23 +42,25 @@ func set_bullet_spawner():
 	if current_dir != ".":
 		return
 	
-	var random = randi_range(0, 4)
+	var random = randi_range(1, 5)
 	
 	if random == 1:
+		if is_in_group("Left Spawner"):
+			current_dir = "left"
+			spawn_bullet()
+	if random == 2:
+		if is_in_group("Top Left Spawner"):
+			current_dir = "top left"
+			spawn_bullet()
+	if random == 3:
 		if is_in_group("Top Spawner"):
 			current_dir = "top"
 			spawn_bullet()
-	if random == 2:
+	if random == 4:
+		if is_in_group("Top Right Spawner"):
+			current_dir = "top right"
+			spawn_bullet()
+	if random == 5:
 		if is_in_group("Right Spawner"):
 			current_dir = "right"
-			spawn_bullet()
-			
-	if random == 3:
-		if is_in_group("Bottom Spawner"):
-			current_dir = "bottom"
-			spawn_bullet()
-			
-	if random == 4:
-		if is_in_group("Left Spawner"):
-			current_dir = "left"
 			spawn_bullet()

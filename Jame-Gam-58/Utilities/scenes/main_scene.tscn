@@ -15,19 +15,23 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="bullet-spawner1" parent="spawner-container2" groups=["Right Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(500, 0)
+[node name="bullet-spawner1" parent="spawner-container2" groups=["Left Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(-500, 0)
 rotation = -3.14159
 
-[node name="bullet-spawner2" parent="spawner-container2" groups=["Top Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(0, -500)
+[node name="bullet-spawner2" parent="spawner-container2" groups=["Top Left Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(-350, -350)
 rotation = -1.5708
 
-[node name="bullet-spawner3" parent="spawner-container2" groups=["Left Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(-500, 0)
+[node name="bullet-spawner3" parent="spawner-container2" groups=["Top Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(0, -500)
 
-[node name="bullet-spawner4" parent="spawner-container2" groups=["Bottom Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(0, 500)
+[node name="bullet-spawner4" parent="spawner-container2" groups=["Top Right Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(350, -350)
+rotation = -1.5708
+
+[node name="bullet-spawner5" parent="spawner-container2" groups=["Right Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(500, 0)
 rotation = -1.5708
 
 [node name="tower" parent="." instance=ExtResource("2_7mml0")]

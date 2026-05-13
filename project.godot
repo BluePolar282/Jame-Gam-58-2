@@ -25,12 +25,13 @@ window/stretch/mode="viewport"
 
 [global_group]
 
-"Bottom Spawner"=""
 "Top Spawner"=""
 "Right Spawner"=""
 "Left Spawner"=""
 Tower=""
 Bullet=""
+"Top Left Spawner"=""
+"Top Right Spawner"=""
 
 [input]
 
