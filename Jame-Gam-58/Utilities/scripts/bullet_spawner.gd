@@ -1,16 +1,16 @@
 extends Area2D
-
+#On timer_timeout, the set_bullet_spawner function activates, and the timer is reset with a random wait time
+#The set_bullet_spawner function randomized which shooter will activate, and make sure one doesn't activate while still shooting
 var bullet = preload("res://Jame-Gam-58/Objects/scenes/bullet.tscn")
-var repeats := 50
-var delay := false
 
-func _physics_process(delta: float) -> void:
-	set_bullet_delay()
+var delay := false
+var current_dir = Globals.current_dir
+
 
 func _on_timer_timeout() -> void:
-	if repeats > 0:
-		set_bullet_spawner()
-		repeats -= 1
+	set_bullet_spawner()
+	$Timer.wait_time = randf_range(0.5, 2)
+	$Timer.start()
 
 func spawn_bullet():
 	var spawned_bullet = bullet.instantiate()
@@ -32,44 +32,30 @@ func spawn_bullet():
 	#---------------------------------------------------
 	delay = true
 	await get_tree().create_timer(0.5).timeout
+	current_dir = "."
 	delay = false
 
-func set_bullet_amount(number1, number2, number3, number4):
-	
-	
-	if self.is_in_group("Top Spawner"):
-		repeats = number1
-		print(number1)
-		
-	elif self.is_in_group("Right Spawner"):
-		repeats = number2
-		print(number2)
-	elif self.is_in_group("Bottom Spawner"):
-		repeats = number3
-		print(number3)
-	elif self.is_in_group("Left Spawner"):
-		repeats = number4
-		print(number4)
-		
-func set_bullet_delay():
-	if delay == true:
-		bullet.queue_free()
-
-func set_bullet_speed():
-	pass
-
 func set_bullet_spawner():
-	var random = randi_range(1, 4)
+	if current_dir != ".":
+		return
+	
+	var random = randi_range(0, 4)
 	
 	if random == 1:
 		if is_in_group("Top Spawner"):
+			current_dir = "top"
 			spawn_bullet()
 	if random == 2:
 		if is_in_group("Right Spawner"):
+			current_dir = "right"
 			spawn_bullet()
+			
 	if random == 3:
 		if is_in_group("Bottom Spawner"):
+			current_dir = "bottom"
 			spawn_bullet()
+			
 	if random == 4:
 		if is_in_group("Left Spawner"):
+			current_dir = "left"
 			spawn_bullet()

@@ -21,11 +21,11 @@ color = Color(0.493762, 0.876565, 0.988914, 1)
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -74)
+position = Vector2(0, -80)
 shape = SubResource("RectangleShape2D_bi7ki")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.25, -74)
+position = Vector2(0, -74)
 shape = SubResource("RectangleShape2D_5megp")
 disabled = true
 

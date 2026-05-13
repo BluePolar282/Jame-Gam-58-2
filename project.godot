@@ -15,6 +15,10 @@ run/main_scene="res://Jame-Gam-58/Utilities/scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Globals="*res://Jame-Gam-58/Utilities/scripts/globals.gd"
+
 [display]
 
 window/stretch/mode="viewport"
