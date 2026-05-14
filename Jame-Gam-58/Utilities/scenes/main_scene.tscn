@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://jr7qfsc0uhdv"]
+[gd_scene load_steps=10 format=3 uid="uid://jr7qfsc0uhdv"]
 
 [ext_resource type="Texture2D" uid="uid://dwhn4gygw7eas" path="res://Jame-Gam-58/Objects/earlyAssets/1_tianzishan_wulingyuan_zhangjiajie_2012.jpg" id="1_1cx0g"]
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
@@ -6,6 +6,16 @@
 [ext_resource type="Texture2D" uid="uid://vwo5xb50x5el" path="res://Jame-Gam-58/Objects/earlyAssets/moss-rock-removebg.png" id="2_sl7a5"]
 [ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
 [ext_resource type="AudioStream" uid="uid://1k6elirp6bqg" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
+[ext_resource type="FontFile" uid="uid://r357nfeg0sgc" path="res://Jame-Gam-58/Utilities/assets/Midorima-PersonalUse-Regular.ttf" id="7_bg630"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/stage_label.gd" id="8_twnem"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fesq6"]
+font = ExtResource("7_bg630")
+font_size = 24
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 9
+shadow_color = Color(0, 0, 0, 0.388235)
 
 [node name="main scene" type="Node2D"]
 
@@ -57,4 +67,14 @@ visibility_layer = 2
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pfejq")
 volume_db = -13.867
-autoplay = true
+
+[node name="stage label" type="Label" parent="."]
+offset_left = -293.0
+offset_top = -373.0
+offset_right = -221.0
+offset_bottom = -344.0
+scale = Vector2(8.155, 8.155)
+theme_override_font_sizes/font_size = 23
+text = "STAGE 1"
+label_settings = SubResource("LabelSettings_fesq6")
+script = ExtResource("8_twnem")

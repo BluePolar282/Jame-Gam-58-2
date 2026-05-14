@@ -9,7 +9,7 @@ size = Vector2(56, 56)
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5t1v"]
 radius = 13.0384
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["Bullet"]]
+[node name="bullet" type="CharacterBody2D" groups=["Bullet"]]
 script = ExtResource("1_fnqk2")
 
 [node name="Area2D" type="Area2D" parent="."]

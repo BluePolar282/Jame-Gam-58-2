@@ -1,13 +1,12 @@
 extends Area2D
-#On timer_timeout, the set_bullet_spawner function activates, and the timer is reset with a random wait time
-#The set_bullet_spawner function randomized which shooter will activate, and make sure one doesn't activate while still shooting
+
 var bullet = preload("res://Jame-Gam-58/Objects/scenes/bullet.tscn")
+var stage = Globals.stage
 
 var delay := false
 
 func _on_timer_timeout() -> void:
 	set_bullet_spawner()
-	$Timer.wait_time = randf_range(0.25, 0.5)
 	$Timer.start()
 
 func spawn_bullet():
@@ -47,7 +46,7 @@ func set_bullet_spawner():
 			Globals.current_dir = "left"
 			spawn_bullet()
 	if random == 2:
-		if is_in_group("Top Left Spawner"):
+		if is_in_group("Top Left Spawner") and Globals.stage > 2:
 			Globals.current_dir = "top left"
 			spawn_bullet()
 	if random == 3:
@@ -55,10 +54,18 @@ func set_bullet_spawner():
 			Globals.current_dir = "top"
 			spawn_bullet()
 	if random == 4:
-		if is_in_group("Top Right Spawner"):
+		if is_in_group("Top Right Spawner") and Globals.stage > 2:
 			Globals.current_dir = "top right"
 			spawn_bullet()
 	if random == 5:
 		if is_in_group("Right Spawner"):
 			Globals.current_dir = "right"
 			spawn_bullet()
+
+func set_difficulty():
+	if stage == 1:
+		$Timer.wait_time = randf_range(1, 1.5)
+	if stage == 2:
+		$Timer.wait_time = randf_range(0.5, 1.25)
+	if stage > 2:
+		$Timer.wait_time = randf_range(0.25, 0.5)
