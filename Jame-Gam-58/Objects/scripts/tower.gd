@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-var HEALTH = 100
+var HEALTH = 50
 func _physics_process(delta: float) -> void:
 	die()
 
