@@ -7,7 +7,7 @@
 size = Vector2(56, 56)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5t1v"]
-radius = 19.799
+radius = 13.0384
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Bullet"]]
 script = ExtResource("1_fnqk2")
@@ -16,16 +16,6 @@ script = ExtResource("1_fnqk2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_xm6sk")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-visible = false
-offset_left = -19.799
-offset_top = -19.799
-offset_right = 20.201
-offset_bottom = 20.201
-rotation = 0.785398
-pivot_offset = Vector2(20, 20)
-color = Color(0, 0, 0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c5t1v")

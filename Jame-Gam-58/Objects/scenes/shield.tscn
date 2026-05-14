@@ -42,6 +42,6 @@ region_filter_clip_enabled = true
 
 [node name="screech" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_0ucmr")
-volume_db = -10.745
+volume_db = -13.425
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
