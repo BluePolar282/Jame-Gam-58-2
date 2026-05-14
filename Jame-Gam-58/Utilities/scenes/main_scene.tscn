@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://jr7qfsc0uhdv"]
+[gd_scene load_steps=8 format=3 uid="uid://cedmi77yo3ej"]
 
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
