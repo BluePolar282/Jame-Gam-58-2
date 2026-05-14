@@ -1,19 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://jr7qfsc0uhdv"]
+[gd_scene load_steps=10 format=3 uid="uid://jr7qfsc0uhdv"]
 
-[ext_resource type="Texture2D" uid="uid://dwhn4gygw7eas" path="res://Jame-Gam-58/Objects/earlyAssets/1_tianzishan_wulingyuan_zhangjiajie_2012.jpg" id="1_1cx0g"]
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
-[ext_resource type="Texture2D" uid="uid://vwo5xb50x5el" path="res://Jame-Gam-58/Objects/earlyAssets/moss-rock-removebg.png" id="2_sl7a5"]
+[ext_resource type="Texture2D" uid="uid://ckesyabxibwl3" path="res://Jame-Gam-58/Objects/earlyAssets/moss-rock-removebg.png" id="2_sl7a5"]
 [ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
-[ext_resource type="AudioStream" uid="uid://1k6elirp6bqg" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
+[ext_resource type="Texture2D" uid="uid://6dypwcvhrg7y" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="6_e1ag4"]
+[ext_resource type="AudioStream" uid="uid://uqefcxbb0dyp" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
+[ext_resource type="Texture2D" uid="uid://phsmo4qflosa" path="res://Jame-Gam-58/Objects/assets/sky2/4.png" id="7_pf86u"]
+[ext_resource type="Texture2D" uid="uid://b0sh36q67ihu0" path="res://Jame-Gam-58/Objects/assets/sky2/5.png" id="8_bkwjl"]
+[ext_resource type="Texture2D" uid="uid://gnrt0kyv6lgk" path="res://Jame-Gam-58/Objects/assets/sky2/6.png" id="9_l0trq"]
 
 [node name="main scene" type="Node2D"]
-
-[node name="background" type="Sprite2D" parent="."]
-self_modulate = Color(0.712129, 0.712129, 0.712129, 1)
-position = Vector2(22, -42)
-scale = Vector2(0.165, 0.165)
-texture = ExtResource("1_1cx0g")
 
 [node name="rock" type="Sprite2D" parent="."]
 position = Vector2(-50, 205)
@@ -22,7 +19,8 @@ texture = ExtResource("2_sl7a5")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -69.34)
-zoom = Vector2(0.96, 0.96)
+offset = Vector2(0, 51.595)
+zoom = Vector2(1.06, 1.06)
 
 [node name="spawner-container2" type="Control" parent="."]
 layout_mode = 3
@@ -58,3 +56,39 @@ visibility_layer = 2
 stream = ExtResource("6_pfejq")
 volume_db = -13.867
 autoplay = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+repeat_size = Vector2(2200, 0)
+autoscroll = Vector2(24.425, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+position = Vector2(0, 272)
+scale = Vector2(2, 2)
+texture = ExtResource("6_e1ag4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+position = Vector2(1132, 273)
+scale = Vector2(2, 2)
+texture = ExtResource("6_e1ag4")
+flip_h = true
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2(2, 2)
+texture = ExtResource("7_pf86u")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+scale = Vector2(2, 2)
+texture = ExtResource("8_bkwjl")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+scale = Vector2(2, 2)
+texture = ExtResource("9_l0trq")

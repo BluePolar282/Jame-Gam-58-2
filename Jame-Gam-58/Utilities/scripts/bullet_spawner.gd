@@ -6,7 +6,7 @@ var bullet = preload("res://Jame-Gam-58/Objects/scenes/bullet.tscn")
 var delay := false
 
 func _on_timer_timeout() -> void:
-	set_bullet_spawner()
+	#set_bullet_spawner()
 	$Timer.wait_time = randf_range(0.25, 0.5)
 	$Timer.start()
 
