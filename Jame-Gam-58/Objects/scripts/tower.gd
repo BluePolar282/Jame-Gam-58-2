@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-var HEALTH = 50
 func _physics_process(delta: float) -> void:
 	die()
 
@@ -9,11 +8,13 @@ func _ready() -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Bullet"):
-		HEALTH = HEALTH - 1
-		print(HEALTH)
+		Globals.HEALTH = Globals.HEALTH - 1
 		body.queue_free()
+		$AnimatedSprite2D.modulate = Color(100, 100, 100)
+		await get_tree().create_timer(0.1).timeout
+		$AnimatedSprite2D.modulate = Color.WHITE
 		
 func die():
-	if HEALTH <= 0:
+	if Globals.HEALTH <= 0:
 		queue_free()
 		print("you died")

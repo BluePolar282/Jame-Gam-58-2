@@ -1,9 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://guryynls3o1l"]
+[gd_scene load_steps=7 format=3 uid="uid://guryynls3o1l"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/tower.gd" id="1_3nbm1"]
+[ext_resource type="Texture2D" uid="uid://db4ml4gxty6t0" path="res://Jame-Gam-58/Objects/assets/lineart-body_Merged-removebg-preview.png" id="2_hm5ed"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dx1j"]
+atlas = ExtResource("2_hm5ed")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bm1pb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dx1j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvna0"]
-size = Vector2(56, 56)
+size = Vector2(68, 76)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvqia"]
 radius = 28.0
@@ -11,19 +27,15 @@ radius = 28.0
 [node name="tower" type="CharacterBody2D" groups=["Tower"]]
 script = ExtResource("1_3nbm1")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-7, 33)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_bm1pb")
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_jvna0")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-rotation = 0.785398
-pivot_offset = Vector2(20, 20)
-color = Color(0.264533, 0.706141, 0.476155, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_uvqia")

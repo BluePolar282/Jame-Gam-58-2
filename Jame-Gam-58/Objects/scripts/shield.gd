@@ -8,6 +8,7 @@ var direction = ""
 func _physics_process(delta: float) -> void:
 	rotate_shield()
 	detect_input()
+	die()
 	
 func rotate_shield():
 	
@@ -39,6 +40,7 @@ func start_cooldown():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Bullet"):
 		body.queue_free()
+		$screech.play()
 
 func detect_input():
 	if Input.is_action_pressed("left"):
@@ -55,3 +57,9 @@ func detect_input():
 
 	if Input.is_action_pressed("right"):
 		direction = "right"
+
+func die():
+	print(Globals.HEALTH)
+	if Globals.HEALTH == 0:
+		print("deaht by shield")
+		queue_free()
