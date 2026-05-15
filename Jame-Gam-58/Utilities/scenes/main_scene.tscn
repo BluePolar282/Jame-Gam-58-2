@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://jr7qfsc0uhdv"]
+[gd_scene load_steps=17 format=3 uid="uid://jr7qfsc0uhdv"]
 
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
@@ -6,13 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://34m50dj66vc" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="5_07asn"]
 [ext_resource type="Texture2D" uid="uid://6dypwcvhrg7y" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="6_e1ag4"]
 [ext_resource type="AudioStream" uid="uid://uqefcxbb0dyp" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
+[ext_resource type="FontFile" uid="uid://cvj5p53cdaqhf" path="res://Jame-Gam-58/Utilities/assets/Midorima-PersonalUse-Regular.ttf" id="7_bg630"]
 [ext_resource type="Texture2D" uid="uid://phsmo4qflosa" path="res://Jame-Gam-58/Objects/assets/sky2/4.png" id="7_pf86u"]
 [ext_resource type="Texture2D" uid="uid://b0sh36q67ihu0" path="res://Jame-Gam-58/Objects/assets/sky2/5.png" id="8_bkwjl"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/stage_label.gd" id="8_twnem"]
 [ext_resource type="Texture2D" uid="uid://bksob503bacv3" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]back-mountains.png" id="9_isqnq"]
 [ext_resource type="Texture2D" uid="uid://gnrt0kyv6lgk" path="res://Jame-Gam-58/Objects/assets/sky2/6.png" id="9_l0trq"]
 [ext_resource type="Texture2D" uid="uid://dtm2jr1mbqumy" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]front-mts.png" id="10_bp5yb"]
 [ext_resource type="Texture2D" uid="uid://bpko5chmu2sv" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]middle-mts.png" id="11_vrwlp"]
 [ext_resource type="Texture2D" uid="uid://bsqoxyi11fx1d" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]needle-rock.png" id="12_ek5rd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_a23qg"]
+font = ExtResource("7_bg630")
+font_size = 146
+outline_size = 26
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 0
 
 [node name="main scene" type="Node2D"]
 position = Vector2(578, 387)
@@ -123,7 +132,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("11_vrwlp")
 
 [node name="Sprite2D4" type="Sprite2D" parent="background parallax"]
-position = Vector2(935.035, 494.91)
+position = Vector2(559, 499)
 texture = ExtResource("5_07asn")
 
 [node name="Parallax2D4" type="Parallax2D" parent="background parallax"]
@@ -133,3 +142,13 @@ scroll_offset = Vector2(578, 387)
 position = Vector2(-62.62, -6.01)
 scale = Vector2(2, 2)
 texture = ExtResource("12_ek5rd")
+
+[node name="stage label" type="Label" parent="."]
+offset_left = -209.0
+offset_top = -267.0
+offset_right = 229.0
+offset_bottom = -90.0
+theme_override_font_sizes/font_size = 240
+text = "STAGE 1"
+label_settings = SubResource("LabelSettings_a23qg")
+script = ExtResource("8_twnem")
