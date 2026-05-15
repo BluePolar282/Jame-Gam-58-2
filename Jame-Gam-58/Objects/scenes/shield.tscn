@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwi8nac8a67fu"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/shield.gd" id="1_hbwpv"]
-[ext_resource type="AudioStream" uid="uid://cd5uu6irwkpye" path="res://Jame-Gam-58/Objects/earlyAssets/HawkDeath.mp3" id="3_0ucmr"]
+[ext_resource type="AudioStream" uid="uid://b4kk5vbm4u4k8" path="res://Jame-Gam-58/Objects/earlyAssets/HawkDeath.mp3" id="3_0ucmr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7ki"]
 size = Vector2(66, 6)
