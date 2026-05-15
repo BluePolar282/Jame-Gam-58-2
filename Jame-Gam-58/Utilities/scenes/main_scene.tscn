@@ -1,23 +1,27 @@
-[gd_scene load_steps=20 format=3 uid="uid://cedmi77yo3ej"]
+[gd_scene load_steps=18 format=3 uid="uid://jr7qfsc0uhdv"]
 
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
 [ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
-[ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/balanceBar.gd" id="5_5dlt0"]
-[ext_resource type="Texture2D" uid="uid://d3ubar2ck7mo6" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="5_07asn"]
-[ext_resource type="Texture2D" uid="uid://bgh7qhcb4kh4u" path="res://Jame-Gam-58/Objects/earlyAssets/earlyHead.png" id="5_15ev6"]
-[ext_resource type="Texture2D" uid="uid://cg2wwhylmi1p6" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="6_e1ag4"]
-[ext_resource type="AudioStream" uid="uid://b43q3f0xy2xar" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
-[ext_resource type="FontFile" uid="uid://b2w8goaf7jwdi" path="res://Jame-Gam-58/Utilities/assets/Midorima-PersonalUse-Regular.ttf" id="7_bg630"]
-[ext_resource type="Texture2D" uid="uid://rrdyltkpgds5" path="res://Jame-Gam-58/Objects/assets/sky2/4.png" id="7_pf86u"]
-[ext_resource type="Texture2D" uid="uid://c7cs0bfx5awiq" path="res://Jame-Gam-58/Objects/assets/sky2/5.png" id="8_bkwjl"]
+[ext_resource type="Texture2D" uid="uid://34m50dj66vc" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="5_07asn"]
+[ext_resource type="Texture2D" uid="uid://6dypwcvhrg7y" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="6_e1ag4"]
+[ext_resource type="AudioStream" uid="uid://uqefcxbb0dyp" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
+[ext_resource type="FontFile" uid="uid://cvj5p53cdaqhf" path="res://Jame-Gam-58/Utilities/assets/Midorima-PersonalUse-Regular.ttf" id="7_bg630"]
+[ext_resource type="Texture2D" uid="uid://phsmo4qflosa" path="res://Jame-Gam-58/Objects/assets/sky2/4.png" id="7_pf86u"]
+[ext_resource type="Texture2D" uid="uid://b0sh36q67ihu0" path="res://Jame-Gam-58/Objects/assets/sky2/5.png" id="8_bkwjl"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/stage_label.gd" id="8_twnem"]
-[ext_resource type="Texture2D" uid="uid://dnha6omycqk8l" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]back-mountains.png" id="9_isqnq"]
-[ext_resource type="Texture2D" uid="uid://daqasjeho5sva" path="res://Jame-Gam-58/Objects/assets/sky2/6.png" id="9_l0trq"]
-[ext_resource type="Texture2D" uid="uid://cpvoyxpft4ola" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]front-mts.png" id="10_bp5yb"]
-[ext_resource type="Texture2D" uid="uid://dmthkmqrw5n7v" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]middle-mts.png" id="11_vrwlp"]
-[ext_resource type="Texture2D" uid="uid://bwdf354osqre" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]needle-rock.png" id="12_ek5rd"]
-[ext_resource type="Texture2D" uid="uid://wg73nj0rxsk6" path="res://Jame-Gam-58/Objects/earlyAssets/early_bar.png" id="14_xabkf"]
+[ext_resource type="Texture2D" uid="uid://bksob503bacv3" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]back-mountains.png" id="9_isqnq"]
+[ext_resource type="Texture2D" uid="uid://gnrt0kyv6lgk" path="res://Jame-Gam-58/Objects/assets/sky2/6.png" id="9_l0trq"]
+[ext_resource type="Texture2D" uid="uid://dtm2jr1mbqumy" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]front-mts.png" id="10_bp5yb"]
+[ext_resource type="Texture2D" uid="uid://bpko5chmu2sv" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]middle-mts.png" id="11_vrwlp"]
+[ext_resource type="Texture2D" uid="uid://bsqoxyi11fx1d" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]needle-rock.png" id="12_ek5rd"]
+
+[sub_resource type="Environment" id="Environment_hdhpj"]
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.05
+glow_bloom = 0.06
+glow_blend_mode = 1
 
 [sub_resource type="LabelSettings" id="LabelSettings_gu8rf"]
 font = ExtResource("7_bg630")
@@ -69,17 +73,22 @@ autoplay = true
 
 [node name="sky parallax" type="ParallaxBackground" parent="."]
 
+[node name="WorldEnvironment" type="WorldEnvironment" parent="sky parallax"]
+environment = SubResource("Environment_hdhpj")
+
 [node name="Parallax2D" type="Parallax2D" parent="sky parallax"]
 repeat_size = Vector2(2200, 0)
 autoscroll = Vector2(24.425, 0)
 repeat_times = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="sky parallax/Parallax2D"]
+modulate = Color(1.2, 1.2, 1.2, 1)
 position = Vector2(0, 272)
 scale = Vector2(2, 2)
 texture = ExtResource("6_e1ag4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="sky parallax/Parallax2D"]
+modulate = Color(1.2, 1.2, 1.2, 1)
 position = Vector2(1132, 273)
 scale = Vector2(2, 2)
 texture = ExtResource("6_e1ag4")
@@ -153,12 +162,3 @@ offset_bottom = -106.0
 text = "STAGE 1"
 label_settings = SubResource("LabelSettings_gu8rf")
 script = ExtResource("8_twnem")
-
-[node name="earlyBar" type="Sprite2D" parent="."]
-position = Vector2(0, 210)
-texture = ExtResource("14_xabkf")
-script = ExtResource("5_5dlt0")
-
-[node name="earlyHead" type="Sprite2D" parent="earlyBar"]
-position = Vector2(0, -1)
-texture = ExtResource("5_15ev6")

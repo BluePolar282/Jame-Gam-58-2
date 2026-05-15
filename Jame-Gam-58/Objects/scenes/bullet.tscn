@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://birhplnauwxjp"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/bullet.gd" id="1_fnqk2"]
-[ext_resource type="Texture2D" uid="uid://cnl10dswll5lg" path="res://Jame-Gam-58/Objects/earlyAssets/birds_PNG44.png" id="2_tvfft"]
+[ext_resource type="Texture2D" uid="uid://5jovh23x5woi" path="res://Jame-Gam-58/Objects/earlyAssets/9-99520_bird-silhouette-silhouette-of-birds-clipart-image-bird-silhouette-removebg-preview.png" id="2_a6ofu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm6sk"]
 size = Vector2(56, 56)
@@ -22,9 +22,9 @@ shape = SubResource("CircleShape2D_c5t1v")
 disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, -4)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("2_tvfft")
+position = Vector2(-0.999996, -1)
+scale = Vector2(0.114606, 0.13462)
+texture = ExtResource("2_a6ofu")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
