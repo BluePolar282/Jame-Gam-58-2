@@ -1,32 +1,31 @@
-[gd_scene load_steps=10 format=3 uid="uid://jr7qfsc0uhdv"]
+[gd_scene load_steps=14 format=3 uid="uid://jr7qfsc0uhdv"]
 
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
-[ext_resource type="Texture2D" uid="uid://ckesyabxibwl3" path="res://Jame-Gam-58/Objects/earlyAssets/moss-rock-removebg.png" id="2_sl7a5"]
 [ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
+[ext_resource type="Texture2D" uid="uid://34m50dj66vc" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="5_07asn"]
 [ext_resource type="Texture2D" uid="uid://6dypwcvhrg7y" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="6_e1ag4"]
 [ext_resource type="AudioStream" uid="uid://uqefcxbb0dyp" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
 [ext_resource type="Texture2D" uid="uid://phsmo4qflosa" path="res://Jame-Gam-58/Objects/assets/sky2/4.png" id="7_pf86u"]
 [ext_resource type="Texture2D" uid="uid://b0sh36q67ihu0" path="res://Jame-Gam-58/Objects/assets/sky2/5.png" id="8_bkwjl"]
+[ext_resource type="Texture2D" uid="uid://bksob503bacv3" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]back-mountains.png" id="9_isqnq"]
 [ext_resource type="Texture2D" uid="uid://gnrt0kyv6lgk" path="res://Jame-Gam-58/Objects/assets/sky2/6.png" id="9_l0trq"]
+[ext_resource type="Texture2D" uid="uid://dtm2jr1mbqumy" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]front-mts.png" id="10_bp5yb"]
+[ext_resource type="Texture2D" uid="uid://bpko5chmu2sv" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]middle-mts.png" id="11_vrwlp"]
+[ext_resource type="Texture2D" uid="uid://bsqoxyi11fx1d" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]needle-rock.png" id="12_ek5rd"]
 
 [node name="main scene" type="Node2D"]
-
-[node name="rock" type="Sprite2D" parent="."]
-position = Vector2(-50, 205)
-scale = Vector2(0.515, 0.515)
-texture = ExtResource("2_sl7a5")
+position = Vector2(578, 387)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, -69.34)
-offset = Vector2(0, 51.595)
-zoom = Vector2(1.06, 1.06)
+enabled = false
 
 [node name="spawner-container2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="bullet-spawner1" parent="spawner-container2" groups=["Left Spawner"] instance=ExtResource("1_ox7t7")]
 position = Vector2(-700, 0)
@@ -57,38 +56,84 @@ stream = ExtResource("6_pfejq")
 volume_db = -13.867
 autoplay = true
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="sky parallax" type="ParallaxBackground" parent="."]
 
-[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground"]
+[node name="Parallax2D" type="Parallax2D" parent="sky parallax"]
 repeat_size = Vector2(2200, 0)
 autoscroll = Vector2(24.425, 0)
 repeat_times = 50
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="sky parallax/Parallax2D"]
 position = Vector2(0, 272)
 scale = Vector2(2, 2)
 texture = ExtResource("6_e1ag4")
 
-[node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/Parallax2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="sky parallax/Parallax2D"]
 position = Vector2(1132, 273)
 scale = Vector2(2, 2)
 texture = ExtResource("6_e1ag4")
 flip_h = true
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="sky parallax"]
+position = Vector2(578, 387)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+[node name="Sprite2D" type="Sprite2D" parent="sky parallax/ParallaxLayer3"]
+position = Vector2(0, -64.17)
 scale = Vector2(2, 2)
 texture = ExtResource("7_pf86u")
 
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="sky parallax"]
+position = Vector2(578, 387)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+[node name="Sprite2D" type="Sprite2D" parent="sky parallax/ParallaxLayer4"]
 scale = Vector2(2, 2)
 texture = ExtResource("8_bkwjl")
 
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="sky parallax"]
+position = Vector2(578, 387)
 
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+[node name="Sprite2D" type="Sprite2D" parent="sky parallax/ParallaxLayer5"]
 scale = Vector2(2, 2)
 texture = ExtResource("9_l0trq")
+
+[node name="background parallax" type="ParallaxBackground" parent="."]
+
+[node name="Parallax2D" type="Parallax2D" parent="background parallax"]
+scroll_offset = Vector2(578, 387)
+
+[node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D"]
+position = Vector2(0, 23.43)
+scale = Vector2(2, 2)
+texture = ExtResource("9_isqnq")
+
+[node name="Sprite2D4" type="Sprite2D" parent="background parallax"]
+position = Vector2(1075.62, 745.64)
+texture = ExtResource("5_07asn")
+
+[node name="Parallax2D2" type="Parallax2D" parent="background parallax"]
+scroll_offset = Vector2(578, 387)
+
+[node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D2"]
+position = Vector2(0, -0.48)
+scale = Vector2(2, 2)
+texture = ExtResource("10_bp5yb")
+
+[node name="Sprite2D3" type="Sprite2D" parent="background parallax"]
+position = Vector2(574, 406)
+texture = ExtResource("5_07asn")
+
+[node name="Parallax2D3" type="Parallax2D" parent="background parallax"]
+scroll_offset = Vector2(578, 387)
+
+[node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D3"]
+position = Vector2(0, 24.175)
+scale = Vector2(2, 2)
+texture = ExtResource("11_vrwlp")
+
+[node name="Parallax2D4" type="Parallax2D" parent="background parallax"]
+scroll_offset = Vector2(578, 387)
+
+[node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D4"]
+position = Vector2(-62.62, -6.01)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ek5rd")

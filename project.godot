@@ -21,7 +21,7 @@ Globals="*res://Jame-Gam-58/Utilities/scripts/globals.gd"
 
 [display]
 
-window/stretch/mode="viewport"
+window/stretch/mode="canvas_items"
 
 [global_group]
 
