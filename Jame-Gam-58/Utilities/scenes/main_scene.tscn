@@ -16,12 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://bpko5chmu2sv" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]middle-mts.png" id="11_vrwlp"]
 [ext_resource type="Texture2D" uid="uid://bsqoxyi11fx1d" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]needle-rock.png" id="12_ek5rd"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_a23qg"]
+[sub_resource type="LabelSettings" id="LabelSettings_gu8rf"]
 font = ExtResource("7_bg630")
-font_size = 146
-outline_size = 26
+font_size = 121
+outline_size = 30
 outline_color = Color(0, 0, 0, 1)
-shadow_size = 0
 
 [node name="main scene" type="Node2D"]
 position = Vector2(578, 387)
@@ -132,7 +131,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("11_vrwlp")
 
 [node name="Sprite2D4" type="Sprite2D" parent="background parallax"]
-position = Vector2(559, 499)
+position = Vector2(579, 438)
 texture = ExtResource("5_07asn")
 
 [node name="Parallax2D4" type="Parallax2D" parent="background parallax"]
@@ -144,11 +143,10 @@ scale = Vector2(2, 2)
 texture = ExtResource("12_ek5rd")
 
 [node name="stage label" type="Label" parent="."]
-offset_left = -209.0
-offset_top = -267.0
-offset_right = 229.0
-offset_bottom = -90.0
-theme_override_font_sizes/font_size = 240
+offset_left = -181.0
+offset_top = -253.0
+offset_right = 182.0
+offset_bottom = -106.0
 text = "STAGE 1"
-label_settings = SubResource("LabelSettings_a23qg")
+label_settings = SubResource("LabelSettings_gu8rf")
 script = ExtResource("8_twnem")
