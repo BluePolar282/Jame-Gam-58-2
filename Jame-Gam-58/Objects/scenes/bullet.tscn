@@ -1,12 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://birhplnauwxjp"]
+[gd_scene load_steps=5 format=3 uid="uid://birhplnauwxjp"]
 
-[ext_resource type="Script" path="res://Jame-Gam-58/Objects/scenes/bullet.gd" id="1_fnqk2"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/bullet.gd" id="1_fnqk2"]
+[ext_resource type="Texture2D" uid="uid://cnl10dswll5lg" path="res://Jame-Gam-58/Objects/earlyAssets/birds_PNG44.png" id="2_tvfft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm6sk"]
 size = Vector2(56, 56)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c5t1v"]
-radius = 19.799
+radius = 13.0384
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Bullet"]]
 script = ExtResource("1_fnqk2")
@@ -16,16 +17,13 @@ script = ExtResource("1_fnqk2")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_xm6sk")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -19.799
-offset_top = -19.799
-offset_right = 20.201
-offset_bottom = 20.201
-rotation = 0.785398
-pivot_offset = Vector2(20, 20)
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c5t1v")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -4)
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("2_tvfft")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
