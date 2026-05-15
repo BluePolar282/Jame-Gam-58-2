@@ -4,7 +4,7 @@ extends Sprite2D
 var velocity = 0.0
 var last_mouse_pos = Vector2.ZERO
 const GRAVITY = 3.0
-const MOUSE_FORCE = 0.5
+const MOUSE_FORCE = 2.5
 
 func _ready():
 	last_mouse_pos = get_local_mouse_position()
