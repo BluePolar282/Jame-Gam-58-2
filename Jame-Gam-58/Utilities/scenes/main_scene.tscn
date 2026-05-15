@@ -106,10 +106,6 @@ position = Vector2(0, 23.43)
 scale = Vector2(2, 2)
 texture = ExtResource("9_isqnq")
 
-[node name="Sprite2D4" type="Sprite2D" parent="background parallax"]
-position = Vector2(1075.62, 745.64)
-texture = ExtResource("5_07asn")
-
 [node name="Parallax2D2" type="Parallax2D" parent="background parallax"]
 scroll_offset = Vector2(578, 387)
 
@@ -118,10 +114,6 @@ position = Vector2(0, -0.48)
 scale = Vector2(2, 2)
 texture = ExtResource("10_bp5yb")
 
-[node name="Sprite2D3" type="Sprite2D" parent="background parallax"]
-position = Vector2(574, 406)
-texture = ExtResource("5_07asn")
-
 [node name="Parallax2D3" type="Parallax2D" parent="background parallax"]
 scroll_offset = Vector2(578, 387)
 
@@ -129,6 +121,10 @@ scroll_offset = Vector2(578, 387)
 position = Vector2(0, 24.175)
 scale = Vector2(2, 2)
 texture = ExtResource("11_vrwlp")
+
+[node name="Sprite2D4" type="Sprite2D" parent="background parallax"]
+position = Vector2(935.035, 494.91)
+texture = ExtResource("5_07asn")
 
 [node name="Parallax2D4" type="Parallax2D" parent="background parallax"]
 scroll_offset = Vector2(578, 387)
