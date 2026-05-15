@@ -13,19 +13,25 @@ func switch_stage():
 	stage = 1
 	switched_stage.emit()
 	print(stage)
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(10).timeout
+	
 	stage = 2
 	switched_stage.emit()
 	print(stage)
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(10).timeout
+	
 	stage = 3
 	switched_stage.emit()
 	print(stage)
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(10).timeout
+	
 	stage = 4
 	switched_stage.emit()
 	print(stage)
-	await get_tree().create_timer(5).timeout
+	await get_tree().create_timer(10).timeout
+	
 	stage = 5
 	switched_stage.emit()
 	print(stage)
+	await get_tree().create_timer(10).timeout
+	

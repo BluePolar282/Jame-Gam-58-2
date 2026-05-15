@@ -9,10 +9,10 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _ready():
-	if stage > 2 and randf() < 0.01:
+	if stage > 3 and randf() < 0.1:
 		SPEED = 100
-	elif stage > 2 and  randf() > 0.01:
-		SPEED = randf_range(250, 450)
+	else:
+		return
 		
 func set_bullet_direction():
 	var direction = Vector2.ZERO
@@ -42,5 +42,7 @@ func set_difficulty():
 		SPEED = randf_range(100, 150)
 	if stage == 2:
 		SPEED = randf_range(150, 300)
-	if stage > 2:
-		SPEED = randf_range(250, 450)
+	if stage == 3 :
+		SPEED = randf_range(300, 400)
+	if stage > 3 :
+		SPEED = randf_range(350, 550)

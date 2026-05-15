@@ -1,0 +1,12 @@
+extends Node2D
+
+@onready var hand = $Line2D
+
+var time_remaining: float = 50.0  # seconds
+
+func _process(delta: float) -> void:
+	if time_remaining <= 0:
+		return
+		
+	time_remaining -= delta
+	hand.rotation = deg_to_rad((time_remaining / 50) * -180.0)
