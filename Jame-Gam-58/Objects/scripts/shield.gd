@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var cooldown = false
-
 var direction = ""
 
 
@@ -40,7 +39,7 @@ func start_cooldown():
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Bullet"):
 		body.queue_free()
-		$screech.play()
+		#$screech.play()
 
 func detect_input():
 	if Input.is_action_pressed("left"):
@@ -59,7 +58,11 @@ func detect_input():
 		direction = "right"
 
 func die():
-	print(Globals.HEALTH)
 	if Globals.HEALTH == 0:
-		print("deaht by shield")
 		queue_free()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Bullet"):
+		area.get_parent().queue_free()
+		#$screech.play()

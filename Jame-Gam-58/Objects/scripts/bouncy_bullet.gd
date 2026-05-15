@@ -1,20 +1,14 @@
 extends CharacterBody2D
 
-var SPEED = 0
-var stage = Globals.stage
+var SPEED = randf_range(250, 450)
 
-func _physics_process(delta: float) -> void:
-	set_difficulty()
-	set_bullet_direction()
-	move_and_slide()
-	
 func _ready():
-	if stage > 2 and randf() < 0.01:
+	if randf() < 0.01:
 		SPEED = 100
-	elif stage > 2 and  randf() > 0.01:
+	else:
 		SPEED = randf_range(250, 450)
 		
-func set_bullet_direction():
+func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
 
 	if is_in_group("Left Spawner"):
@@ -36,11 +30,4 @@ func set_bullet_direction():
 
 	velocity = direction.normalized() * SPEED
 
-
-func set_difficulty():
-	if stage == 1:
-		SPEED = randf_range(100, 150)
-	if stage == 2:
-		SPEED = randf_range(150, 300)
-	if stage > 2:
-		SPEED = randf_range(250, 450)
+	move_and_slide()
