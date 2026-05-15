@@ -135,10 +135,10 @@ position = Vector2(579, 438)
 texture = ExtResource("5_07asn")
 
 [node name="Parallax2D4" type="Parallax2D" parent="background parallax"]
-scroll_offset = Vector2(578, 387)
+scroll_offset = Vector2(568, 391)
 
 [node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D4"]
-position = Vector2(-62.62, -6.01)
+position = Vector2(-27, -61)
 scale = Vector2(2, 2)
 texture = ExtResource("12_ek5rd")
 
