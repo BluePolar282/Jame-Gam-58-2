@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://guryynls3o1l"]
+[gd_scene load_steps=11 format=3 uid="uid://guryynls3o1l"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/tower.gd" id="1_3nbm1"]
 [ext_resource type="Texture2D" uid="uid://bifpgv5wet0rq" path="res://Jame-Gam-58/Objects/assets/player/DIRECTIONmonk3.png" id="2_hp6j3"]
@@ -60,6 +60,9 @@ size = Vector2(68, 76)
 [sub_resource type="CircleShape2D" id="CircleShape2D_uvqia"]
 radius = 28.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gtuj"]
+size = Vector2(33, 77.375)
+
 [node name="tower" type="CharacterBody2D" groups=["Tower"]]
 position = Vector2(0, 39)
 script = ExtResource("1_3nbm1")
@@ -68,7 +71,6 @@ script = ExtResource("1_3nbm1")
 position = Vector2(0, -62)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bm1pb")
-animation = &"fall"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Tower"]]
 position = Vector2(0, -39)
@@ -84,6 +86,19 @@ disabled = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(0, 40)
 offset = Vector2(0, -40)
+
+[node name="leftSide" type="Area2D" parent="."]
+position = Vector2(-16, -39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leftSide"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_4gtuj")
+
+[node name="rightSide" type="Area2D" parent="."]
+position = Vector2(18, -39)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rightSide"]
+shape = SubResource("RectangleShape2D_4gtuj")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

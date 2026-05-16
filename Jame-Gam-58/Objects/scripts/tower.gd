@@ -21,6 +21,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		await get_tree().create_timer(0.15).timeout
 		currently_animating = false
 
+
 func die():
 	if Globals.is_game_over == true:
 		print("you died")
