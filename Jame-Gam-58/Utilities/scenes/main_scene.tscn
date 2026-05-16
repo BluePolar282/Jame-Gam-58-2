@@ -65,7 +65,7 @@ rotation = -1.5708
 
 [node name="tower" parent="." instance=ExtResource("2_7mml0")]
 visibility_layer = 2
-position = Vector2(0, 13.655)
+position = Vector2(0, 21.11)
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pfejq")

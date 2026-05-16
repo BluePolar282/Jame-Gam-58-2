@@ -9,9 +9,9 @@ func _physics_process(delta: float) -> void:
 	
 func _ready():
 	set_difficulty()
-	if stage > 4 and randf() < 0.01:
+	if Globals.stage > 2 and randf() < 0.05:
 		SPEED = 70
-	elif stage > 4 and  randf() > 0.01:
+	elif stage > 4 and  randf() > 0.05:
 		return
 
 func set_bullet_direction():

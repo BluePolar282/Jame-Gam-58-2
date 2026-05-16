@@ -6,8 +6,8 @@ var is_game_over = false
 var tilt = 0
 var is_debug_on = false
 var on_cooldown := false
-
 var stage = 1
+
 signal switched_stage
 signal inner_peace
 signal game_over
