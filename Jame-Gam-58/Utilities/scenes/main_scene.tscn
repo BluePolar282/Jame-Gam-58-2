@@ -70,7 +70,7 @@ position = Vector2(578, 387)
 
 [node name="tower" parent="CanvasLayer" instance=ExtResource("2_7mml0")]
 visibility_layer = 2
-position = Vector2(579, 436)
+position = Vector2(579, 426)
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pfejq")
