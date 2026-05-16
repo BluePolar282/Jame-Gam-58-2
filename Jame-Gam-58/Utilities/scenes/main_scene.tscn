@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bpko5chmu2sv" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]middle-mts.png" id="11_vrwlp"]
 [ext_resource type="Texture2D" uid="uid://bsqoxyi11fx1d" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]needle-rock.png" id="12_ek5rd"]
 [ext_resource type="Texture2D" uid="uid://wg73nj0rxsk6" path="res://Jame-Gam-58/Objects/earlyAssets/early_bar.png" id="14_xabkf"]
-[ext_resource type="LabelSettings" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="15_fadg7"]
+[ext_resource type="LabelSettings" uid="uid://cv60yr3d4fomp" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="15_fadg7"]
 [ext_resource type="AudioStream" uid="uid://bqsceh1v03dc4" path="res://Jame-Gam-58/Utilities/assets/fallSound_temp.mp3" id="19_nq8ia"]
 [ext_resource type="PackedScene" uid="uid://byws6lghtmj7l" path="res://Jame-Gam-58/UI/scenes/inner_peace_meter.tscn" id="19_p3fk7"]
 

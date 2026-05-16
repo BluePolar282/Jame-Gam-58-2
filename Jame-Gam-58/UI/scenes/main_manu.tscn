@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://34m50dj66vc" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="6_tch6l"]
 [ext_resource type="Texture2D" uid="uid://7hfh2nu208lj" path="res://Jame-Gam-58/UI/assets/sun-rays-ray-png-transparent-ray-images-pluspng-31.png" id="7_ev5ed"]
 [ext_resource type="Texture2D" uid="uid://bhdh2t1fvog6v" path="res://Jame-Gam-58/UI/assets/chinese-cloud-gold-outline-png.webp" id="11_rhy0b"]
-[ext_resource type="LabelSettings" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="12_3n1uf"]
-[ext_resource type="Theme" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="13_17lr7"]
+[ext_resource type="LabelSettings" uid="uid://cv60yr3d4fomp" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="12_3n1uf"]
+[ext_resource type="Theme" uid="uid://ca38i25koq3bw" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="13_17lr7"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/button_effects_module.gd" id="14_epqxd"]
 
 [node name="main-menu" type="Control"]

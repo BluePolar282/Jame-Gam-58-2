@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bt5swvof2gr7w" path="res://Jame-Gam-58/UI/assets/Vignette.png" id="4_agioj"]
 [ext_resource type="Texture2D" uid="uid://cuw8da74e1p57" path="res://Jame-Gam-58/UI/assets/[DIRECTION]deadmonk.png" id="5_cd0rj"]
 [ext_resource type="FontFile" uid="uid://wq302sifuugx" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="6_sifph"]
-[ext_resource type="Theme" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="7_vrhft"]
+[ext_resource type="Theme" uid="uid://ca38i25koq3bw" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="7_vrhft"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/button_effects_module.gd" id="8_u0812"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ehcm"]

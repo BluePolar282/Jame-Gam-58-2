@@ -1,40 +1,17 @@
 extends Label
 
-var tween = create_tween()
-
 func _ready() -> void:
-	if Globals.stage == 1:
-		$".".text = "sTaGe 1"
-		tween.tween_property($Label, "modulate:a", 1.0, 1.0)
-		await get_tree().create_timer(3).timeout
-		tween.tween_property($Sprite2D, "modulate:a", 0.0, 1.0)
-		$".".visible = false
+	modulate.a = 0.0
 	Globals.switched_stage.connect(show_label)
-		
+	if Globals.stage == 1:
+		show_label()
+
 func show_label():
-		
-	if Globals.stage == 2:
-		$".".text = "sTaGe 2"
-		tween.tween_property($Label, "modulate:a", 1.0, 1.0)
-		await get_tree().create_timer(2).timeout
-		tween.tween_property($Sprite2D, "modulate:a", 0.0, 1.0) 
-		
-	if Globals.stage == 3:
-		$".".text = "sTaGe 3"
-		tween.tween_property($Label, "modulate:a", 1.0, 1.0)
-		await get_tree().create_timer(2).timeout
-		tween.tween_property($Sprite2D, "modulate:a", 0.0, 1.0) 
-		
-	if Globals.stage == 4:
-		$".".text = "sTaGe 4"
-		tween.tween_property($Label, "modulate:a", 1.0, 1.0)
-		await get_tree().create_timer(2).timeout
-		tween.tween_property($Sprite2D, "modulate:a", 0.0, 1.0)
-		
-	if Globals.stage == 5:
-		$".".text = "sTaGe 5"
-		tween.tween_property($Label, "modulate:a", 1.0, 1.0)
-		await get_tree().create_timer(2).timeout
-		tween.tween_property($Sprite2D, "modulate:a", 0.0, 1.0)
+	text = "stage %d" % Globals.stage
+
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 1.0, 0.5)
+	tween.tween_interval(2.0)                         
+	tween.tween_property(self, "modulate:a", 0.0, 0.5)  
 		
 		
