@@ -2,6 +2,7 @@ extends Node
 
 var current_dir = "."
 var HEALTH = 10
+var on_cooldown := false
 
 var stage = 1
 signal switched_stage

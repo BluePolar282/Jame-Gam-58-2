@@ -30,7 +30,7 @@ outline_color = Color(0, 0, 0, 1)
 position = Vector2(578, 387)
 
 [node name="Camera2D" type="Camera2D" parent="."]
-enabled = false
+zoom = Vector2(1.005, 1.005)
 
 [node name="spawner-container2" type="Control" parent="."]
 layout_mode = 3
@@ -62,6 +62,7 @@ rotation = -1.5708
 
 [node name="tower" parent="." instance=ExtResource("2_7mml0")]
 visibility_layer = 2
+position = Vector2(0, 13.655)
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pfejq")
@@ -126,7 +127,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("10_bp5yb")
 
 [node name="Parallax2D3" type="Parallax2D" parent="background parallax"]
-scroll_offset = Vector2(578, 387)
+scroll_offset = Vector2(578, 407)
 
 [node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D3"]
 position = Vector2(0, 24.175)

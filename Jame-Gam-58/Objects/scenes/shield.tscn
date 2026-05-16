@@ -19,7 +19,7 @@ offset_right = 33.0
 offset_bottom = -90.0
 color = Color(0.303984, 0.701214, 0.5808, 1)
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["Shield"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -93)

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://cia4w4is83yym"]
+
+[ext_resource type="Script" path="res://bouncing_bullet.gd" id="1_hsif3"]
+[ext_resource type="Texture2D" uid="uid://mxrhir5dxrq7" path="res://Jame-Gam-58/Objects/earlyAssets/image_2026-05-15_191600899-removebg-preview.png" id="2_vmot2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_74u4r"]
+size = Vector2(56, 56)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v14ht"]
+radius = 13.0384
+
+[node name="bouncing bullet" type="CharacterBody2D"]
+script = ExtResource("1_hsif3")
+
+[node name="Area2D" type="Area2D" parent="." groups=["Bouncing Bullet"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_74u4r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_v14ht")
+disabled = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999996, -1)
+scale = Vector2(0.26, 0.305)
+texture = ExtResource("2_vmot2")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
