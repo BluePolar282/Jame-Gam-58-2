@@ -1,7 +1,7 @@
 extends Sprite2D
 @onready var early_head: Sprite2D = $earlyHead
 var velocity = 0.0
-const GRAVITY = 2.7
+const GRAVITY = 2.0
 const MOUSE_FORCE = 2.5
 
 func start_fade(timer):
@@ -18,6 +18,9 @@ func debug():
 		else:
 			Globals.is_debug_on = false
 			hide()
+
+func nudge(amount: float):
+	velocity += amount
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
