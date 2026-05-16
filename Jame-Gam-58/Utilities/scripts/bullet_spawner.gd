@@ -48,7 +48,7 @@ func spawn_bullets() -> void:
 	if rand > 0.1:
 		add_child(spawned_bullet)
 		spawned_bullet.add_to_group(spawner_group)
-	if rand < 0.1:
+	if rand < 0.1 and stage > 2:
 		add_child(spawned_bouncy_bullet)
 		spawned_bouncy_bullet.add_to_group(spawner_group)
 		bouncy_in_scene = true

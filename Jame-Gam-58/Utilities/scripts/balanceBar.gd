@@ -12,7 +12,6 @@ func start_fade(timer):
 		modulate.a -= 0.1
 	modulate.a = 0.0
 
-
 func debug():
 	if Input.is_action_just_pressed("debug"):
 		if Globals.is_debug_on == false:
@@ -22,21 +21,13 @@ func debug():
 			Globals.is_debug_on = false
 			hide()
 
-
-
-
 func _ready():
 	last_mouse_pos = get_global_mouse_position() 
 	hide()
 
-
-
 func _physics_process(delta: float) -> void:
 	debug()
 	
-
-
-
 func _process(delta):
 	if Globals.is_game_over == true:
 		return

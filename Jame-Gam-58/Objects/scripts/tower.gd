@@ -26,6 +26,7 @@ func die():
 		print("you died")
 		await get_tree().create_timer(55.8).timeout
 		queue_free()
+		get_tree().change_scene_to_file("res://Jame-Gam-58/UI/scenes/endscreen.tscn")
 
 func _process(delta: float):
 	rotation = Globals.tilt

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cia4w4is83yym"]
 
-[ext_resource type="Script" path="res://bouncing_bullet.gd" id="1_hsif3"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/bouncing_bullet.gd" id="1_hsif3"]
 [ext_resource type="Texture2D" uid="uid://mxrhir5dxrq7" path="res://Jame-Gam-58/Objects/earlyAssets/image_2026-05-15_191600899-removebg-preview.png" id="2_vmot2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74u4r"]
