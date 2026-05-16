@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="JameGam#58 - Direction"
-run/main_scene="res://Jame-Gam-58/Utilities/scenes/main_scene.tscn"
+run/main_scene="res://Jame-Gam-58/UI/scenes/main_manu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -80,3 +80,4 @@ debug={
 [rendering]
 
 textures/canvas_textures/default_texture_filter=3
+2d/snap/snap_2d_transforms_to_pixel=true

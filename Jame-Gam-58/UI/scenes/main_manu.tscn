@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://s8578akya4g6"]
+
+[ext_resource type="Texture2D" uid="uid://d3it6625nxt8s" path="res://Jame-Gam-58/UI/assets/Screenshot 2026-05-15 223918.png" id="1_3pnrd"]
+[ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/main_manu.gd" id="1_stlli"]
+[ext_resource type="FontFile" uid="uid://cvj5p53cdaqhf" path="res://Jame-Gam-58/Utilities/assets/Midorima-PersonalUse-Regular.ttf" id="2_bx7pj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b5ih5"]
+font = ExtResource("2_bx7pj")
+font_size = 121
+outline_size = 91
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_2qtbo"]
+default_font = ExtResource("2_bx7pj")
+default_font_size = 18
+
+[node name="main-menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stlli")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(575.266, 321)
+scale = Vector2(0.66736, 0.66736)
+texture = ExtResource("1_3pnrd")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 21.0
+offset_top = 28.0
+offset_right = 608.0
+offset_bottom = 175.0
+text = "Peace Stop"
+label_settings = SubResource("LabelSettings_b5ih5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 38.61
+offset_top = -133.135
+offset_right = 157.975
+offset_bottom = -24.255
+grow_vertical = 2
+scale = Vector2(3.53, 3.53)
+theme = SubResource("Theme_2qtbo")
+
+[node name="start" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="tutorial" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Tutorial"
+
+[node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]

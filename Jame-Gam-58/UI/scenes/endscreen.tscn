@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcnq3oeap16yy"]
+[gd_scene load_steps=8 format=3 uid="uid://bcnq3oeap16yy"]
 
+[ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/endscreen.gd" id="1_42rj1"]
 [ext_resource type="FontFile" uid="uid://cvj5p53cdaqhf" path="res://Jame-Gam-58/Utilities/assets/Midorima-PersonalUse-Regular.ttf" id="1_mim0k"]
+[ext_resource type="Texture2D" uid="uid://p6urhxibn5r" path="res://Jame-Gam-58/UI/assets/[DIRECTION]end-cutscene.png" id="2_qfu7s"]
+[ext_resource type="Texture2D" uid="uid://cfav1wjjcq4m8" path="res://Jame-Gam-58/UI/assets/vintage-rough-texture-png.webp" id="3_oxdoe"]
+[ext_resource type="Texture2D" uid="uid://bt5swvof2gr7w" path="res://Jame-Gam-58/UI/assets/Vignette.png" id="4_agioj"]
+[ext_resource type="Texture2D" uid="uid://cuw8da74e1p57" path="res://Jame-Gam-58/UI/assets/[DIRECTION]deadmonk.png" id="5_cd0rj"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_x4bwh"]
 font = ExtResource("1_mim0k")
-font_size = 76
-outline_size = 40
+font_size = 136
+outline_size = 50
 outline_color = Color(0, 0, 0, 1)
 
 [node name="endscreen" type="Control"]
@@ -15,14 +20,54 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_42rj1")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "YOu are INNerLy peacefuL !!11!!!!!11"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="inner-peace" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 325)
+scale = Vector2(2, 1.99383)
+texture = ExtResource("2_qfu7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/inner-peace"]
+position = Vector2(0, -6.5)
+scale = Vector2(1, 0.962857)
+texture = ExtResource("3_oxdoe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/inner-peace"]
+scale = Vector2(-0.15, -0.15)
+texture = ExtResource("4_agioj")
+
+[node name="death" type="Sprite2D" parent="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/death"]
+offset_right = 1150.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/death"]
+position = Vector2(567, 393)
+scale = Vector2(4.485, 4.485)
+texture = ExtResource("5_cd0rj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/death"]
+position = Vector2(578.5, 321)
+scale = Vector2(1.95408, 1.83429)
+texture = ExtResource("3_oxdoe")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -227.0
+offset_right = 227.0
+offset_bottom = 165.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+text = "THE EnD"
 label_settings = SubResource("LabelSettings_x4bwh")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+horizontal_alignment = 1
+vertical_alignment = 1
