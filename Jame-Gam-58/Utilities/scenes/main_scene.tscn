@@ -70,7 +70,7 @@ position = Vector2(578, 387)
 
 [node name="tower" parent="CanvasLayer" instance=ExtResource("2_7mml0")]
 visibility_layer = 2
-position = Vector2(579, 426)
+position = Vector2(579, 436)
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pfejq")
@@ -98,7 +98,7 @@ flip_h = true
 position = Vector2(578, 387)
 
 [node name="Sprite2D" type="Sprite2D" parent="sky parallax/ParallaxLayer3"]
-position = Vector2(0, -64.17)
+position = Vector2(0, -64)
 scale = Vector2(2, 2)
 texture = ExtResource("7_6dmrp")
 
