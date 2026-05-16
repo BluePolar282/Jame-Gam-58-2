@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Globals="*res://Jame-Gam-58/Utilities/scripts/globals.gd"
+Transition="*res://Jame-Gam-58/Utilities/scenes/transition.tscn"
 
 [display]
 
@@ -79,5 +80,8 @@ debug={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=3
-2d/snap/snap_2d_transforms_to_pixel=true
+textures/canvas_textures/default_texture_filter=0
+textures/decals/filter=0
+textures/light_projectors/filter=0
+environment/defaults/default_clear_color=Color(0.12038, 0.1577, 0.208848, 1)
+textures/snap/snap_2d_transforms_to_pixel=true

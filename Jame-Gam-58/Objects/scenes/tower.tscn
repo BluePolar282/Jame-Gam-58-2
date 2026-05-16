@@ -68,7 +68,7 @@ script = ExtResource("1_3nbm1")
 position = Vector2(0, -62)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bm1pb")
-animation = &"fall"
+autoplay = "default"
 
 [node name="Area2D" type="Area2D" parent="." groups=["Tower"]]
 position = Vector2(0, -39)

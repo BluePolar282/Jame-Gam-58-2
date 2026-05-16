@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cedmi77yo3ej"]
+[gd_scene load_steps=22 format=3 uid="uid://cedmi77yo3ej"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/main_scene.gd" id="1_hko3k"]
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
@@ -10,8 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://6dypwcvhrg7y" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="6_e1ag4"]
 [ext_resource type="AudioStream" uid="uid://uqefcxbb0dyp" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
 [ext_resource type="Texture2D" uid="uid://dnea5e4ounek6" path="res://Jame-Gam-58/Objects/assets/sky3/4.png" id="7_6dmrp"]
-[ext_resource type="FontFile" uid="uid://cvj5p53cdaqhf" path="res://Jame-Gam-58/Utilities/assets/Midorima-PersonalUse-Regular.ttf" id="7_bg630"]
-[ext_resource type="Texture2D" uid="uid://b772y0530ttt1" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]sun.png" id="7_v57xl"]
 [ext_resource type="Texture2D" uid="uid://b0sh36q67ihu0" path="res://Jame-Gam-58/Objects/assets/sky2/5.png" id="8_bkwjl"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/stage_label.gd" id="8_twnem"]
 [ext_resource type="Texture2D" uid="uid://bksob503bacv3" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]back-mountains.png" id="9_isqnq"]
@@ -20,14 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://bpko5chmu2sv" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]middle-mts.png" id="11_vrwlp"]
 [ext_resource type="Texture2D" uid="uid://bsqoxyi11fx1d" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]needle-rock.png" id="12_ek5rd"]
 [ext_resource type="Texture2D" uid="uid://wg73nj0rxsk6" path="res://Jame-Gam-58/Objects/earlyAssets/early_bar.png" id="14_xabkf"]
+[ext_resource type="LabelSettings" uid="uid://omr7r3brqpt8" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="15_fadg7"]
 [ext_resource type="AudioStream" uid="uid://bqsceh1v03dc4" path="res://Jame-Gam-58/Utilities/assets/fallSound_temp.mp3" id="19_nq8ia"]
 [ext_resource type="PackedScene" uid="uid://byws6lghtmj7l" path="res://Jame-Gam-58/UI/scenes/inner_peace_meter.tscn" id="19_p3fk7"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gu8rf"]
-font = ExtResource("7_bg630")
-font_size = 121
-outline_size = 30
-outline_color = Color(0, 0, 0, 1)
 
 [node name="main scene" type="Node2D"]
 position = Vector2(578, 387)
@@ -71,7 +64,7 @@ position = Vector2(578, 387)
 
 [node name="tower" parent="CanvasLayer" instance=ExtResource("2_7mml0")]
 visibility_layer = 2
-position = Vector2(579, 436)
+position = Vector2(579, 426)
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pfejq")
@@ -80,33 +73,26 @@ volume_db = -13.867
 [node name="sky parallax" type="ParallaxBackground" parent="."]
 
 [node name="Parallax2D" type="Parallax2D" parent="sky parallax"]
-repeat_size = Vector2(2290.12, 0)
+repeat_size = Vector2(2200, 0)
 autoscroll = Vector2(24.425, 0)
 repeat_times = 50
 
 [node name="Sprite2D" type="Sprite2D" parent="sky parallax/Parallax2D"]
-position = Vector2(13.84, 272)
+position = Vector2(0, 272)
 scale = Vector2(2, 2)
 texture = ExtResource("6_e1ag4")
 
 [node name="Sprite2D2" type="Sprite2D" parent="sky parallax/Parallax2D"]
-position = Vector2(1152.11, 273)
+position = Vector2(1132, 273)
 scale = Vector2(2, 2)
 texture = ExtResource("6_e1ag4")
 flip_h = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="sky parallax"]
-position = Vector2(578, 323)
-scale = Vector2(2, 2)
-texture = ExtResource("7_v57xl")
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="sky parallax"]
+position = Vector2(578, 387)
 
-[node name="Parallax2D2" type="Parallax2D" parent="sky parallax"]
-repeat_size = Vector2(1151.25, 0)
-autoscroll = Vector2(7.225, 0)
-repeat_times = 50
-
-[node name="Sprite2D" type="Sprite2D" parent="sky parallax/Parallax2D2"]
-position = Vector2(578, 323)
+[node name="Sprite2D" type="Sprite2D" parent="sky parallax/ParallaxLayer3"]
+position = Vector2(0, -64)
 scale = Vector2(2, 2)
 texture = ExtResource("7_6dmrp")
 
@@ -123,8 +109,6 @@ position = Vector2(578, 387)
 [node name="Sprite2D" type="Sprite2D" parent="sky parallax/ParallaxLayer5"]
 scale = Vector2(2, 2)
 texture = ExtResource("9_l0trq")
-
-[node name="Sprite2D" type="Sprite2D" parent="sky parallax"]
 
 [node name="background parallax" type="ParallaxBackground" parent="."]
 
@@ -165,12 +149,12 @@ scale = Vector2(2, 2)
 texture = ExtResource("12_ek5rd")
 
 [node name="stage label" type="Label" parent="."]
-offset_left = -176.0
-offset_top = 135.0
-offset_right = 187.0
-offset_bottom = 282.0
+offset_left = -177.0
+offset_top = -279.0
+offset_right = 186.0
+offset_bottom = -132.0
 text = "STAGE 1"
-label_settings = SubResource("LabelSettings_gu8rf")
+label_settings = ExtResource("15_fadg7")
 script = ExtResource("8_twnem")
 
 [node name="earlyBar" type="Sprite2D" parent="."]
