@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcnq3oeap16yy"]
+
+[ext_resource type="FontFile" uid="uid://cvj5p53cdaqhf" path="res://Jame-Gam-58/Utilities/assets/Midorima-PersonalUse-Regular.ttf" id="1_mim0k"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_x4bwh"]
+font = ExtResource("1_mim0k")
+font_size = 76
+outline_size = 40
+outline_color = Color(0, 0, 0, 1)
+
+[node name="endscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "YOu are INNerLy peacefuL !!11!!!!!11"
+label_settings = SubResource("LabelSettings_x4bwh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]

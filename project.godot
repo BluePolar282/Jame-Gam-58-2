@@ -33,6 +33,8 @@ Tower=""
 Bullet=""
 "Top Left Spawner"=""
 "Top Right Spawner"=""
+"Bouncing Bullet"=""
+Shield=""
 
 [input]
 

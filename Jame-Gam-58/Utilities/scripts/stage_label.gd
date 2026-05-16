@@ -28,5 +28,10 @@ func show_label():
 		$".".visible = true
 		await get_tree().create_timer(2).timeout
 		$".".visible = false
+	if Globals.stage == 5:
+		$".".text = "sTaGe 5"
+		$".".visible = true
+		await get_tree().create_timer(2).timeout
+		$".".visible = false
 		
 		

@@ -1,71 +1,83 @@
 extends Area2D
 
 var bullet = preload("res://Jame-Gam-58/Objects/scenes/bullet.tscn")
+var bouncy_bullet = preload("res://Jame-Gam-58/Objects/scenes/bouncing_bullet.tscn")
+var spawner_group := ""
+var spawner_dir := ""
+var bouncy_in_scene = false
 var stage = Globals.stage
 
-var delay := false
-
-func _on_timer_timeout() -> void:
-	set_bullet_spawner()
+func _ready() -> void:
+	for g in ["Left Spawner", "Top Left Spawner", "Top Spawner", "Top Right Spawner", "Right Spawner"]:
+		if is_in_group(g):
+			spawner_group = g
+			break
+	spawner_dir = set_direction(spawner_group)
+	set_difficulty()
 	$Timer.start()
 
-func spawn_bullet():
-	var spawned_bullet = bullet.instantiate()
-	
-	if delay == false:
-		add_child(spawned_bullet)
-	#---------------------------------------------------
-	if is_in_group("Left Spawner"):
-		spawned_bullet.add_to_group("Left Spawner")
-		
-	if is_in_group("Top Left Spawner"):
-		spawned_bullet.add_to_group("Top Left Spawner")
-		
-	if is_in_group("Top Spawner"):
-		spawned_bullet.add_to_group("Top Spawner")
-		
-	if is_in_group("Top Right Spawner"):
-		spawned_bullet.add_to_group("Top Right Spawner")
-		
-	if is_in_group("Right Spawner"):
-		spawned_bullet.add_to_group("Right Spawner")
-	#---------------------------------------------------
-	delay = true
-	await get_tree().create_timer(0.5).timeout
-	Globals.current_dir = "."
-	delay = false
+func set_direction(g: String) -> String:
+	match g:
+		"Left Spawner":      return "left"
+		"Top Left Spawner":  return "top left"
+		"Top Spawner":       return "top"
+		"Top Right Spawner": return "top right"
+		"Right Spawner":     return "right"
+	return "."
 
-func set_bullet_spawner():
-	if Globals.current_dir != ".":
+func _on_timer_timeout() -> void:
+	set_difficulty()
+	spawn_bullets()
+
+func spawn_bullets() -> void:
+	var rand = randf()
+	rand
+
+	if Globals.on_cooldown:
 		return
-	
-	var random = randi_range(1, 5)
-	
-	if random == 1:
-		if is_in_group("Left Spawner"):
-			Globals.current_dir = "left"
-			spawn_bullet()
-	if random == 2:
-		if is_in_group("Top Left Spawner") and Globals.stage > 2:
-			Globals.current_dir = "top left"
-			spawn_bullet()
-	if random == 3:
-		if is_in_group("Top Spawner"):
-			Globals.current_dir = "top"
-			spawn_bullet()
-	if random == 4:
-		if is_in_group("Top Right Spawner") and Globals.stage > 2:
-			Globals.current_dir = "top right"
-			spawn_bullet()
-	if random == 5:
-		if is_in_group("Right Spawner"):
-			Globals.current_dir = "right"
-			spawn_bullet()
+	if spawner_group in ["Top Left Spawner", "Top Right Spawner"] and Globals.stage <= 2:
+		return
 
-func set_difficulty():
-	if stage == 1:
-		$Timer.wait_time = randf_range(1, 1.5)
-	if stage == 2:
-		$Timer.wait_time = randf_range(0.5, 1.25)
-	if stage > 2:
+	var fire_chance := set_bullet_chance()
+	if randf() > fire_chance:
+		return
+
+	var spawned_bullet = bullet.instantiate()
+	var spawned_bouncy_bullet = bouncy_bullet.instantiate()
+	
+	if rand > 0.1:
+		add_child(spawned_bullet)
+		spawned_bullet.add_to_group(spawner_group)
+	if rand < 0.1 and stage > 2:
+		add_child(spawned_bouncy_bullet)
+		spawned_bouncy_bullet.add_to_group(spawner_group)
+		bouncy_in_scene = true
+		await get_tree().create_timer(1.5).timeout
+		bouncy_in_scene = false
+	
+	Globals.current_dir = spawner_dir
+
+	Globals.on_cooldown = true
+	await get_tree().create_timer(0.5).timeout
+	Globals.on_cooldown = false
+
+func set_bullet_chance() -> float:
+	match Globals.stage:
+		1: return 0.4
+		2: return 0.4
+		3: return 0.5
+		4: return 0.55
+		5: return 0.65
+	return 0.4
+
+func set_difficulty() -> void:
+	if stage == 1 and !bouncy_in_scene:
+		$Timer.wait_time = randf_range(1, 2)
+	if stage == 2 and !bouncy_in_scene:
+		$Timer.wait_time = randf_range(0.5, 1)
+	if stage == 3 and !bouncy_in_scene:
 		$Timer.wait_time = randf_range(0.25, 0.5)
+	if stage > 4 and !bouncy_in_scene:
+		$Timer.wait_time = randf_range(0.1, 0.3)
+	elif stage > 0 and bouncy_in_scene:
+		$Timer.wait_time = randf_range(1, 2)

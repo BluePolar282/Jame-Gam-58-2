@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://guryynls3o1l"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/tower.gd" id="1_3nbm1"]
-[ext_resource type="Texture2D" uid="uid://b8ot7m4wwj660" path="res://Jame-Gam-58/Objects/assets/player/[DIRECTION]monk3.png" id="2_w3ae5"]
+[ext_resource type="Texture2D" uid="uid://ckx372oyjnnf4" path="res://Jame-Gam-58/Objects/assets/player/[DIRECTION]monk3.png" id="2_w3ae5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31oni"]
 atlas = ExtResource("2_w3ae5")
@@ -25,23 +25,19 @@ size = Vector2(68, 76)
 radius = 28.0
 
 [node name="tower" type="CharacterBody2D" groups=["Tower"]]
-position = Vector2(0, -26.015)
 script = ExtResource("1_3nbm1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -0.985001)
+position = Vector2(0, -23)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bm1pb")
-offset = Vector2(0.5, -31)
 
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(0, -39.985)
+[node name="Area2D" type="Area2D" parent="." groups=["Tower"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_jvna0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -39.985)
 shape = SubResource("CircleShape2D_uvqia")
 disabled = true
 

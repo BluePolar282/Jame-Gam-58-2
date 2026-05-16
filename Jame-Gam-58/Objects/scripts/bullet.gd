@@ -4,16 +4,16 @@ var SPEED = 0
 var stage = Globals.stage
 
 func _physics_process(delta: float) -> void:
-	set_difficulty()
 	set_bullet_direction()
 	move_and_slide()
 	
 func _ready():
-	if stage > 2 and randf() < 0.01:
-		SPEED = 100
-	elif stage > 2 and  randf() > 0.01:
-		SPEED = randf_range(250, 450)
-		
+	set_difficulty()
+	if stage > 4 and randf() < 0.01:
+		SPEED = 70
+	elif stage > 4 and  randf() > 0.01:
+		return
+
 func set_bullet_direction():
 	var direction = Vector2.ZERO
 
@@ -36,11 +36,10 @@ func set_bullet_direction():
 
 	velocity = direction.normalized() * SPEED
 
-
 func set_difficulty():
 	if stage == 1:
 		SPEED = randf_range(100, 150)
 	if stage == 2:
 		SPEED = randf_range(150, 300)
 	if stage > 2:
-		SPEED = randf_range(250, 450)
+		SPEED = randf_range(300, 425)
