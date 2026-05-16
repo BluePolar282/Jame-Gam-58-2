@@ -42,6 +42,8 @@ shape = SubResource("CircleShape2D_uvqia")
 disabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(0, 40)
+offset = Vector2(0, -40)
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -42,30 +42,35 @@ offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="bullet-spawner1" parent="spawner-container2" groups=["Left Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(-600, 0)
+[node name="CanvasLayer" type="CanvasLayer" parent="spawner-container2"]
+
+[node name="bullet-spawner1" parent="spawner-container2/CanvasLayer" groups=["Left Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(-22, 387)
 rotation = -3.14159
 
-[node name="bullet-spawner2" parent="spawner-container2" groups=["Top Left Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(-450, -450)
+[node name="bullet-spawner2" parent="spawner-container2/CanvasLayer" groups=["Top Left Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(128, -63)
 rotation = -1.5708
 
-[node name="bullet-spawner3" parent="spawner-container2" groups=["Top Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(0, -600)
+[node name="bullet-spawner3" parent="spawner-container2/CanvasLayer" groups=["Top Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(578, -213)
 
-[node name="bullet-spawner4" parent="spawner-container2" groups=["Top Right Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(450, -450)
+[node name="bullet-spawner4" parent="spawner-container2/CanvasLayer" groups=["Top Right Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(1028, -63)
 rotation = -1.5708
 
-[node name="bullet-spawner5" parent="spawner-container2" groups=["Right Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(600, 0)
+[node name="bullet-spawner5" parent="spawner-container2/CanvasLayer" groups=["Right Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(1178, 387)
 rotation = -1.5708
 
-[node name="shield" parent="." instance=ExtResource("3_gvl8j")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="tower" parent="." instance=ExtResource("2_7mml0")]
+[node name="shield" parent="CanvasLayer" instance=ExtResource("3_gvl8j")]
+position = Vector2(578, 387)
+
+[node name="tower" parent="CanvasLayer" instance=ExtResource("2_7mml0")]
 visibility_layer = 2
-position = Vector2(0, 21.11)
+position = Vector2(578, 388.965)
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pfejq")
@@ -138,7 +143,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("11_vrwlp")
 
 [node name="Sprite2D4" type="Sprite2D" parent="background parallax"]
-position = Vector2(579, 438)
+position = Vector2(571, 637)
 texture = ExtResource("5_07asn")
 
 [node name="Parallax2D4" type="Parallax2D" parent="background parallax"]
@@ -171,5 +176,6 @@ texture = ExtResource("5_15ev6")
 stream = ExtResource("19_nq8ia")
 
 [node name="inner_peace_meter" parent="." instance=ExtResource("19_p3fk7")]
+visible = false
 position = Vector2(388, 226)
 scale = Vector2(0.725, 0.725)
