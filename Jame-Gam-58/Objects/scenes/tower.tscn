@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://guryynls3o1l"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/tower.gd" id="1_3nbm1"]
-[ext_resource type="Texture2D" uid="uid://bitmbhiew5l1n" path="res://Jame-Gam-58/Objects/assets/player/DIRECTIONmonk3.png" id="2_hp6j3"]
+[ext_resource type="Texture2D" uid="uid://bifpgv5wet0rq" path="res://Jame-Gam-58/Objects/assets/player/DIRECTIONmonk3.png" id="2_hp6j3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_em3vl"]
 atlas = ExtResource("2_hp6j3")

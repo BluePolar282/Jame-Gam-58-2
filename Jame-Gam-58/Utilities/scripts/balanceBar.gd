@@ -1,8 +1,8 @@
 extends Sprite2D
 @onready var early_head: Sprite2D = $earlyHead
 var velocity = 0.0
-const GRAVITY = 2.0
-const MOUSE_FORCE = 2.5
+const GRAVITY = 1.7
+const MOUSE_FORCE = 2.8
 
 func start_fade(timer):
 	while modulate.a > 0:
@@ -43,7 +43,7 @@ func _process(delta):
 	
 	Globals.tilt = remap(early_head.global_position.x - global_position.x, -3000, 3000, -5, 5)
 	
-	if (early_head.global_position.x - global_position.x) <= -400 or (early_head.global_position.x - global_position.x) >= 400:
+	if (early_head.global_position.x - global_position.x) <= -425 or (early_head.global_position.x - global_position.x) >= 425:
 		Globals.game_over.emit()
 		$slipSound.play()
 		start_fade(0.1)

@@ -39,10 +39,10 @@ func _process(delta: float):
 func _on_left_side_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
 		print("left hit")
-		balance_bar.nudge(250.0)
+		balance_bar.nudge(370.0)
 
 
 func _on_right_side_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
 		print("right hit")
-		balance_bar.nudge(-250.0)
+		balance_bar.nudge(-370.0)
