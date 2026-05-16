@@ -1,0 +1,9 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://0agulhd1vh2a"]
+
+[ext_resource type="Texture2D" uid="uid://b4e2g1i8hefiu" path="res://Jame-Gam-58/UI/assets/image_2026-05-16_151436194-removebg-preview.png" id="1_vq7om"]
+
+[resource]
+texture = ExtResource("1_vq7om")
+expand_margin_left = 25.0
+expand_margin_right = 25.0
+modulate_color = Color(0.79, 0.696122, 0.6083, 1)

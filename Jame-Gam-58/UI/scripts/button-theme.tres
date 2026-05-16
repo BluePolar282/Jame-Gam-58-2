@@ -1,0 +1,30 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://b3d3rldsprotv"]
+
+[ext_resource type="FontFile" uid="uid://wq302sifuugx" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="1_ynrw3"]
+[ext_resource type="StyleBox" uid="uid://0agulhd1vh2a" path="res://Jame-Gam-58/UI/scripts/new_style_box_texture.tres" id="2_cr38q"]
+
+[resource]
+Button/colors/font_color = Color(0.207917, 0.138476, 0.0728687, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(0.210392, 0.131486, 0.0634902, 1)
+Button/colors/font_hover_color = Color(0.213952, 0.140327, 0.0817513, 1)
+Button/colors/font_hover_pressed_color = Color(0.227826, 0.133394, 0.0580724, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.243017, 0.145713, 0.100063, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 299
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 76
+Button/fonts/font = ExtResource("1_ynrw3")
+Button/styles/disabled = ExtResource("2_cr38q")
+Button/styles/focus = ExtResource("2_cr38q")
+Button/styles/hover = ExtResource("2_cr38q")
+Button/styles/normal = ExtResource("2_cr38q")
+Button/styles/pressed = ExtResource("2_cr38q")

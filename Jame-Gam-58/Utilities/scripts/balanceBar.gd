@@ -31,14 +31,14 @@ func _input(event):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if event is InputEventMouseMotion:
-		if Globals.is_game_over == false:
+		if Globals.lost == false:
 			velocity += event.relative.x * MOUSE_FORCE
 
 func _physics_process(delta: float) -> void:
 	debug()
 
 func _process(delta):
-	if Globals.is_game_over == true:
+	if Globals.lost == true:
 		return
 	
 	Globals.tilt = remap(early_head.global_position.x - global_position.x, -3000, 3000, -5, 5)

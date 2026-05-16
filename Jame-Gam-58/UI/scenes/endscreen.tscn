@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcnq3oeap16yy"]
+[gd_scene load_steps=10 format=3 uid="uid://bcnq3oeap16yy"]
 
-[ext_resource type="FontFile" uid="uid://cvj5p53cdaqhf" path="res://Jame-Gam-58/Utilities/assets/Midorima-PersonalUse-Regular.ttf" id="1_mim0k"]
+[ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/endscreen.gd" id="1_42rj1"]
+[ext_resource type="Texture2D" uid="uid://p6urhxibn5r" path="res://Jame-Gam-58/UI/assets/[DIRECTION]end-cutscene.png" id="2_qfu7s"]
+[ext_resource type="Texture2D" uid="uid://cfav1wjjcq4m8" path="res://Jame-Gam-58/UI/assets/vintage-rough-texture-png.webp" id="3_oxdoe"]
+[ext_resource type="Texture2D" uid="uid://bt5swvof2gr7w" path="res://Jame-Gam-58/UI/assets/Vignette.png" id="4_agioj"]
+[ext_resource type="Texture2D" uid="uid://cuw8da74e1p57" path="res://Jame-Gam-58/UI/assets/[DIRECTION]deadmonk.png" id="5_cd0rj"]
+[ext_resource type="FontFile" uid="uid://wq302sifuugx" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="6_sifph"]
+[ext_resource type="Theme" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="7_vrhft"]
+[ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/button_effects_module.gd" id="8_u0812"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_x4bwh"]
-font = ExtResource("1_mim0k")
-font_size = 76
-outline_size = 40
+[sub_resource type="LabelSettings" id="LabelSettings_2ehcm"]
+font = ExtResource("6_sifph")
+font_size = 176
+outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
 [node name="endscreen" type="Control"]
@@ -15,14 +22,93 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_42rj1")
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "YOu are INNerLy peacefuL !!11!!!!!11"
-label_settings = SubResource("LabelSettings_x4bwh")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="inner-peace" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576, 325)
+scale = Vector2(2, 1.99383)
+texture = ExtResource("2_qfu7s")
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/inner-peace"]
+self_modulate = Color(1, 1, 1, 0.481)
+position = Vector2(0, -6.5)
+scale = Vector2(1, 0.962857)
+texture = ExtResource("3_oxdoe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/inner-peace"]
+self_modulate = Color(1, 1, 1, 0.584)
+scale = Vector2(-0.15, -0.15)
+texture = ExtResource("4_agioj")
+
+[node name="death" type="Sprite2D" parent="CanvasLayer"]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/death"]
+offset_right = 1150.0
+offset_bottom = 646.0
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/death"]
+position = Vector2(557, 319)
+scale = Vector2(4.485, 4.485)
+texture = ExtResource("5_cd0rj")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/death"]
+position = Vector2(578.5, 321)
+scale = Vector2(1.95408, 1.83429)
+texture = ExtResource("3_oxdoe")
+
+[node name="CenterContainer" type="CenterContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -265.0
+offset_top = 18.0
+offset_right = 262.0
+offset_bottom = 208.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/CenterContainer"]
+layout_mode = 2
+text = "THE END"
+label_settings = SubResource("LabelSettings_2ehcm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -274.0
+offset_top = -183.195
+offset_right = 274.0
+offset_bottom = -92.195
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.25, 1.25)
+pivot_offset = Vector2(273.006, 46.395)
+theme = ExtResource("7_vrhft")
+theme_override_constants/separation = 205
+
+[node name="menu" type="Button" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_vrhft")
+text = "Menu"
+
+[node name="Node" type="Node" parent="CanvasLayer/HBoxContainer/menu"]
+script = ExtResource("8_u0812")
+
+[node name="retry" type="Button" parent="CanvasLayer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("7_vrhft")
+text = "Retry"
+
+[node name="Node" type="Node" parent="CanvasLayer/HBoxContainer/retry"]
+script = ExtResource("8_u0812")
+
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/retry" to="." method="_on_retry_pressed"]
