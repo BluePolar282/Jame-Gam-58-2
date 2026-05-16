@@ -2,33 +2,29 @@ extends CharacterBody2D
 
 var cooldown = false
 var direction = ""
-
+var target_rotation = 0.0
+const ROTATE_SPEED = 50.0 
 
 func _physics_process(delta: float) -> void:
-	rotate_shield()
 	detect_input()
 	die()
-	
+	rotation_degrees = lerp(rotation_degrees, target_rotation, ROTATE_SPEED * delta)
+
 func rotate_shield():
-	
 	if direction == "left" and not cooldown:
-		rotation_degrees = -90
+		target_rotation = -90.0
 		start_cooldown()
-	
 	if direction == "top left" and not cooldown:
-		rotation_degrees = -45
+		target_rotation = -45.0
 		start_cooldown()
-	
 	if direction == "top" and not cooldown:
-		rotation_degrees = 0
+		target_rotation = 0.0
 		start_cooldown()
-
 	if direction == "top right" and not cooldown:
-		rotation_degrees = 45
+		target_rotation = 45.0
 		start_cooldown()
-
 	if direction == "right" and not cooldown:
-		rotation_degrees = 90
+		target_rotation = 90.0
 		start_cooldown()
 
 func start_cooldown():
@@ -36,31 +32,30 @@ func start_cooldown():
 	await get_tree().create_timer(0.1).timeout
 	cooldown = false
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Bullet"):
-		body.queue_free()
-		#$screech.play()
-
 func detect_input():
 	if Input.is_action_pressed("left"):
 		direction = "left"
-		
+		rotate_shield()
 	if Input.is_action_pressed("top left"):
 		direction = "top left"
-	
+		rotate_shield()
 	if Input.is_action_pressed("up"):
 		direction = "top"
-
+		rotate_shield()
 	if Input.is_action_pressed("top right"):
 		direction = "top right"
-
+		rotate_shield()
 	if Input.is_action_pressed("right"):
 		direction = "right"
+		rotate_shield()
 
 func die():
 	if Globals.HEALTH == 0:
 		queue_free()
 
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Bullet"):
+		body.queue_free()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
