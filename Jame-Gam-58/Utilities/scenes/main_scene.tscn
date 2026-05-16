@@ -1,5 +1,6 @@
-[gd_scene load_steps=21 format=3 uid="uid://cedmi77yo3ej"]
+[gd_scene load_steps=22 format=3 uid="uid://cedmi77yo3ej"]
 
+[ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scenes/main_scene.gd" id="1_hko3k"]
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
 [ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
@@ -28,6 +29,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="main scene" type="Node2D"]
 position = Vector2(578, 387)
+script = ExtResource("1_hko3k")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.005, 1.005)
