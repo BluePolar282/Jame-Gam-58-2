@@ -1,10 +1,8 @@
 extends Sprite2D
 @onready var early_head: Sprite2D = $earlyHead
-
 var velocity = 0.0
-var last_mouse_pos = Vector2.ZERO
-const GRAVITY = 2.7
-const MOUSE_FORCE = 3.5
+const GRAVITY = 2.0
+const MOUSE_FORCE = 2.5
 
 func start_fade(timer):
 	while modulate.a > 0:
@@ -21,28 +19,34 @@ func debug():
 			Globals.is_debug_on = false
 			hide()
 
+func nudge(amount: float):
+	velocity += amount
+
 func _ready():
-	last_mouse_pos = get_global_mouse_position() 
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	hide()
+
+func _input(event):
+	if event is InputEventKey and event.keycode == KEY_ESCAPE:
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+	if event is InputEventMouseMotion:
+		if Globals.is_game_over == false:
+			velocity += event.relative.x * MOUSE_FORCE
 
 func _physics_process(delta: float) -> void:
 	debug()
-	
+
 func _process(delta):
-	if Globals.lost == true:
+	if Globals.is_game_over == true:
 		return
 	
-	Globals.tilt = remap(early_head.global_position.x - global_position.x, -3000,3000, -5, 5) 
+	Globals.tilt = remap(early_head.global_position.x - global_position.x, -3000, 3000, -5, 5)
 	
 	if (early_head.global_position.x - global_position.x) <= -400 or (early_head.global_position.x - global_position.x) >= 400:
 		Globals.game_over.emit()
 		$slipSound.play()
+		start_fade(0.1)
 	else:
-		var mouse_pos = get_global_mouse_position()
-		var mouse_delta = mouse_pos.x - last_mouse_pos.x
-		last_mouse_pos = mouse_pos
-		
 		velocity += (early_head.global_position.x - global_position.x) * GRAVITY * delta
-		velocity += mouse_delta * MOUSE_FORCE
 		early_head.global_position.x += velocity * delta
-		

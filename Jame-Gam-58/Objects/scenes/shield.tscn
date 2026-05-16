@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dwi8nac8a67fu"]
+[gd_scene load_steps=6 format=3 uid="uid://dwi8nac8a67fu"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/shield.gd" id="1_hbwpv"]
+[ext_resource type="Texture2D" uid="uid://7v2noeepkkl3" path="res://Jame-Gam-58/Objects/assets/player/playerShield.png" id="2_d78gf"]
 [ext_resource type="AudioStream" uid="uid://b4kk5vbm4u4k8" path="res://Jame-Gam-58/Objects/earlyAssets/HawkDeath.mp3" id="3_0ucmr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bi7ki"]
@@ -12,12 +13,10 @@ size = Vector2(66, 6)
 [node name="shield" type="CharacterBody2D"]
 script = ExtResource("1_hbwpv")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -33.0
-offset_top = -96.0
-offset_right = 33.0
-offset_bottom = -90.0
-color = Color(0.303984, 0.701214, 0.5808, 1)
+[node name="PlayerShield" type="Sprite2D" parent="."]
+position = Vector2(1.07288e-06, -93.5)
+scale = Vector2(1.73684, 1.75)
+texture = ExtResource("2_d78gf")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Shield"]]
 

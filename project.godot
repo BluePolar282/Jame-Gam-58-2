@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="JameGam#58 - Direction"
-run/main_scene="res://Jame-Gam-58/UI/scenes/main_manu.tscn"
+run/main_scene="res://Jame-Gam-58/Utilities/scenes/main_scene.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 Globals="*res://Jame-Gam-58/Utilities/scripts/globals.gd"
-Transition="*res://Jame-Gam-58/Utilities/scenes/transition.tscn"
 
 [display]
 
@@ -80,8 +79,5 @@ debug={
 
 [rendering]
 
-textures/canvas_textures/default_texture_filter=0
-textures/decals/filter=0
-textures/light_projectors/filter=0
-environment/defaults/default_clear_color=Color(0.12038, 0.1577, 0.208848, 1)
-textures/snap/snap_2d_transforms_to_pixel=true
+textures/canvas_textures/default_texture_filter=3
+2d/snap/snap_2d_transforms_to_pixel=true
