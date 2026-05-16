@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cedmi77yo3ej"]
+[gd_scene load_steps=23 format=3 uid="uid://cedmi77yo3ej"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/main_scene.gd" id="1_hko3k"]
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://6dypwcvhrg7y" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="6_e1ag4"]
 [ext_resource type="AudioStream" uid="uid://uqefcxbb0dyp" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
 [ext_resource type="Texture2D" uid="uid://dnea5e4ounek6" path="res://Jame-Gam-58/Objects/assets/sky3/4.png" id="7_6dmrp"]
+[ext_resource type="Texture2D" uid="uid://b772y0530ttt1" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]sun.png" id="7_v57xl"]
 [ext_resource type="Texture2D" uid="uid://b0sh36q67ihu0" path="res://Jame-Gam-58/Objects/assets/sky2/5.png" id="8_bkwjl"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/stage_label.gd" id="8_twnem"]
 [ext_resource type="Texture2D" uid="uid://bksob503bacv3" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]back-mountains.png" id="9_isqnq"]
@@ -88,11 +89,18 @@ scale = Vector2(2, 2)
 texture = ExtResource("6_e1ag4")
 flip_h = true
 
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="sky parallax"]
-position = Vector2(578, 387)
+[node name="sun" type="Sprite2D" parent="sky parallax"]
+position = Vector2(577, 340)
+scale = Vector2(1.782, 1.655)
+texture = ExtResource("7_v57xl")
 
-[node name="Sprite2D" type="Sprite2D" parent="sky parallax/ParallaxLayer3"]
-position = Vector2(0, -64)
+[node name="Parallax2D2" type="Parallax2D" parent="sky parallax"]
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(10.51, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="sky parallax/Parallax2D2"]
+position = Vector2(578, 323)
 scale = Vector2(2, 2)
 texture = ExtResource("7_6dmrp")
 
