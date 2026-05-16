@@ -3,7 +3,7 @@ extends CharacterBody2D
 var cooldown = false
 var direction = ""
 var target_rotation = 0.0
-const ROTATE_SPEED = 50.0 
+const ROTATE_SPEED = 45.0 
 
 func _physics_process(delta: float) -> void:
 	detect_input()
