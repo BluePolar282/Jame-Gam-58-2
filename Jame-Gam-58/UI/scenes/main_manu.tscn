@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://d16yxuhlsh51i"]
+[gd_scene load_steps=15 format=3 uid="uid://bv1pwivskenxc"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="1_fgsbe"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/main_manu.gd" id="1_lb870"]
@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://34m50dj66vc" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="6_tch6l"]
 [ext_resource type="Texture2D" uid="uid://7hfh2nu208lj" path="res://Jame-Gam-58/UI/assets/sun-rays-ray-png-transparent-ray-images-pluspng-31.png" id="7_ev5ed"]
 [ext_resource type="Texture2D" uid="uid://bhdh2t1fvog6v" path="res://Jame-Gam-58/UI/assets/chinese-cloud-gold-outline-png.webp" id="11_rhy0b"]
-[ext_resource type="LabelSettings" uid="uid://omr7r3brqpt8" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="12_3n1uf"]
-[ext_resource type="Theme" uid="uid://b3d3rldsprotv" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="13_17lr7"]
+[ext_resource type="LabelSettings" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="12_3n1uf"]
+[ext_resource type="Theme" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="13_17lr7"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/button_effects_module.gd" id="14_epqxd"]
 
 [node name="main-menu" type="Control"]
