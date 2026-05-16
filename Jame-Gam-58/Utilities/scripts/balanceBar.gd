@@ -3,7 +3,7 @@ extends Sprite2D
 
 var velocity = 0.0
 var last_mouse_pos = Vector2.ZERO
-const GRAVITY = 3.0
+const GRAVITY = 2.7
 const MOUSE_FORCE = 2.5
 
 func start_fade(timer):
@@ -32,9 +32,9 @@ func _process(delta):
 	if Globals.is_game_over == true:
 		return
 	
-	Globals.tilt = remap(early_head.global_position.x - global_position.x, -4000,4000, -10, 10) 
+	Globals.tilt = remap(early_head.global_position.x - global_position.x, -3000,3000, -5, 5) 
 	
-	if (early_head.global_position.x - global_position.x) <= -300 or (early_head.global_position.x - global_position.x) >= 300:
+	if (early_head.global_position.x - global_position.x) <= -400 or (early_head.global_position.x - global_position.x) >= 400:
 		Globals.game_over.emit()
 		$slipSound.play()
 		start_fade(0.1)
