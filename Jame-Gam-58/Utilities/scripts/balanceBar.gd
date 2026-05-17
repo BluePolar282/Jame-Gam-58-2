@@ -4,7 +4,7 @@ extends Sprite2D
 @onready var fall: AudioStreamPlayer2D = $cartoonFall
 var velocity = 0.0
 const GRAVITY = 1.7
-const MOUSE_FORCE = 2.8
+const MOUSE_FORCE = 2.9
 
 func start_fade(timer):
 	while modulate.a > 0:
