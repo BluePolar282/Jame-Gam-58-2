@@ -8,6 +8,8 @@ var on_cooldown := false
 var stage = 1
 var _stage_gen := 0
 
+var has_won := false
+
 var won = false
 var lost = false
 var in_main_scene = false
@@ -23,6 +25,9 @@ signal inner_peace
 signal game_over
 
 func _physics_process(delta: float) -> void:
+	if has_won == true:
+		print ("has won")
+	
 	if !in_main_scene:
 		return
 	else:
@@ -94,6 +99,7 @@ func switch_stage():
 		Transition.transition()
 		await Transition.transition_finished
 		get_tree().change_scene_to_file("res://Jame-Gam-58/UI/scenes/endscreen.tscn")
+		var has_won = true
 	
 func _game_is_over():
 	lost = true

@@ -1,6 +1,16 @@
 extends Control
 @onready var gong = $gong
 
+func _ready() -> void:
+	if Globals.has_won == true:
+		print("night")
+		$sunset.visible = false
+		$nighttime.visible = true
+	elif Globals.has_won == false:
+		print("day")
+		$sunset.visible = true
+		$nighttime.visible = false
+
 func _on_start_pressed() -> void:
 	gong.get_parent().remove_child(gong)
 	get_tree().root.add_child(gong)
@@ -29,7 +39,6 @@ func _on_quit_pressed() -> void:
 	$CanvasLayer/ColorRect/exit2.disabled = false
 	var tween = create_tween()
 	tween.tween_property($CanvasLayer/ColorRect, "modulate:a", 1, 0.2)
-
 
 func _on_exit_pressed() -> void:
 	$CanvasLayer/VBoxContainer/start.disabled = false

@@ -1,15 +1,23 @@
-[gd_scene load_steps=13 format=3 uid="uid://bcnq3oeap16yy"]
+[gd_scene load_steps=22 format=3 uid="uid://bcnq3oeap16yy"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/endscreen.gd" id="1_42rj1"]
-[ext_resource type="Texture2D" uid="uid://cc7cmku2fq6y3" path="res://Jame-Gam-58/UI/assets/[DIRECTION]end-cutscene.png" id="2_qfu7s"]
-[ext_resource type="Texture2D" uid="uid://c6da7bg1fx1ax" path="res://Jame-Gam-58/UI/assets/vintage-rough-texture-png.webp" id="3_oxdoe"]
-[ext_resource type="Texture2D" uid="uid://bcobwfxrjpx18" path="res://Jame-Gam-58/UI/assets/Vignette.png" id="4_agioj"]
-[ext_resource type="Texture2D" uid="uid://c3r2gs7743muf" path="res://Jame-Gam-58/UI/assets/[DIRECTION]deadmonk.png" id="5_cd0rj"]
-[ext_resource type="FontFile" uid="uid://cq1fitj756ass" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="6_sifph"]
+[ext_resource type="Texture2D" uid="uid://g2250yrop6ep" path="res://Jame-Gam-58/Objects/assets/sky1/1.png" id="2_kgdcd"]
+[ext_resource type="Texture2D" uid="uid://dmqqpja8dk3ia" path="res://Jame-Gam-58/Objects/assets/win-background/[DIRECTION]moon.png" id="3_bi3tt"]
+[ext_resource type="Texture2D" uid="uid://cfav1wjjcq4m8" path="res://Jame-Gam-58/UI/assets/vintage-rough-texture-png.webp" id="3_oxdoe"]
+[ext_resource type="Texture2D" uid="uid://bt5swvof2gr7w" path="res://Jame-Gam-58/UI/assets/Vignette.png" id="4_agioj"]
+[ext_resource type="Texture2D" uid="uid://dyt8tiadnaywg" path="res://Jame-Gam-58/Objects/assets/sky1/3.png" id="4_fflgi"]
+[ext_resource type="Texture2D" uid="uid://byobtri63orhw" path="res://Jame-Gam-58/Utilities/assets/Glow-PNG-File.png" id="4_g3h6m"]
+[ext_resource type="Texture2D" uid="uid://cuw8da74e1p57" path="res://Jame-Gam-58/UI/assets/[DIRECTION]deadmonk.png" id="5_cd0rj"]
+[ext_resource type="Texture2D" uid="uid://dfeyeqlqgo0b6" path="res://Jame-Gam-58/Objects/assets/win-background/[DIRECTION]night-mts-back.png" id="5_yv74k"]
+[ext_resource type="Texture2D" uid="uid://dubj75vexqth3" path="res://Jame-Gam-58/Objects/assets/win-background/[DIRECTION]night-mts-front.png" id="6_mnt4a"]
+[ext_resource type="FontFile" uid="uid://wq302sifuugx" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="6_sifph"]
+[ext_resource type="Texture2D" uid="uid://cf57n5qtir6n8" path="res://Jame-Gam-58/Objects/assets/win-background/[DIRECTION]night-front-rockt.png" id="7_c16cp"]
 [ext_resource type="Theme" uid="uid://ca38i25koq3bw" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="7_vrhft"]
+[ext_resource type="Texture2D" uid="uid://c0voo7v6doh8f" path="res://Jame-Gam-58/Objects/assets/win-background/[DIRECTION]night-peoples.png" id="8_5n5k2"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/button_effects_module.gd" id="8_u0812"]
-[ext_resource type="AudioStream" uid="uid://ddxjxuct3v5yk" path="res://Jame-Gam-58/Utilities/sfx/hoverOver.mp3" id="9_nrkh4"]
-[ext_resource type="AudioStream" uid="uid://dnaolp51sylqd" path="res://Jame-Gam-58/Utilities/sfx/hoverOff.mp3" id="10_oiuj0"]
+[ext_resource type="AudioStream" uid="uid://bo40lrn10s1v6" path="res://Jame-Gam-58/Utilities/sfx/hoverOver.mp3" id="9_nrkh4"]
+[ext_resource type="AudioStream" uid="uid://dqhci12fna4q6" path="res://Jame-Gam-58/Utilities/sfx/hoverOff.mp3" id="10_oiuj0"]
+[ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="17_8lps8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ehcm"]
 font = ExtResource("6_sifph")
@@ -22,9 +30,13 @@ shadow_offset = Vector2(5.385, 8.83)
 [sub_resource type="LabelSettings" id="LabelSettings_15d7q"]
 font = ExtResource("6_sifph")
 font_size = 66
-shadow_size = 11
-shadow_color = Color(0, 0, 0, 0.2)
+font_color = Color(0.402709, 0.551237, 0.711055, 1)
+shadow_size = 9
 shadow_offset = Vector2(3.575, 3.645)
+
+[sub_resource type="Theme" id="Theme_6wmrg"]
+default_font = ExtResource("6_sifph")
+default_font_size = 60
 
 [node name="endscreen" type="Control"]
 layout_mode = 3
@@ -38,14 +50,85 @@ script = ExtResource("1_42rj1")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 follow_viewport_enabled = true
 
-[node name="inner-peace" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(576, 325)
-scale = Vector2(2, 1.99383)
-texture = ExtResource("2_qfu7s")
+[node name="win" type="Node2D" parent="CanvasLayer"]
 
-[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/inner-peace"]
+[node name="sky" type="Parallax2D" parent="CanvasLayer/win"]
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(12.55, 0)
+repeat_times = 221
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/win/sky"]
+position = Vector2(578.5, 325.5)
+scale = Vector2(1.99826, 2.00926)
+texture = ExtResource("2_kgdcd")
+
+[node name="moon" type="Parallax2D" parent="CanvasLayer/win"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/win/moon"]
+position = Vector2(574, 322)
+scale = Vector2(2, 2)
+texture = ExtResource("3_bi3tt")
+
+[node name="light" type="Sprite2D" parent="CanvasLayer/win/moon"]
+modulate = Color(0.906015, 0.96822, 1, 1)
+self_modulate = Color(0.2448, 0.520427, 0.68, 0.352941)
+position = Vector2(714.14, 245.255)
+scale = Vector2(0.615, 0.615)
+texture = ExtResource("4_g3h6m")
+
+[node name="clouds" type="Parallax2D" parent="CanvasLayer/win"]
+repeat_size = Vector2(2150, 0)
+autoscroll = Vector2(6.305, 0)
+repeat_times = 186
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/win/clouds"]
+position = Vector2(1600, 328)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fflgi")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/win/clouds"]
+position = Vector2(576, 328)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fflgi")
+
+[node name="mts back" type="Parallax2D" parent="CanvasLayer/win"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/win/mts back"]
+position = Vector2(576.778, 326)
+scale = Vector2(2.00617, 2.00617)
+texture = ExtResource("5_yv74k")
+
+[node name="mts front" type="Parallax2D" parent="CanvasLayer/win"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/win/mts front"]
+position = Vector2(575, 324)
+scale = Vector2(2, 2)
+texture = ExtResource("6_mnt4a")
+
+[node name="light2" type="Sprite2D" parent="CanvasLayer/win"]
+modulate = Color(0.144431, 0.771938, 1, 1)
+self_modulate = Color(0.36, 0.36, 0.36, 0.290196)
+position = Vector2(254, 382)
+texture = ExtResource("4_g3h6m")
+
+[node name="front rock" type="Parallax2D" parent="CanvasLayer/win"]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/win/front rock"]
+position = Vector2(574.111, 324.5)
+scale = Vector2(1.99691, 1.99691)
+texture = ExtResource("7_c16cp")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/win/front rock"]
+position = Vector2(574, 325)
+scale = Vector2(2, 2)
+texture = ExtResource("8_5n5k2")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CanvasLayer/win"]
 self_modulate = Color(1, 1, 1, 0.584)
-scale = Vector2(-0.15, -0.15)
+position = Vector2(576, 325)
+rotation = 3.14159
+scale = Vector2(0.3, 0.299075)
 texture = ExtResource("4_agioj")
 
 [node name="death" type="Sprite2D" parent="CanvasLayer"]
@@ -68,9 +151,10 @@ texture = ExtResource("3_oxdoe")
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_left = 170.0
 offset_top = 32.0
-offset_right = 957.0
-offset_bottom = 200.0
+offset_right = 960.0
+offset_bottom = 201.0
 pivot_offset = Vector2(232, 85)
+theme_override_font_sizes/font_size = 81
 text = "THE END"
 label_settings = SubResource("LabelSettings_2ehcm")
 horizontal_alignment = 1
@@ -78,10 +162,10 @@ vertical_alignment = 1
 
 [node name="Label2" type="Label" parent="CanvasLayer"]
 visible = false
-offset_left = 341.0
-offset_top = 399.0
-offset_right = 837.0
-offset_bottom = 567.0
+offset_left = 338.0
+offset_top = 448.0
+offset_right = 834.0
+offset_bottom = 616.0
 text = "Thanks for playing"
 label_settings = SubResource("LabelSettings_15d7q")
 horizontal_alignment = 1
@@ -94,14 +178,14 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -108.0
-offset_top = -87.0
-offset_right = 352.0
-offset_bottom = -4.0
+offset_left = -107.0
+offset_top = -88.0
+offset_right = 353.0
+offset_bottom = -5.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(0.475, 0.475)
-theme = ExtResource("7_vrhft")
+theme = SubResource("Theme_6wmrg")
 text = "return to menu"
 
 [node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/return"]
@@ -158,6 +242,12 @@ stream = ExtResource("9_nrkh4")
 
 [node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/HBoxContainer/retry/Node"]
 stream = ExtResource("10_oiuj0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+ignore_rotation = false
+zoom = Vector2(1.065, 1.065)
+script = ExtResource("17_8lps8")
 
 [connection signal="pressed" from="CanvasLayer/return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/menu" to="." method="_on_menu_pressed"]
