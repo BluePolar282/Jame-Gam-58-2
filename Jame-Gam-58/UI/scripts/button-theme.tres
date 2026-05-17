@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://ca38i25koq3bw"]
 
 [ext_resource type="FontFile" uid="uid://wq302sifuugx" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="1_ynrw3"]
-[ext_resource type="StyleBox" path="res://Jame-Gam-58/UI/scripts/new_style_box_texture.tres" id="2_cr38q"]
+[ext_resource type="StyleBox" uid="uid://c3bqgm2q54rlf" path="res://Jame-Gam-58/UI/scripts/new_style_box_texture.tres" id="2_cr38q"]
 
 [resource]
 Button/colors/font_color = Color(0.207917, 0.138476, 0.0728687, 1)

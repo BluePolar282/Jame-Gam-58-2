@@ -78,12 +78,13 @@ func switch_stage():
 	print(stage)
 	await start_stage_timer()
 	
-	inner_peace.emit()
-	won = true
-	await get_tree().create_timer(2).timeout
-	Transition.transition()
-	await Transition.transition_finished
-	get_tree().change_scene_to_file("res://Jame-Gam-58/UI/scenes/endscreen.tscn")
+	if !lost:
+		inner_peace.emit()
+		won = true
+		await get_tree().create_timer(2).timeout
+		Transition.transition()
+		await Transition.transition_finished
+		get_tree().change_scene_to_file("res://Jame-Gam-58/UI/scenes/endscreen.tscn")
 	
 func _game_is_over():
 	lost = true
@@ -94,3 +95,20 @@ func _game_is_over():
 
 func add_time():
 	time_left += 5
+
+func reset():
+
+	current_dir = "."
+	HEALTH = 10
+	tilt = 0
+	is_debug_on = false
+	on_cooldown = false
+	stage = 1
+
+	won = false
+	lost = false
+	in_main_scene = false
+	tower_hit = false
+	set_time = 5
+
+	

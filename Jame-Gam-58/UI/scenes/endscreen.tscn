@@ -64,7 +64,6 @@ scale = Vector2(1.95408, 1.83429)
 texture = ExtResource("3_oxdoe")
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-anchors_preset = -1
 offset_left = 170.0
 offset_top = 32.0
 offset_right = 957.0
