@@ -1,4 +1,6 @@
 extends CharacterBody2D
+@onready var shieldBlock: AudioStreamPlayer2D = $shieldBlock
+
 
 var cooldown = false
 var direction = ""
@@ -50,8 +52,12 @@ func detect_input():
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Bullet"):
+		shieldBlock.pitch_scale = randf_range(0.7, 1.2)
+		shieldBlock.play()
 		body.queue_free()
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
+		shieldBlock.pitch_scale = randf_range(0.7, 1.2)
+		shieldBlock.play()
 		area.get_parent().queue_free()
