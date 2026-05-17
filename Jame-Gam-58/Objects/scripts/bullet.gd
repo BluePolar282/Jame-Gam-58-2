@@ -2,11 +2,26 @@ extends CharacterBody2D
 
 var SPEED = 0
 var stage = Globals.stage
+var thwomped = false
+
+var ragdoll_velocity = Vector2(0,-250)
+const RAGDOLL_GRAVITY = 680.0
 
 func _physics_process(delta: float) -> void:
 	set_bullet_direction()
 	move_and_slide()
-	
+	if thwomped:
+		$Area2D.set_deferred("monitorable", false)
+		ragdoll_velocity.y += RAGDOLL_GRAVITY * delta
+		global_position.y += ragdoll_velocity.y * delta
+		var tween = create_tween()
+		tween.tween_property($AnimatedSprite2D, "modulate:a", 0.0, 1)
+		await get_tree().create_timer(1).timeout
+		queue_free()
+		return
+	else:
+		return
+		
 func _ready():
 	set_difficulty()
 	if Globals.stage > 2 and randf() < 0.05:

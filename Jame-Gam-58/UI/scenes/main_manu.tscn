@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bv1pwivskenxc"]
+[gd_scene load_steps=20 format=3 uid="uid://bv1pwivskenxc"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="1_fgsbe"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/main_manu.gd" id="1_lb870"]
@@ -16,10 +16,15 @@
 [ext_resource type="Theme" uid="uid://ca38i25koq3bw" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="13_17lr7"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/button_effects_module.gd" id="14_epqxd"]
 [ext_resource type="FontFile" uid="uid://wq302sifuugx" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="16_efmgj"]
+[ext_resource type="Texture2D" uid="uid://cjc6yo0rsmkku" path="res://Jame-Gam-58/UI/assets/Game_tutorialV1.png" id="17_ik2eu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v7ivf"]
 font = ExtResource("16_efmgj")
 font_size = 30
+
+[sub_resource type="Theme" id="Theme_uo0ph"]
+default_font = ExtResource("16_efmgj")
+default_font_size = 45
 
 [node name="main-menu" type="Control"]
 layout_mode = 3
@@ -182,6 +187,25 @@ grow_vertical = 0
 text = "v1.0.0"
 label_settings = SubResource("LabelSettings_v7ivf")
 
+[node name="tutorial" type="Sprite2D" parent="CanvasLayer"]
+visible = false
+position = Vector2(578.875, 325.813)
+scale = Vector2(1.11581, 1.01775)
+texture = ExtResource("17_ik2eu")
+
+[node name="exit" type="Button" parent="CanvasLayer/tutorial"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -644.038
+offset_top = -301.463
+offset_right = -549.038
+offset_bottom = -244.463
+grow_horizontal = 0
+theme = SubResource("Theme_uo0ph")
+text = "back"
+
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="CanvasLayer/tutorial/exit" to="." method="_on_exit_pressed"]

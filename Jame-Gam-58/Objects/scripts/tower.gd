@@ -31,7 +31,10 @@ func _process(delta: float):
 		ragdoll_velocity.y += RAGDOLL_GRAVITY * delta
 		global_position.y += ragdoll_velocity.y * delta
 		return
-
+		
+	if !Globals.won:
+		return
+	$AnimatedSprite2D.play("damage")
 
 @onready var balance_bar = $"../earlyBar"
 

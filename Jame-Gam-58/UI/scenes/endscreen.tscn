@@ -135,5 +135,6 @@ text = "Retry"
 [node name="Node" type="Node" parent="CanvasLayer/HBoxContainer/retry"]
 script = ExtResource("8_u0812")
 
+[connection signal="pressed" from="CanvasLayer/return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/retry" to="." method="_on_retry_pressed"]
