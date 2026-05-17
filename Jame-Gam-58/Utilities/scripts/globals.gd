@@ -45,7 +45,7 @@ func _ready() -> void:
 	game_over.connect(_game_is_over)
 	
 func start_stage_timer():
-	time_left = 45
+	time_left = 30
 	timer_active = true
 	stage_complete = false
 	# Wait until _process flips stage_complete to true

@@ -38,6 +38,7 @@ func _on_retry_pressed() -> void:
 
 
 func _on_return_pressed() -> void:
+	print("returned")
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://Jame-Gam-58/UI/scenes/main_manu.tscn")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://cia4w4is83yym"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/bouncing_bullet.gd" id="1_hsif3"]
-[ext_resource type="Texture2D" uid="uid://b7jr8knn63n6e" path="res://Jame-Gam-58/Objects/assets/[DIRECTION]bird1.png" id="2_l7p05"]
+[ext_resource type="Texture2D" uid="uid://bemm58xle748g" path="res://Jame-Gam-58/Objects/assets/[DIRECTION]bird1.png" id="2_l7p05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74u4r"]
 size = Vector2(56, 56)

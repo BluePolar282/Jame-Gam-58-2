@@ -26,8 +26,8 @@
 [ext_resource type="LabelSettings" uid="uid://cv60yr3d4fomp" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="15_fadg7"]
 [ext_resource type="AudioStream" uid="uid://bqsceh1v03dc4" path="res://Jame-Gam-58/Utilities/assets/fallSound_temp.mp3" id="19_nq8ia"]
 [ext_resource type="PackedScene" uid="uid://byws6lghtmj7l" path="res://Jame-Gam-58/UI/scenes/inner_peace_meter.tscn" id="19_p3fk7"]
-[ext_resource type="AudioStream" uid="uid://ddn0yaymgpmuc" path="res://Jame-Gam-58/Utilities/sfx/cartoonFall.mp3" id="22_tviit"]
-[ext_resource type="AudioStream" uid="uid://djks1icytvuad" path="res://Jame-Gam-58/Utilities/sfx/ShieldBlock.mp3" id="24_8lxd2"]
+[ext_resource type="AudioStream" uid="uid://dwnmhtw7ovbv8" path="res://Jame-Gam-58/Utilities/sfx/cartoonFall.mp3" id="22_tviit"]
+[ext_resource type="AudioStream" uid="uid://cdftq1xifmogv" path="res://Jame-Gam-58/Utilities/sfx/ShieldBlock.mp3" id="24_8lxd2"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="24_50550"]
 [ext_resource type="AudioStream" uid="uid://c3pnlo45demrr" path="res://Jame-Gam-58/Utilities/sfx/Asia sounds (looping).mp3" id="26_kvl8q"]
 

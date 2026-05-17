@@ -104,6 +104,16 @@ scale = Vector2(0.475, 0.475)
 theme = ExtResource("7_vrhft")
 text = "return to menu"
 
+[node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/return"]
+position = Vector2(-985.263, -1181.05)
+scale = Vector2(2.10526, 2.10526)
+stream = ExtResource("9_nrkh4")
+
+[node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/return"]
+position = Vector2(-985.263, -1181.05)
+scale = Vector2(2.10526, 2.10526)
+stream = ExtResource("10_oiuj0")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 7
 anchor_left = 0.5
@@ -149,5 +159,6 @@ stream = ExtResource("9_nrkh4")
 [node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/HBoxContainer/retry/Node"]
 stream = ExtResource("10_oiuj0")
 
+[connection signal="pressed" from="CanvasLayer/return" to="." method="_on_return_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/menu" to="." method="_on_menu_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/retry" to="." method="_on_retry_pressed"]

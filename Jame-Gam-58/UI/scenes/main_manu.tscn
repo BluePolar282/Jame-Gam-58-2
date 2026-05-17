@@ -138,7 +138,7 @@ offset_left = 17.0
 offset_top = 49.0
 offset_right = 686.0
 offset_bottom = 196.0
-text = "peace stop it"
+text = "peaceless birds"
 label_settings = ExtResource("12_3n1uf")
 metadata/_edit_use_anchors_ = true
 
@@ -236,6 +236,7 @@ stream = ExtResource("20_pluwx")
 volume_db = -5.621
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]
+[connection signal="button_up" from="CanvasLayer/VBoxContainer/tutorial" to="." method="_on_tutorial_button_up"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/tutorial/exit" to="." method="_on_exit_pressed"]

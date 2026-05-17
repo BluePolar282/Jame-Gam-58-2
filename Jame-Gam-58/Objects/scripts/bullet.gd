@@ -55,6 +55,12 @@ func set_difficulty():
 	if stage == 1:
 		SPEED = randf_range(100, 150)
 	if stage == 2:
-		SPEED = randf_range(150, 300)
-	if stage > 2:
-		SPEED = randf_range(300, 425)
+		SPEED = randf_range(120, 230)
+	if stage == 3:
+		SPEED = randf_range(230, 320)
+	if stage == 4:
+		SPEED = randf_range(300, 400)
+	if stage == 5:
+		SPEED = randf_range(350, 450)
+	
+	

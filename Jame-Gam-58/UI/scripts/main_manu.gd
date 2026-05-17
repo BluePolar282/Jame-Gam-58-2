@@ -11,6 +11,10 @@ func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file("res://Jame-Gam-58/Utilities/scenes/main_scene.tscn")
 
 func _on_tutorial_pressed() -> void:
+	$CanvasLayer/VBoxContainer/start.disabled = true
+	$CanvasLayer/VBoxContainer/tutorial.disabled = true
+	$CanvasLayer/VBoxContainer/quit.disabled = true
+	
 	$CanvasLayer/tutorial.visible = true
 	$CanvasLayer/tutorial/exit.disabled = false
 	var tween = create_tween()
@@ -21,6 +25,9 @@ func _on_quit_pressed() -> void:
 
 
 func _on_exit_pressed() -> void:
+	$CanvasLayer/VBoxContainer/start.disabled = false
+	$CanvasLayer/VBoxContainer/tutorial.disabled = false
+	$CanvasLayer/VBoxContainer/quit.disabled = false
 	var tween = get_tree().create_tween()
 	tween.tween_property($CanvasLayer/tutorial, "modulate:a", 0.0, 0.2)
 	await tween.finished
