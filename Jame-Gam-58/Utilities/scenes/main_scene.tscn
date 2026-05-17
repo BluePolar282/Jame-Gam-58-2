@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cedmi77yo3ej"]
+[gd_scene load_steps=27 format=3 uid="uid://cedmi77yo3ej"]
 
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scenes/main_scene.gd" id="1_p41wq"]
@@ -25,6 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://cjdpn4jfc86c6" path="res://Jame-Gam-58/Utilities/assets/fallSound_temp.mp3" id="19_nq8ia"]
 [ext_resource type="PackedScene" uid="uid://byws6lghtmj7l" path="res://Jame-Gam-58/UI/scenes/inner_peace_meter.tscn" id="19_p3fk7"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="24_50550"]
+[ext_resource type="AudioStream" uid="uid://d2dsj6cv8imr3" path="res://Jame-Gam-58/Utilities/sfx/Asia sounds (looping).mp3" id="26_kvl8q"]
 
 [node name="main scene" type="Node2D"]
 position = Vector2(578, 387)
@@ -202,3 +203,7 @@ offset = Vector2(0, -81.165)
 ignore_rotation = false
 zoom = Vector2(1.065, 1.065)
 script = ExtResource("24_50550")
+
+[node name="ambience" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_kvl8q")
+autoplay = true

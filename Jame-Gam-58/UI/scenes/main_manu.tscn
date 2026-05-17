@@ -139,12 +139,24 @@ text = "Start"
 [node name="Node" type="Node" parent="CanvasLayer/VBoxContainer/start"]
 script = ExtResource("14_epqxd")
 
+[node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/start/Node"]
+stream = ExtResource("15_iauhm")
+
+[node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/start/Node"]
+stream = ExtResource("16_513lb")
+
 [node name="tutorial" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Tutorial"
 
 [node name="Node2" type="Node" parent="CanvasLayer/VBoxContainer/tutorial"]
 script = ExtResource("14_epqxd")
+
+[node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/tutorial/Node2"]
+stream = ExtResource("15_iauhm")
+
+[node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/tutorial/Node2"]
+stream = ExtResource("16_513lb")
 
 [node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
@@ -153,15 +165,23 @@ text = "Quit"
 [node name="Node3" type="Node" parent="CanvasLayer/VBoxContainer/quit"]
 script = ExtResource("14_epqxd")
 
-[node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer"]
+[node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/quit/Node3"]
 stream = ExtResource("15_iauhm")
 
-[node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer"]
+[node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/quit/Node3"]
 stream = ExtResource("16_513lb")
 
 [node name="ambience" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_ve6j7")
 autoplay = true
+
+[node name="hoverOn" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(51.155, 254.145)
+stream = ExtResource("15_iauhm")
+
+[node name="hoverOff" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(51.155, 254.145)
+stream = ExtResource("16_513lb")
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
