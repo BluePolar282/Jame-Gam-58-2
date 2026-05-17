@@ -1,13 +1,35 @@
-[gd_scene load_steps=5 format=3 uid="uid://cia4w4is83yym"]
+[gd_scene load_steps=8 format=3 uid="uid://cia4w4is83yym"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/bouncing_bullet.gd" id="1_hsif3"]
-[ext_resource type="Texture2D" uid="uid://mxrhir5dxrq7" path="res://Jame-Gam-58/Objects/earlyAssets/image_2026-05-15_191600899-removebg-preview.png" id="2_vmot2"]
+[ext_resource type="Texture2D" uid="uid://b7jr8knn63n6e" path="res://Jame-Gam-58/Objects/assets/[DIRECTION]bird1.png" id="2_l7p05"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74u4r"]
 size = Vector2(56, 56)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v14ht"]
 radius = 13.0384
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3nfq"]
+atlas = ExtResource("2_l7p05")
+region = Rect2(128, 0, 64, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78i0j"]
+atlas = ExtResource("2_l7p05")
+region = Rect2(192, 0, 64, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_756pb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3nfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78i0j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="bouncing bullet" type="CharacterBody2D"]
 script = ExtResource("1_hsif3")
@@ -21,9 +43,9 @@ shape = SubResource("RectangleShape2D_74u4r")
 shape = SubResource("CircleShape2D_v14ht")
 disabled = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.999996, -1)
-scale = Vector2(0.26, 0.305)
-texture = ExtResource("2_vmot2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_756pb")
+autoplay = "default"
+frame_progress = 0.955043
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -61,3 +61,8 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 		shieldBlock.pitch_scale = randf_range(0.7, 1.2)
 		shieldBlock.play()
 		area.get_parent().queue_free()
+		body.thwomped = true
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Bullet"):
+		area.get_parent().thwomped = true
