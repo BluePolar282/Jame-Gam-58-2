@@ -2,7 +2,6 @@ extends CharacterBody2D
 
 var ragdoll_velocity = Vector2(0,-250)
 const RAGDOLL_GRAVITY = 680.0
-
 var currently_animating = false
 
 func _ready() -> void:
@@ -34,15 +33,17 @@ func _process(delta: float):
 		return
 
 
-@onready var balance_bar = $"/root/main scene/earlyBar"
+@onready var balance_bar = $"../earlyBar"
 
 func _on_left_side_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
+		Globals.tower_hit = true
 		print("left hit")
 		balance_bar.nudge(370.0)
 
 
 func _on_right_side_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
+		Globals.tower_hit = true
 		print("right hit")
 		balance_bar.nudge(-370.0)

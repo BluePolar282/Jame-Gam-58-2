@@ -7,7 +7,6 @@ const ROTATE_SPEED = 45.0
 
 func _physics_process(delta: float) -> void:
 	detect_input()
-	die()
 	rotation_degrees = lerp(rotation_degrees, target_rotation, ROTATE_SPEED * delta)
 
 func rotate_shield():
@@ -48,10 +47,6 @@ func detect_input():
 	if Input.is_action_pressed("right"):
 		direction = "right"
 		rotate_shield()
-
-func die():
-	if Globals.HEALTH == 0:
-		queue_free()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Bullet"):
