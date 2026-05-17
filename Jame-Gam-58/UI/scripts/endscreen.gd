@@ -3,6 +3,8 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
 	if Globals.won == true:
 		$CanvasLayer/HBoxContainer.visible = false
 		$CanvasLayer/death.visible = false
@@ -16,9 +18,6 @@ func _ready() -> void:
 		var tween = create_tween()
 		tween.tween_property($CanvasLayer/Label2, "modulate:a", 1.0, 0.5)
 		tween.tween_property($CanvasLayer/return, "modulate:a", 1.0, 0.5)
-
-		
-		
 		
 	elif Globals.lost == true:
 		$CanvasLayer/HBoxContainer.visible = true
@@ -26,14 +25,13 @@ func _ready() -> void:
 		$CanvasLayer/death.visible
 		$CanvasLayer/Label.text = "game over"
 
-
 func _on_menu_pressed() -> void:
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://Jame-Gam-58/UI/scenes/main_manu.tscn")
 
-
 func _on_retry_pressed() -> void:
+	Globals.reset()
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://Jame-Gam-58/Utilities/scenes/main_scene.tscn")

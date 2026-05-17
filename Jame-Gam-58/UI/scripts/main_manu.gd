@@ -2,6 +2,7 @@ extends Control
 
 
 func _on_start_pressed() -> void:
+	Globals.reset()
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://Jame-Gam-58/Utilities/scenes/main_scene.tscn")
