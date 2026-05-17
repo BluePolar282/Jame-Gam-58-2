@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://cedmi77yo3ej"]
+[gd_scene load_steps=26 format=3 uid="uid://cedmi77yo3ej"]
 
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scenes/main_scene.gd" id="1_p41wq"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
 [ext_resource type="Texture2D" uid="uid://bjcmsxyajqlcl" path="res://Jame-Gam-58/Utilities/assets/Glow-PNG-File.png" id="2_ko6oc"]
 [ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
@@ -27,6 +28,7 @@
 
 [node name="main scene" type="Node2D"]
 position = Vector2(578, 387)
+script = ExtResource("1_p41wq")
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pfejq")
@@ -138,8 +140,9 @@ metadata/_edit_use_anchors_ = true
 [node name="spawner-container2" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
+offset_top = 39.575
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 79.575
 metadata/_edit_use_anchors_ = true
 
 [node name="bullet-spawner1" parent="spawner-container2" groups=["Left Spawner"] instance=ExtResource("1_ox7t7")]
@@ -179,6 +182,7 @@ position = Vector2(388, 226)
 scale = Vector2(0.725, 0.725)
 
 [node name="shield" parent="." instance=ExtResource("3_gvl8j")]
+position = Vector2(0, 39.98)
 
 [node name="tower" parent="." instance=ExtResource("2_7mml0")]
 visibility_layer = 2
@@ -187,7 +191,7 @@ position = Vector2(1, 78)
 [node name="PointLight2D" type="PointLight2D" parent="."]
 position = Vector2(3, -39)
 scale = Vector2(1.64507, 1.56412)
-color = Color(0.999998, 0.99955, 0.720167, 1)
+color = Color(1, 0.911601, 0.668853, 1)
 energy = 0.15
 texture = ExtResource("2_ko6oc")
 texture_scale = 0.71
