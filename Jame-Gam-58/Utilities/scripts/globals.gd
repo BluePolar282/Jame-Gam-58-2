@@ -51,7 +51,7 @@ func switch_stage():
 	get_tree().change_scene_to_file("res://Jame-Gam-58/UI/scenes/endscreen.tscn")
 	
 func _game_is_over():
-	lost = true
+	won = true
 	await get_tree().create_timer(2).timeout
 	Transition.transition()
 	await Transition.transition_finished

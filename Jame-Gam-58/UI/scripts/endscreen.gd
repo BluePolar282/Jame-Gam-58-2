@@ -4,13 +4,12 @@ extends Control
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if Globals.won == true:
+		$CanvasLayer/HBoxContainer.visible = false
 		$CanvasLayer/death.visible = false
 		$"CanvasLayer/inner-peace".visible
-		$CanvasLayer/CenterContainer/Label.text = "finally,
-		
-		
-		inner peace..."
+		$CanvasLayer/CenterContainer/Label.text = "peace at last"
 	elif Globals.lost == true:
+		$CanvasLayer/HBoxContainer.visible = true
 		$"CanvasLayer/inner-peace".visible= false
 		$CanvasLayer/death.visible
 		$CanvasLayer/CenterContainer/Label.text = "game over"

@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var color_rect = $ColorRect
 @onready var animation_player = $AnimationPlayer
+var won = false
 
 signal transition_finished
 
@@ -9,6 +10,10 @@ func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	color_rect.visible = false
 	animation_player.animation_finished.connect(on_animation_finished)
+	if Globals.won:
+		won = true
+	else:
+		won = false
 	
 func on_animation_finished(anim_name):
 	if anim_name ==  "fade-to-black":
@@ -16,9 +21,16 @@ func on_animation_finished(anim_name):
 		animation_player.play("black-to-fade")
 	elif anim_name ==  "black-to-fade":
 		color_rect.visible = false
-		get_tree().paused = false
+		
+	if anim_name == "fade-to-white":
+		transition_finished.emit()
+		animation_player.play("white-to-fade")
+	elif anim_name ==  "white-to-fade":
+		color_rect.visible = false
 
 func transition():
-	get_tree().paused = true
 	color_rect.visible = true
-	animation_player.play("fade-to-black")
+	if won:
+		animation_player.play("fade-to-white")
+	else:
+		animation_player.play("fade-to-black")

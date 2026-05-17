@@ -79,7 +79,7 @@ texture = ExtResource("7_ev5ed")
 scroll_scale = Vector2(0.7, 0.7)
 
 [node name="Sprite2D" type="Sprite2D" parent="rock"]
-position = Vector2(576.463, 327.5)
+position = Vector2(596, 352)
 scale = Vector2(1.33535, 1.33535)
 texture = ExtResource("6_ftvnr")
 
@@ -89,6 +89,17 @@ zoom = Vector2(1.05, 1.05)
 script = ExtResource("1_fgsbe")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="fade" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(184, 333)
+rotation = 1.5708
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_tch6l")
+
+[node name="fade2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(582, 608)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("6_tch6l")
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(451, 137)

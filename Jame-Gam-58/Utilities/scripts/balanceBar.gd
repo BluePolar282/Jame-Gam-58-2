@@ -45,7 +45,7 @@ func _process(delta):
 	
 	if (early_head.global_position.x - global_position.x) <= -400 or (early_head.global_position.x - global_position.x) >= 400:
 		Globals.game_over.emit()
-		$slipSound.play()
+		#$slipSound.play()
 		start_fade(0.1)
 	else:
 		velocity += (early_head.global_position.x - global_position.x) * GRAVITY * delta

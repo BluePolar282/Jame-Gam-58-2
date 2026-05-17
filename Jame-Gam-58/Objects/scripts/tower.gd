@@ -10,7 +10,7 @@ func _ready() -> void:
 	
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
-		Globals.HEALTH = Globals.HEALTH - 0
+		Globals.HEALTH = Globals.HEALTH - 1
 		area.get_parent().queue_free()
 		currently_animating = true
 		$AnimatedSprite2D.play("damage")
@@ -19,6 +19,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _process(delta: float):
 	rotation = Globals.tilt
+	print(Globals.tilt)
 	
 	if Globals.tilt > 0.45 or Globals.tilt < -0.45 and Globals.lost == false and currently_animating == false:
 		$AnimatedSprite2D.play("scared")
@@ -32,17 +33,3 @@ func _process(delta: float):
 		ragdoll_velocity.y += RAGDOLL_GRAVITY * delta
 		global_position.y += ragdoll_velocity.y * delta
 		return
-
-
-@onready var balance_bar = $"/root/main scene/earlyBar"
-
-func _on_left_side_entered(area: Area2D) -> void:
-	if area.is_in_group("Bullet"):
-		print("left hit")
-		balance_bar.nudge(250.0)
-
-
-func _on_right_side_entered(area: Area2D) -> void:
-	if area.is_in_group("Bullet"):
-		print("right hit")
-		balance_bar.nudge(-250.0)

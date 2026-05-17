@@ -1,9 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://cedmi77yo3ej"]
+[gd_scene load_steps=25 format=3 uid="uid://cedmi77yo3ej"]
 
-[ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/main_scene.gd" id="1_hko3k"]
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
+[ext_resource type="Texture2D" uid="uid://byobtri63orhw" path="res://Jame-Gam-58/Utilities/assets/Glow-PNG-File.png" id="2_ko6oc"]
 [ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/point_light_2d.gd" id="4_40aq8"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/balanceBar.gd" id="5_5dlt0"]
 [ext_resource type="Texture2D" uid="uid://34m50dj66vc" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="5_07asn"]
 [ext_resource type="Texture2D" uid="uid://cy3q253kcbkte" path="res://Jame-Gam-58/Objects/earlyAssets/earlyHead.png" id="5_15ev6"]
@@ -22,13 +23,117 @@
 [ext_resource type="LabelSettings" uid="uid://cv60yr3d4fomp" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="15_fadg7"]
 [ext_resource type="AudioStream" uid="uid://bqsceh1v03dc4" path="res://Jame-Gam-58/Utilities/assets/fallSound_temp.mp3" id="19_nq8ia"]
 [ext_resource type="PackedScene" uid="uid://byws6lghtmj7l" path="res://Jame-Gam-58/UI/scenes/inner_peace_meter.tscn" id="19_p3fk7"]
+[ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="24_50550"]
 
 [node name="main scene" type="Node2D"]
 position = Vector2(578, 387)
-script = ExtResource("1_hko3k")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.005, 1.005)
+[node name="background music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_pfejq")
+volume_db = -13.867
+
+[node name="parallax layers" type="Node2D" parent="."]
+position = Vector2(-578, -387)
+
+[node name="Parallax2D" type="Parallax2D" parent="parallax layers"]
+repeat_size = Vector2(2200, 0)
+autoscroll = Vector2(24.425, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D"]
+position = Vector2(0, 272)
+scale = Vector2(2, 2)
+texture = ExtResource("6_e1ag4")
+
+[node name="Sprite2D2" type="Sprite2D" parent="parallax layers/Parallax2D"]
+position = Vector2(1132, 273)
+scale = Vector2(2, 2)
+texture = ExtResource("6_e1ag4")
+flip_h = true
+
+[node name="sun" type="Sprite2D" parent="parallax layers"]
+position = Vector2(577, 340)
+scale = Vector2(1.782, 1.655)
+texture = ExtResource("7_v57xl")
+
+[node name="Parallax2D2" type="Parallax2D" parent="parallax layers"]
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(10.51, 0)
+repeat_times = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D2"]
+position = Vector2(578, 323)
+scale = Vector2(2, 2)
+texture = ExtResource("7_6dmrp")
+
+[node name="Parallax2D7" type="Parallax2D" parent="parallax layers"]
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D7"]
+position = Vector2(578, 387)
+scale = Vector2(2, 2)
+texture = ExtResource("8_bkwjl")
+
+[node name="Parallax2D8" type="Parallax2D" parent="parallax layers"]
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D8"]
+position = Vector2(575, 306)
+scale = Vector2(2, 2)
+texture = ExtResource("9_l0trq")
+
+[node name="Parallax2D3" type="Parallax2D" parent="parallax layers"]
+scroll_offset = Vector2(578, 387)
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D3"]
+position = Vector2(0, 23.43)
+scale = Vector2(2, 2)
+texture = ExtResource("9_isqnq")
+
+[node name="Parallax2D4" type="Parallax2D" parent="parallax layers"]
+scroll_offset = Vector2(578, 387)
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D4"]
+position = Vector2(0, -0.48)
+scale = Vector2(2, 2)
+texture = ExtResource("10_bp5yb")
+
+[node name="Parallax2D5" type="Parallax2D" parent="parallax layers"]
+scroll_offset = Vector2(578, 407)
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D5"]
+position = Vector2(0, 24.175)
+scale = Vector2(2, 2)
+texture = ExtResource("11_vrwlp")
+
+[node name="Sprite2D4" type="Sprite2D" parent="parallax layers"]
+position = Vector2(571, 637)
+texture = ExtResource("5_07asn")
+
+[node name="Parallax2D6" type="Parallax2D" parent="parallax layers"]
+scroll_offset = Vector2(568, 391)
+
+[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D6"]
+position = Vector2(-27, -22)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ek5rd")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="stage label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.049
+anchor_right = 0.5
+anchor_bottom = 0.243975
+offset_left = -171.0
+offset_top = 0.247999
+offset_right = 173.0
+offset_bottom = 3.90398
+text = "STAGE 1"
+label_settings = ExtResource("15_fadg7")
+script = ExtResource("8_twnem")
+metadata/_edit_use_anchors_ = true
+
+[node name="vignette" type="Sprite2D" parent="CanvasLayer"]
 
 [node name="spawner-container2" type="Control" parent="."]
 layout_mode = 3
@@ -37,133 +142,24 @@ offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="spawner-container2"]
-
-[node name="bullet-spawner1" parent="spawner-container2/CanvasLayer" groups=["Left Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(-22, 387)
+[node name="bullet-spawner1" parent="spawner-container2" groups=["Left Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(-600, 0)
 rotation = -3.14159
 
-[node name="bullet-spawner2" parent="spawner-container2/CanvasLayer" groups=["Top Left Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(128, -63)
+[node name="bullet-spawner2" parent="spawner-container2" groups=["Top Left Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(-450, -450)
 rotation = -1.5708
 
-[node name="bullet-spawner3" parent="spawner-container2/CanvasLayer" groups=["Top Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(578, -213)
+[node name="bullet-spawner3" parent="spawner-container2" groups=["Top Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(0, -600)
 
-[node name="bullet-spawner4" parent="spawner-container2/CanvasLayer" groups=["Top Right Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(1028, -63)
+[node name="bullet-spawner4" parent="spawner-container2" groups=["Top Right Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(450, -450)
 rotation = -1.5708
 
-[node name="bullet-spawner5" parent="spawner-container2/CanvasLayer" groups=["Right Spawner"] instance=ExtResource("1_ox7t7")]
-position = Vector2(1178, 387)
+[node name="bullet-spawner5" parent="spawner-container2" groups=["Right Spawner"] instance=ExtResource("1_ox7t7")]
+position = Vector2(600, 0)
 rotation = -1.5708
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="shield" parent="CanvasLayer" instance=ExtResource("3_gvl8j")]
-position = Vector2(578, 387)
-
-[node name="tower" parent="CanvasLayer" instance=ExtResource("2_7mml0")]
-visibility_layer = 2
-position = Vector2(579, 426)
-
-[node name="background music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_pfejq")
-volume_db = -13.867
-
-[node name="sky parallax" type="ParallaxBackground" parent="."]
-
-[node name="Parallax2D" type="Parallax2D" parent="sky parallax"]
-repeat_size = Vector2(2200, 0)
-autoscroll = Vector2(24.425, 0)
-repeat_times = 50
-
-[node name="Sprite2D" type="Sprite2D" parent="sky parallax/Parallax2D"]
-position = Vector2(0, 272)
-scale = Vector2(2, 2)
-texture = ExtResource("6_e1ag4")
-
-[node name="Sprite2D2" type="Sprite2D" parent="sky parallax/Parallax2D"]
-position = Vector2(1132, 273)
-scale = Vector2(2, 2)
-texture = ExtResource("6_e1ag4")
-flip_h = true
-
-[node name="sun" type="Sprite2D" parent="sky parallax"]
-position = Vector2(577, 340)
-scale = Vector2(1.782, 1.655)
-texture = ExtResource("7_v57xl")
-
-[node name="Parallax2D2" type="Parallax2D" parent="sky parallax"]
-repeat_size = Vector2(1152, 0)
-autoscroll = Vector2(10.51, 0)
-repeat_times = 50
-
-[node name="Sprite2D" type="Sprite2D" parent="sky parallax/Parallax2D2"]
-position = Vector2(578, 323)
-scale = Vector2(2, 2)
-texture = ExtResource("7_6dmrp")
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="sky parallax"]
-position = Vector2(578, 387)
-
-[node name="Sprite2D" type="Sprite2D" parent="sky parallax/ParallaxLayer4"]
-scale = Vector2(2, 2)
-texture = ExtResource("8_bkwjl")
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="sky parallax"]
-position = Vector2(578, 387)
-
-[node name="Sprite2D" type="Sprite2D" parent="sky parallax/ParallaxLayer5"]
-scale = Vector2(2, 2)
-texture = ExtResource("9_l0trq")
-
-[node name="background parallax" type="ParallaxBackground" parent="."]
-
-[node name="Parallax2D" type="Parallax2D" parent="background parallax"]
-scroll_offset = Vector2(578, 387)
-
-[node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D"]
-position = Vector2(0, 23.43)
-scale = Vector2(2, 2)
-texture = ExtResource("9_isqnq")
-
-[node name="Parallax2D2" type="Parallax2D" parent="background parallax"]
-scroll_offset = Vector2(578, 387)
-
-[node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D2"]
-position = Vector2(0, -0.48)
-scale = Vector2(2, 2)
-texture = ExtResource("10_bp5yb")
-
-[node name="Parallax2D3" type="Parallax2D" parent="background parallax"]
-scroll_offset = Vector2(578, 407)
-
-[node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D3"]
-position = Vector2(0, 24.175)
-scale = Vector2(2, 2)
-texture = ExtResource("11_vrwlp")
-
-[node name="Sprite2D4" type="Sprite2D" parent="background parallax"]
-position = Vector2(571, 637)
-texture = ExtResource("5_07asn")
-
-[node name="Parallax2D4" type="Parallax2D" parent="background parallax"]
-scroll_offset = Vector2(568, 391)
-
-[node name="Sprite2D" type="Sprite2D" parent="background parallax/Parallax2D4"]
-position = Vector2(-27, -61)
-scale = Vector2(2, 2)
-texture = ExtResource("12_ek5rd")
-
-[node name="stage label" type="Label" parent="."]
-offset_left = -177.0
-offset_top = -279.0
-offset_right = 186.0
-offset_bottom = -132.0
-text = "STAGE 1"
-label_settings = ExtResource("15_fadg7")
-script = ExtResource("8_twnem")
 
 [node name="earlyBar" type="Sprite2D" parent="."]
 position = Vector2(0, 210)
@@ -181,3 +177,24 @@ stream = ExtResource("19_nq8ia")
 visible = false
 position = Vector2(388, 226)
 scale = Vector2(0.725, 0.725)
+
+[node name="shield" parent="." instance=ExtResource("3_gvl8j")]
+
+[node name="tower" parent="." instance=ExtResource("2_7mml0")]
+visibility_layer = 2
+position = Vector2(1, 78)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(3, -39)
+scale = Vector2(1.64507, 1.56412)
+color = Color(0.999998, 0.99955, 0.720167, 1)
+energy = 0.15
+texture = ExtResource("2_ko6oc")
+texture_scale = 0.71
+script = ExtResource("4_40aq8")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(0, -81.165)
+ignore_rotation = false
+zoom = Vector2(1.065, 1.065)
+script = ExtResource("24_50550")
