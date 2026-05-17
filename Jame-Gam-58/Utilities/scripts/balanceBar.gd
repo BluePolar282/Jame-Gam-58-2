@@ -1,5 +1,7 @@
 extends Sprite2D
 @onready var early_head: Sprite2D = $earlyHead
+@onready var slip: AudioStreamPlayer2D = $slipSound
+@onready var fall: AudioStreamPlayer2D = $cartoonFall
 var velocity = 0.0
 const GRAVITY = 1.7
 const MOUSE_FORCE = 2.8
@@ -45,7 +47,11 @@ func _process(delta):
 	
 	if (early_head.global_position.x - global_position.x) <= -425 or (early_head.global_position.x - global_position.x) >= 425:
 		Globals.game_over.emit()
-		start_fade(0.1)
+		slip.play()
+		await get_tree().create_timer(0.2).timeout
+		fall.get_parent().remove_child(fall)
+		get_tree().root.add_child(fall)
+		fall.play()
 	else:
 		velocity += (early_head.global_position.x - global_position.x) * GRAVITY * delta
 		early_head.global_position.x += velocity * delta
