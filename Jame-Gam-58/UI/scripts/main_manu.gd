@@ -21,7 +21,14 @@ func _on_tutorial_pressed() -> void:
 	tween.tween_property($CanvasLayer/tutorial, "modulate:a", 1, 0.2)
 
 func _on_quit_pressed() -> void:
-	get_tree().queue_free()
+	$CanvasLayer/VBoxContainer/start.disabled = true
+	$CanvasLayer/VBoxContainer/tutorial.disabled = true
+	$CanvasLayer/VBoxContainer/quit.disabled = true
+	
+	$CanvasLayer/ColorRect.visible = true
+	$CanvasLayer/ColorRect/exit2.disabled = false
+	var tween = create_tween()
+	tween.tween_property($CanvasLayer/ColorRect, "modulate:a", 1, 0.2)
 
 
 func _on_exit_pressed() -> void:
@@ -33,3 +40,13 @@ func _on_exit_pressed() -> void:
 	await tween.finished
 	$CanvasLayer/tutorial.visible = false
 	$CanvasLayer/tutorial/exit.disabled = true
+
+func _on_exit_2_pressed() -> void:
+	$CanvasLayer/VBoxContainer/start.disabled = false
+	$CanvasLayer/VBoxContainer/tutorial.disabled = false
+	$CanvasLayer/VBoxContainer/quit.disabled = false
+	var tween = get_tree().create_tween()
+	tween.tween_property($CanvasLayer/ColorRect, "modulate:a", 0.0, 0.2)
+	await tween.finished
+	$CanvasLayer/ColorRect.visible = false
+	$CanvasLayer/ColorRect/exit2.disabled = true

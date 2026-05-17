@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bv1pwivskenxc"]
+[gd_scene load_steps=25 format=3 uid="uid://bv1pwivskenxc"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="1_fgsbe"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/main_manu.gd" id="1_lb870"]
@@ -21,10 +21,14 @@
 [ext_resource type="Texture2D" uid="uid://cjc6yo0rsmkku" path="res://Jame-Gam-58/UI/assets/Game_tutorialV1.png" id="17_ik2eu"]
 [ext_resource type="AudioStream" uid="uid://c3pnlo45demrr" path="res://Jame-Gam-58/Utilities/sfx/Asia sounds (looping).mp3" id="17_ve6j7"]
 [ext_resource type="AudioStream" uid="uid://bb1hxkpqpido2" path="res://Jame-Gam-58/Utilities/sfx/gongHit(better).mp3" id="20_pluwx"]
+[ext_resource type="Texture2D" uid="uid://doyma7w2pre0x" path="res://Jame-Gam-58/Utilities/gold-frame-page-divider-free-png (1).webp" id="21_6h420"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v7ivf"]
 font = ExtResource("16_efmgj")
 font_size = 30
+
+[sub_resource type="Theme" id="Theme_ngmwl"]
+default_font = ExtResource("16_efmgj")
 
 [node name="main-menu" type="Control"]
 layout_mode = 3
@@ -184,7 +188,7 @@ stream = ExtResource("16_513lb")
 
 [node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+text = "Credits"
 
 [node name="Node3" type="Node" parent="CanvasLayer/VBoxContainer/quit"]
 script = ExtResource("14_epqxd")
@@ -231,6 +235,57 @@ theme_override_fonts/font = ExtResource("16_efmgj")
 theme_override_font_sizes/font_size = 46
 text = "back"
 
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+offset_top = -15.0
+offset_right = 1152.0
+offset_bottom = 635.0
+color = Color(0, 0, 0, 0.588235)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ColorRect"]
+position = Vector2(585, 67)
+scale = Vector2(0.76, 0.76)
+texture = ExtResource("21_6h420")
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 109.0
+offset_right = 763.0
+offset_bottom = 239.0
+text = "Credits"
+label_settings = ExtResource("12_3n1uf")
+
+[node name="Label2" type="Label" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 225.0
+offset_right = 996.0
+offset_bottom = 631.0
+theme = SubResource("Theme_ngmwl")
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.290196)
+theme_override_constants/line_spacing = 20
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("16_efmgj")
+theme_override_font_sizes/font_size = 46
+text = "-- Lead desigers --
+Purplenurple44          Bluepolar282
+
+-- playtesters --
+mossman       duckycraft668     yameton"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="exit2" type="Button" parent="CanvasLayer/ColorRect"]
+layout_mode = 0
+offset_left = 1025.0
+offset_top = 32.0
+offset_right = 1122.0
+offset_bottom = 90.0
+theme_override_fonts/font = ExtResource("16_efmgj")
+theme_override_font_sizes/font_size = 46
+text = "back"
+
 [node name="gong" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_pluwx")
 volume_db = -5.621
@@ -240,3 +295,4 @@ volume_db = -5.621
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="CanvasLayer/tutorial/exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/ColorRect/exit2" to="." method="_on_exit_2_pressed"]
