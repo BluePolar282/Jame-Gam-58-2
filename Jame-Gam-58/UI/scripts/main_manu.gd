@@ -1,14 +1,17 @@
 extends Control
-
+@onready var gong = $gong
 
 func _on_start_pressed() -> void:
+	gong.get_parent().remove_child(gong)
+	get_tree().root.add_child(gong)
+	gong.play()
 	Globals.reset()
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://Jame-Gam-58/Utilities/scenes/main_scene.tscn")
 
 func _on_tutorial_pressed() -> void:
-	pass # Replace with function body.
+	pass
 
 func _on_quit_pressed() -> void:
 	get_tree().queue_free()

@@ -23,7 +23,7 @@ func _on_mouse_hovered(hovered: bool) -> void:
 		rotation_amount * -0.5 if hovered else 0.0, anim_duration)
 	
 	if hovered:
-		hoverOn.play()
+		hoverOn.play() 
 	else:
 		hoverOff.play()
 
