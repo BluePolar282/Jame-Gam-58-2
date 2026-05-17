@@ -28,6 +28,7 @@ func _process(delta: float):
 	
 	if Globals.lost == true:
 		$AnimatedSprite2D.play("fall")
+		
 		ragdoll_velocity.y += RAGDOLL_GRAVITY * delta
 		global_position.y += ragdoll_velocity.y * delta
 		return

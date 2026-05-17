@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var hand = $Line2D
 
-var time_remaining: float = 300.0  # seconds
+var time_remaining: float = 300.0  
 
 func _process(delta: float) -> void:
 	if time_remaining <= 0:
