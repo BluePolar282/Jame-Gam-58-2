@@ -1,7 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://cia4w4is83yym"]
+[gd_scene load_steps=12 format=3 uid="uid://cia4w4is83yym"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/bouncing_bullet.gd" id="1_hsif3"]
-[ext_resource type="Texture2D" uid="uid://bemm58xle748g" path="res://Jame-Gam-58/Objects/assets/[DIRECTION]bird1.png" id="2_l7p05"]
+[ext_resource type="Texture2D" uid="uid://dkpdvxiymdgbb" path="res://Jame-Gam-58/Objects/assets/[DIRECTION]bird1.png" id="2_l7p05"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Objects/scenes/animated_sprite_2d.gd" id="3_skbkw"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Objects/scenes/fatbirdAnimation.gd" id="4_avkd8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_74u4r"]
 size = Vector2(56, 56)
@@ -28,8 +30,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
+
+[sub_resource type="Animation" id="Animation_lh8ov"]
+resource_name = "fat bird"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.92, 1.08), Vector2(1.08, 0.92), Vector2(0.92, 1.08)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4pt7u"]
+_data = {
+"fat bird": SubResource("Animation_lh8ov")
+}
 
 [node name="bouncing bullet" type="CharacterBody2D"]
 script = ExtResource("1_hsif3")
@@ -44,8 +67,17 @@ shape = SubResource("CircleShape2D_v14ht")
 disabled = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.92, 1.08)
 sprite_frames = SubResource("SpriteFrames_756pb")
 autoplay = "default"
-frame_progress = 0.0943366
+frame_progress = 0.763769
+script = ExtResource("3_skbkw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_4pt7u")
+}
+script = ExtResource("4_avkd8")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -43,11 +43,11 @@ func _on_left_side_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
 		Globals.tower_hit = true
 		print("left hit")
-		balance_bar.nudge(370.0)
+		balance_bar.nudge(340.0)
 
 
 func _on_right_side_entered(area: Area2D) -> void:
 	if area.is_in_group("Bullet"):
 		Globals.tower_hit = true
 		print("right hit")
-		balance_bar.nudge(-370.0)
+		balance_bar.nudge(-340.0)
