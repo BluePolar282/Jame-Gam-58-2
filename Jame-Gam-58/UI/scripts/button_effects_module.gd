@@ -22,6 +22,9 @@ func _on_mouse_hovered(hovered: bool) -> void:
 	tween.tween_property(button, "rotation_degrees",
 		rotation_amount * -0.5 if hovered else 0.0, anim_duration)
 
+
+
+
 func reset_tween() -> void:
 	if tween:
 		tween.kill()
