@@ -1,30 +1,29 @@
-[gd_scene load_steps=20 format=3 uid="uid://bv1pwivskenxc"]
+[gd_scene load_steps=22 format=3 uid="uid://bv1pwivskenxc"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="1_fgsbe"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/main_manu.gd" id="1_lb870"]
-[ext_resource type="Texture2D" uid="uid://6dypwcvhrg7y" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="2_kfu8g"]
-[ext_resource type="Texture2D" uid="uid://b772y0530ttt1" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]sun.png" id="3_vxqh3"]
-[ext_resource type="Texture2D" uid="uid://byobtri63orhw" path="res://Jame-Gam-58/Utilities/assets/Glow-PNG-File.png" id="3_ygcqj"]
-[ext_resource type="Texture2D" uid="uid://dnea5e4ounek6" path="res://Jame-Gam-58/Objects/assets/sky3/4.png" id="4_veexe"]
-[ext_resource type="Texture2D" uid="uid://gjnulfwslilo" path="res://Jame-Gam-58/UI/assets/main-menu-mts.png" id="5_dltwb"]
-[ext_resource type="Texture2D" uid="uid://ftdbbuwll7du" path="res://Jame-Gam-58/UI/assets/main-menu-rock.png" id="6_ftvnr"]
-[ext_resource type="Texture2D" uid="uid://34m50dj66vc" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="6_tch6l"]
-[ext_resource type="Texture2D" uid="uid://7hfh2nu208lj" path="res://Jame-Gam-58/UI/assets/sun-rays-ray-png-transparent-ray-images-pluspng-31.png" id="7_ev5ed"]
+[ext_resource type="Texture2D" uid="uid://cg2wwhylmi1p6" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="2_kfu8g"]
+[ext_resource type="Texture2D" uid="uid://kmy6k4wiuhlr" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]sun.png" id="3_vxqh3"]
+[ext_resource type="Texture2D" uid="uid://bjcmsxyajqlcl" path="res://Jame-Gam-58/Utilities/assets/Glow-PNG-File.png" id="3_ygcqj"]
+[ext_resource type="Texture2D" uid="uid://brs6d7i48m0y8" path="res://Jame-Gam-58/Objects/assets/sky3/4.png" id="4_veexe"]
+[ext_resource type="Texture2D" uid="uid://m58ygm0f613m" path="res://Jame-Gam-58/UI/assets/main-menu-mts.png" id="5_dltwb"]
+[ext_resource type="Texture2D" uid="uid://b32rhuwlbj6vp" path="res://Jame-Gam-58/UI/assets/main-menu-rock.png" id="6_ftvnr"]
+[ext_resource type="Texture2D" uid="uid://d3ubar2ck7mo6" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="6_tch6l"]
+[ext_resource type="Texture2D" uid="uid://b3vwavgo7tah0" path="res://Jame-Gam-58/UI/assets/sun-rays-ray-png-transparent-ray-images-pluspng-31.png" id="7_ev5ed"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/point_light_2d.gd" id="9_o3gcs"]
-[ext_resource type="Texture2D" uid="uid://bhdh2t1fvog6v" path="res://Jame-Gam-58/UI/assets/chinese-cloud-gold-outline-png.webp" id="11_rhy0b"]
+[ext_resource type="Texture2D" uid="uid://b8pn2s24n3scw" path="res://Jame-Gam-58/UI/assets/chinese-cloud-gold-outline-png.webp" id="11_rhy0b"]
 [ext_resource type="LabelSettings" uid="uid://cv60yr3d4fomp" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="12_3n1uf"]
 [ext_resource type="Theme" uid="uid://ca38i25koq3bw" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="13_17lr7"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/button_effects_module.gd" id="14_epqxd"]
-[ext_resource type="FontFile" uid="uid://wq302sifuugx" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="16_efmgj"]
-[ext_resource type="Texture2D" uid="uid://cjc6yo0rsmkku" path="res://Jame-Gam-58/UI/assets/Game_tutorialV1.png" id="17_ik2eu"]
+[ext_resource type="AudioStream" uid="uid://ddxjxuct3v5yk" path="res://Jame-Gam-58/Utilities/sfx/hoverOver.mp3" id="15_iauhm"]
+[ext_resource type="AudioStream" uid="uid://dnaolp51sylqd" path="res://Jame-Gam-58/Utilities/sfx/hoverOff.mp3" id="16_513lb"]
+[ext_resource type="FontFile" uid="uid://cq1fitj756ass" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="16_efmgj"]
+[ext_resource type="AudioStream" uid="uid://d2dsj6cv8imr3" path="res://Jame-Gam-58/Utilities/sfx/Asia sounds (looping).mp3" id="17_ve6j7"]
+[ext_resource type="AudioStream" uid="uid://6cskklrrh876" path="res://Jame-Gam-58/Utilities/sfx/gongHit(better).mp3" id="20_pluwx"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_v7ivf"]
 font = ExtResource("16_efmgj")
 font_size = 30
-
-[sub_resource type="Theme" id="Theme_uo0ph"]
-default_font = ExtResource("16_efmgj")
-default_font_size = 45
 
 [node name="main-menu" type="Control"]
 layout_mode = 3
@@ -34,6 +33,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lb870")
+
+[node name="AsiaSounds(looping)" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_ve6j7")
+volume_db = -4.685
+autoplay = true
 
 [node name="Node2D" type="Node2D" parent="."]
 
@@ -158,6 +162,12 @@ text = "Start"
 [node name="Node" type="Node" parent="CanvasLayer/VBoxContainer/start"]
 script = ExtResource("14_epqxd")
 
+[node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/start/Node"]
+stream = ExtResource("15_iauhm")
+
+[node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/start/Node"]
+stream = ExtResource("16_513lb")
+
 [node name="tutorial" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Tutorial"
@@ -165,12 +175,30 @@ text = "Tutorial"
 [node name="Node2" type="Node" parent="CanvasLayer/VBoxContainer/tutorial"]
 script = ExtResource("14_epqxd")
 
+[node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/tutorial/Node2"]
+stream = ExtResource("15_iauhm")
+
+[node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/tutorial/Node2"]
+stream = ExtResource("16_513lb")
+
 [node name="quit" type="Button" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
 [node name="Node3" type="Node" parent="CanvasLayer/VBoxContainer/quit"]
 script = ExtResource("14_epqxd")
+
+[node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/quit/Node3"]
+stream = ExtResource("15_iauhm")
+
+[node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer/quit/Node3"]
+stream = ExtResource("16_513lb")
+
+[node name="hoverOff" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer"]
+stream = ExtResource("16_513lb")
+
+[node name="hoverOn" type="AudioStreamPlayer2D" parent="CanvasLayer/VBoxContainer"]
+stream = ExtResource("15_iauhm")
 
 [node name="credits" type="Label" parent="CanvasLayer"]
 anchors_preset = -1
@@ -187,25 +215,10 @@ grow_vertical = 0
 text = "v1.0.0"
 label_settings = SubResource("LabelSettings_v7ivf")
 
-[node name="tutorial" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-position = Vector2(578.875, 325.813)
-scale = Vector2(1.11581, 1.01775)
-texture = ExtResource("17_ik2eu")
-
-[node name="exit" type="Button" parent="CanvasLayer/tutorial"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -644.038
-offset_top = -301.463
-offset_right = -549.038
-offset_bottom = -244.463
-grow_horizontal = 0
-theme = SubResource("Theme_uo0ph")
-text = "back"
+[node name="gong" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_pluwx")
+volume_db = -5.621
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="CanvasLayer/tutorial/exit" to="." method="_on_exit_pressed"]
