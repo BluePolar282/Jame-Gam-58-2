@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bv1pwivskenxc"]
+[gd_scene load_steps=18 format=3 uid="uid://bv1pwivskenxc"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="1_fgsbe"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/main_manu.gd" id="1_lb870"]
@@ -15,6 +15,11 @@
 [ext_resource type="LabelSettings" uid="uid://cv60yr3d4fomp" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="12_3n1uf"]
 [ext_resource type="Theme" uid="uid://ca38i25koq3bw" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="13_17lr7"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/button_effects_module.gd" id="14_epqxd"]
+[ext_resource type="FontFile" uid="uid://wq302sifuugx" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="16_efmgj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v7ivf"]
+font = ExtResource("16_efmgj")
+font_size = 30
 
 [node name="main-menu" type="Control"]
 layout_mode = 3
@@ -25,58 +30,60 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lb870")
 
-[node name="sky" type="Parallax2D" parent="."]
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="sky" type="Parallax2D" parent="Node2D"]
 repeat_size = Vector2(1153.59, 0)
 autoscroll = Vector2(10.905, 0)
 repeat_times = 10
 
-[node name="Sprite2D" type="Sprite2D" parent="sky"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/sky"]
 position = Vector2(574.889, 168.983)
 scale = Vector2(2.00309, 2.00309)
 texture = ExtResource("2_kfu8g")
 
-[node name="sun" type="Parallax2D" parent="."]
+[node name="sun" type="Parallax2D" parent="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="sun"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/sun"]
 position = Vector2(833, 270.668)
 scale = Vector2(2.14383, 2.10103)
 texture = ExtResource("3_vxqh3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
 self_modulate = Color(1, 1, 1, 0.4)
 position = Vector2(837, 291)
 texture = ExtResource("3_ygcqj")
 
-[node name="clouds" type="Parallax2D" parent="."]
+[node name="clouds" type="Parallax2D" parent="Node2D"]
 repeat_size = Vector2(1150, 0)
 autoscroll = Vector2(4.255, 0)
 repeat_times = 4
 
-[node name="Sprite2D" type="Sprite2D" parent="clouds"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/clouds"]
 position = Vector2(574.889, 323.168)
 scale = Vector2(2.00309, 2.00309)
 texture = ExtResource("4_veexe")
 
-[node name="mts" type="Parallax2D" parent="."]
+[node name="mts" type="Parallax2D" parent="Node2D"]
 repeat_size = Vector2(1150, 0)
 repeat_times = 5
 
-[node name="Sprite2D" type="Sprite2D" parent="mts"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/mts"]
 position = Vector2(577.149, 331.997)
 scale = Vector2(1.34141, 1.34141)
 texture = ExtResource("5_dltwb")
 
-[node name="shadow" type="Sprite2D" parent="."]
+[node name="shadow" type="Sprite2D" parent="Node2D"]
 position = Vector2(488, 500)
 texture = ExtResource("6_tch6l")
 
-[node name="rays" type="Sprite2D" parent="."]
+[node name="rays" type="Sprite2D" parent="Node2D"]
 self_modulate = Color(1, 1, 1, 0.292)
 position = Vector2(704.977, 403.956)
 scale = Vector2(0.956962, 1.08955)
 texture = ExtResource("7_ev5ed")
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
+[node name="PointLight2D" type="PointLight2D" parent="Node2D"]
 position = Vector2(845, 281)
 scale = Vector2(1.64507, 1.56412)
 color = Color(1, 0.911601, 0.668853, 1)
@@ -85,10 +92,10 @@ texture = ExtResource("3_ygcqj")
 texture_scale = 0.71
 script = ExtResource("9_o3gcs")
 
-[node name="rock" type="Parallax2D" parent="."]
+[node name="rock" type="Parallax2D" parent="Node2D"]
 scroll_scale = Vector2(0.7, 0.7)
 
-[node name="Sprite2D" type="Sprite2D" parent="rock"]
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/rock"]
 position = Vector2(596, 352)
 scale = Vector2(1.33535, 1.33535)
 texture = ExtResource("6_ftvnr")
@@ -159,6 +166,21 @@ text = "Quit"
 
 [node name="Node3" type="Node" parent="CanvasLayer/VBoxContainer/quit"]
 script = ExtResource("14_epqxd")
+
+[node name="credits" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.906
+anchor_top = 0.923
+anchor_right = 0.966
+anchor_bottom = 0.974
+offset_left = 0.287964
+offset_top = -0.104004
+offset_right = 0.167969
+offset_bottom = -0.152039
+grow_horizontal = 2
+grow_vertical = 0
+text = "v1.0.0"
+label_settings = SubResource("LabelSettings_v7ivf")
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/tutorial" to="." method="_on_tutorial_pressed"]
