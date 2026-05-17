@@ -35,7 +35,7 @@ func spawn_bullets() -> void:
 
 	if Globals.on_cooldown:
 		return
-	if spawner_group in ["Top Left Spawner", "Top Right Spawner"] and Globals.stage <= 2:
+	if spawner_group in ["Top Left Spawner", "Top Right Spawner"] and Globals.stage <= 1:
 		return
 
 	var fire_chance := set_bullet_chance()
@@ -64,10 +64,10 @@ func spawn_bullets() -> void:
 func set_bullet_chance() -> float:
 	match Globals.stage:
 		1: return 0.4
-		2: return 0.4
+		2: return 0.45
 		3: return 0.5
 		4: return 0.55
-		5: return 0.65
+		5: return 0.6
 	return 0.4
 
 func set_difficulty() -> void:

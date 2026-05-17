@@ -46,6 +46,6 @@ disabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_756pb")
 autoplay = "default"
-frame_progress = 0.955043
+frame_progress = 0.0943366
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -6,12 +6,13 @@ var tilt = 0
 var is_debug_on = false
 var on_cooldown := false
 var stage = 1
+var _stage_gen := 0
 
 var won = false
 var lost = false
 var in_main_scene = false
 var tower_hit = false
-var set_time = 5
+var set_time = 45
 
 var time_left: float = 0.0
 var timer_active: bool = false
@@ -44,7 +45,7 @@ func _ready() -> void:
 	game_over.connect(_game_is_over)
 	
 func start_stage_timer():
-	time_left = set_time
+	time_left = 45
 	timer_active = true
 	stage_complete = false
 	# Wait until _process flips stage_complete to true
@@ -53,30 +54,38 @@ func start_stage_timer():
 		await get_tree().process_frame
 		
 func switch_stage():
+	_stage_gen += 1
+	var gen := _stage_gen  # capture current generation
+	
 	stage = 1
 	switched_stage.emit()
 	print(stage)
 	await start_stage_timer()
+	if _stage_gen != gen: return
 	
 	stage = 2
 	switched_stage.emit()
 	print(stage)
 	await start_stage_timer()
+	if _stage_gen != gen: return
 	
 	stage = 3
 	switched_stage.emit()
 	print(stage)
 	await start_stage_timer()
+	if _stage_gen != gen: return
 	
 	stage = 4
 	switched_stage.emit()
 	print(stage)
 	await start_stage_timer()
+	if _stage_gen != gen: return
 	
 	stage = 5
 	switched_stage.emit()
 	print(stage)
 	await start_stage_timer()
+	if _stage_gen != gen: return
 	
 	if !lost:
 		inner_peace.emit()
@@ -97,18 +106,18 @@ func add_time():
 	time_left += 5
 
 func reset():
-
 	current_dir = "."
 	HEALTH = 10
 	tilt = 0
 	is_debug_on = false
 	on_cooldown = false
 	stage = 1
-
 	won = false
 	lost = false
 	in_main_scene = false
 	tower_hit = false
 	set_time = 5
-
+	timer_active = false
+	stage_complete = true  # unblocks any awaiting start_stage_timer()
+	_stage_gen += 1        # invalidates the running switch_stage() coroutine
 	

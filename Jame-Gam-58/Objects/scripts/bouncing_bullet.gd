@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		ragdoll_velocity.y += RAGDOLL_GRAVITY * delta
 		global_position.y += ragdoll_velocity.y * delta
 		var tween = create_tween()
-		tween.tween_property($AnimatedSprite2D, "modulate:a", 0.0, 1)
+		tween.tween_property($AnimatedSprite2D, "modulate:a", 0.0, 0.5)
 		await get_tree().create_timer(1).timeout
 		queue_free()
 		return

@@ -1,15 +1,15 @@
 [gd_scene load_steps=13 format=3 uid="uid://bcnq3oeap16yy"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/endscreen.gd" id="1_42rj1"]
-[ext_resource type="Texture2D" uid="uid://cc7cmku2fq6y3" path="res://Jame-Gam-58/UI/assets/[DIRECTION]end-cutscene.png" id="2_qfu7s"]
-[ext_resource type="Texture2D" uid="uid://c6da7bg1fx1ax" path="res://Jame-Gam-58/UI/assets/vintage-rough-texture-png.webp" id="3_oxdoe"]
-[ext_resource type="Texture2D" uid="uid://bcobwfxrjpx18" path="res://Jame-Gam-58/UI/assets/Vignette.png" id="4_agioj"]
-[ext_resource type="Texture2D" uid="uid://c3r2gs7743muf" path="res://Jame-Gam-58/UI/assets/[DIRECTION]deadmonk.png" id="5_cd0rj"]
-[ext_resource type="FontFile" uid="uid://cq1fitj756ass" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="6_sifph"]
+[ext_resource type="Texture2D" uid="uid://p6urhxibn5r" path="res://Jame-Gam-58/UI/assets/[DIRECTION]end-cutscene.png" id="2_qfu7s"]
+[ext_resource type="Texture2D" uid="uid://cfav1wjjcq4m8" path="res://Jame-Gam-58/UI/assets/vintage-rough-texture-png.webp" id="3_oxdoe"]
+[ext_resource type="Texture2D" uid="uid://bt5swvof2gr7w" path="res://Jame-Gam-58/UI/assets/Vignette.png" id="4_agioj"]
+[ext_resource type="Texture2D" uid="uid://cuw8da74e1p57" path="res://Jame-Gam-58/UI/assets/[DIRECTION]deadmonk.png" id="5_cd0rj"]
+[ext_resource type="FontFile" uid="uid://wq302sifuugx" path="res://Jame-Gam-58/Utilities/assets/Korean_Calligraphy.ttf" id="6_sifph"]
 [ext_resource type="Theme" uid="uid://ca38i25koq3bw" path="res://Jame-Gam-58/UI/scripts/button-theme.tres" id="7_vrhft"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/button_effects_module.gd" id="8_u0812"]
-[ext_resource type="AudioStream" uid="uid://ddxjxuct3v5yk" path="res://Jame-Gam-58/Utilities/sfx/hoverOver.mp3" id="9_nrkh4"]
-[ext_resource type="AudioStream" uid="uid://dnaolp51sylqd" path="res://Jame-Gam-58/Utilities/sfx/hoverOff.mp3" id="10_oiuj0"]
+[ext_resource type="AudioStream" uid="uid://bo40lrn10s1v6" path="res://Jame-Gam-58/Utilities/sfx/hoverOver.mp3" id="9_nrkh4"]
+[ext_resource type="AudioStream" uid="uid://dqhci12fna4q6" path="res://Jame-Gam-58/Utilities/sfx/hoverOff.mp3" id="10_oiuj0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ehcm"]
 font = ExtResource("6_sifph")
