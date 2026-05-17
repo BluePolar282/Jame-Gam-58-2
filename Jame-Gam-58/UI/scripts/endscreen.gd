@@ -7,12 +7,24 @@ func _ready() -> void:
 		$CanvasLayer/HBoxContainer.visible = false
 		$CanvasLayer/death.visible = false
 		$"CanvasLayer/inner-peace".visible
-		$CanvasLayer/CenterContainer/Label.text = "peace at last"
+		$CanvasLayer/Label.text = "peace at last"
+		await get_tree().create_timer(6).timeout
+		$CanvasLayer/Label2.modulate.a = 0
+		$CanvasLayer/return.modulate.a = 0
+		$CanvasLayer/Label2.visible = true
+		$CanvasLayer/return.visible = true
+		var tween = create_tween()
+		tween.tween_property($CanvasLayer/Label2, "modulate:a", 1.0, 0.5)
+		tween.tween_property($CanvasLayer/return, "modulate:a", 1.0, 0.5)
+
+		
+		
+		
 	elif Globals.lost == true:
 		$CanvasLayer/HBoxContainer.visible = true
 		$"CanvasLayer/inner-peace".visible= false
 		$CanvasLayer/death.visible
-		$CanvasLayer/CenterContainer/Label.text = "game over"
+		$CanvasLayer/Label.text = "game over"
 
 
 func _on_menu_pressed() -> void:

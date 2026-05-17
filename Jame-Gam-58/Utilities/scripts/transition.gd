@@ -12,8 +12,6 @@ func _ready():
 	animation_player.animation_finished.connect(on_animation_finished)
 	if Globals.won:
 		won = true
-	else:
-		won = false
 	
 func on_animation_finished(anim_name):
 	if anim_name ==  "fade-to-black":
@@ -29,8 +27,9 @@ func on_animation_finished(anim_name):
 		color_rect.visible = false
 
 func transition():
+	print(Globals.won)
 	color_rect.visible = true
-	if won:
+	if Globals.won:
 		animation_player.play("fade-to-white")
-	else:
+	elif !Globals.won:
 		animation_player.play("fade-to-black")
