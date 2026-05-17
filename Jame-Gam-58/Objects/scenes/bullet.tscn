@@ -1,7 +1,40 @@
-[gd_scene load_steps=8 format=3 uid="uid://birhplnauwxjp"]
+[gd_scene load_steps=14 format=3 uid="uid://birhplnauwxjp"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/bullet.gd" id="1_fnqk2"]
+[ext_resource type="Texture2D" uid="uid://b1ueskurvgscb" path="res://Jame-Gam-58/UI/assets/partical textures/feather.png" id="2_018an"]
 [ext_resource type="Texture2D" uid="uid://dkpdvxiymdgbb" path="res://Jame-Gam-58/Objects/assets/[DIRECTION]bird1.png" id="2_yuxki"]
+
+[sub_resource type="Curve" id="Curve_4j5x7"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, -0.225), -1.225, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_e53su"]
+curve = SubResource("Curve_4j5x7")
+
+[sub_resource type="Curve" id="Curve_x8d7i"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.531646, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), -5.20879, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_uxdsh"]
+curve = SubResource("Curve_x8d7i")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_7fcm0"]
+particle_flag_disable_z = true
+angle_min = -118.7
+angle_max = 300.5
+angle_curve = SubResource("CurveTexture_e53su")
+gravity = Vector3(0, 18.625, 0)
+damping_max = 0.447
+scale_min = 0.95
+scale_max = 1.25
+scale_curve = SubResource("CurveTexture_uxdsh")
+turbulence_noise_scale = 2.745
+turbulence_noise_speed_random = 0.56
+turbulence_influence_max = 0.144
+turbulence_initial_displacement_min = -10.7
+turbulence_initial_displacement_max = 2.9
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm6sk"]
 size = Vector2(56, 56)
@@ -34,6 +67,16 @@ animations = [{
 [node name="bullet" type="CharacterBody2D" groups=["Bullet"]]
 script = ExtResource("1_fnqk2")
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 1
+amount_ratio = 0.7765
+process_material = SubResource("ParticleProcessMaterial_7fcm0")
+texture = ExtResource("2_018an")
+lifetime = 2.0
+preprocess = 0.48
+speed_scale = 0.65
+explosiveness = 0.19
+
 [node name="Area2D" type="Area2D" parent="." groups=["Bullet"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
@@ -46,7 +89,8 @@ disabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6km6e")
 autoplay = "default"
-frame_progress = 0.210828
+frame = 1
+frame_progress = 0.722159
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
