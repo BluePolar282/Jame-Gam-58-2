@@ -6,9 +6,10 @@ func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	if Globals.won == true:
+		Globals.has_won = true
 		$CanvasLayer/HBoxContainer.visible = false
 		$CanvasLayer/death.visible = false
-		$"CanvasLayer/inner-peace".visible
+		$"CanvasLayer/win".visible
 		$CanvasLayer/Label.text = "peace at last"
 		await get_tree().create_timer(6).timeout
 		$CanvasLayer/Label2.modulate.a = 0
@@ -21,7 +22,7 @@ func _ready() -> void:
 		
 	elif Globals.lost == true:
 		$CanvasLayer/HBoxContainer.visible = true
-		$"CanvasLayer/inner-peace".visible= false
+		$"CanvasLayer/win".visible = false
 		$CanvasLayer/death.visible
 		$CanvasLayer/Label.text = "game over"
 
@@ -36,8 +37,8 @@ func _on_retry_pressed() -> void:
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://Jame-Gam-58/Utilities/scenes/main_scene.tscn")
 
-
 func _on_return_pressed() -> void:
+	print("returned")
 	Transition.transition()
 	await Transition.transition_finished
 	get_tree().change_scene_to_file("res://Jame-Gam-58/UI/scenes/main_manu.tscn")
