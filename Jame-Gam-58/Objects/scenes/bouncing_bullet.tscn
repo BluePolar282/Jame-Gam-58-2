@@ -70,7 +70,7 @@ disabled = true
 scale = Vector2(0.92, 1.08)
 sprite_frames = SubResource("SpriteFrames_756pb")
 autoplay = "default"
-frame_progress = 0.763769
+frame_progress = 0.939881
 script = ExtResource("3_skbkw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]

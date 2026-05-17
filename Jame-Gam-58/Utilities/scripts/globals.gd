@@ -109,7 +109,7 @@ func _game_is_over():
 	get_tree().change_scene_to_file("res://Jame-Gam-58/UI/scenes/endscreen.tscn")
 
 func add_time():
-	time_left += 5
+	time_left += 2
 
 func reset():
 	current_dir = "."

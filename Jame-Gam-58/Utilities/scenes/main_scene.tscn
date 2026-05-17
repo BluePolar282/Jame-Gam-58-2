@@ -38,7 +38,7 @@
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="24_50550"]
 [ext_resource type="AudioStream" uid="uid://d2dsj6cv8imr3" path="res://Jame-Gam-58/Utilities/sfx/Asia sounds (looping).mp3" id="26_kvl8q"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scenes/asia_sounds(looping).gd" id="38_k64m3"]
-[ext_resource type="AudioStream" uid="uid://da3qxck177cm5" path="res://Jame-Gam-58/Utilities/sfx/Night Ambience Loop ｜ Free Sound Effects ｜ Ambient Sounds - Free Sounds Library (youtube).mp3" id="39_rhl2o"]
+[ext_resource type="AudioStream" uid="uid://deh0p7lroca33" path="res://Jame-Gam-58/Utilities/Night Ambience Loop ｜ Free Sound Effects ｜ Ambient Sounds - Free Sounds Library (youtube).mp3" id="39_nccjt"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scenes/asia_sounds(looping)night.gd" id="40_e50bj"]
 
 [node name="main scene" type="Node2D"]
@@ -323,6 +323,6 @@ volume_db = -4.685
 script = ExtResource("38_k64m3")
 
 [node name="AsiaSounds(looping)night" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("39_rhl2o")
+stream = ExtResource("39_nccjt")
 volume_db = -19.55
 script = ExtResource("40_e50bj")
