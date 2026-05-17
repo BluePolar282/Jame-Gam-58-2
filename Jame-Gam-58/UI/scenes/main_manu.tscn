@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scenes/asia_sounds(looping).gd" id="3_3txrc"]
 [ext_resource type="Texture2D" uid="uid://kmy6k4wiuhlr" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]sun.png" id="3_vxqh3"]
 [ext_resource type="Texture2D" uid="uid://bjcmsxyajqlcl" path="res://Jame-Gam-58/Utilities/assets/Glow-PNG-File.png" id="3_ygcqj"]
-[ext_resource type="AudioStream" uid="uid://da3qxck177cm5" path="res://Jame-Gam-58/Utilities/sfx/Night Ambience Loop ｜ Free Sound Effects ｜ Ambient Sounds - Free Sounds Library (youtube).mp3" id="4_n1778"]
+[ext_resource type="AudioStream" uid="uid://deh0p7lroca33" path="res://Jame-Gam-58/Utilities/Night Ambience Loop ｜ Free Sound Effects ｜ Ambient Sounds - Free Sounds Library (youtube).mp3" id="4_0usj3"]
 [ext_resource type="Texture2D" uid="uid://brs6d7i48m0y8" path="res://Jame-Gam-58/Objects/assets/sky3/4.png" id="4_veexe"]
 [ext_resource type="Texture2D" uid="uid://m58ygm0f613m" path="res://Jame-Gam-58/UI/assets/main-menu-mts.png" id="5_dltwb"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scenes/asia_sounds(looping)night.gd" id="5_e3nun"]
@@ -56,7 +56,7 @@ volume_db = -4.685
 script = ExtResource("3_3txrc")
 
 [node name="AsiaSounds(looping)night" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_n1778")
+stream = ExtResource("4_0usj3")
 volume_db = -19.55
 script = ExtResource("5_e3nun")
 
@@ -359,9 +359,9 @@ label_settings = ExtResource("12_3n1uf")
 
 [node name="Label2" type="Label" parent="CanvasLayer/ColorRect"]
 layout_mode = 0
-offset_left = 188.0
+offset_left = 101.0
 offset_top = 225.0
-offset_right = 996.0
+offset_right = 1062.0
 offset_bottom = 631.0
 theme = SubResource("Theme_ngmwl")
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.290196)
@@ -369,11 +369,11 @@ theme_override_constants/line_spacing = 20
 theme_override_constants/shadow_outline_size = 20
 theme_override_fonts/font = ExtResource("16_efmgj")
 theme_override_font_sizes/font_size = 46
-text = "-- Lead desigers --
+text = "-- Lead designers --
 Purplenurple44          Bluepolar282
 
 -- playtesters --
-mossman       duckycraft668     yameton"
+mossman       duckycraft668     yameton     puggnog"
 horizontal_alignment = 1
 vertical_alignment = 1
 
