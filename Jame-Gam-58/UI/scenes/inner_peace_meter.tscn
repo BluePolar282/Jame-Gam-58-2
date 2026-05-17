@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://byws6lghtmj7l"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/inner_peace_meter.gd" id="1_0q4nb"]
-[ext_resource type="Texture2D" uid="uid://c5gto4ouegu6l" path="res://Jame-Gam-58/UI/assets/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA3L3JtNjU1LWVsZW1lbnRzLWgtMDA5LmpwZw-removebg-preview.png" id="2_peesi"]
+[ext_resource type="Texture2D" uid="uid://go3vxp8wcuha" path="res://Jame-Gam-58/UI/assets/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIzLTA3L3JtNjU1LWVsZW1lbnRzLWgtMDA5LmpwZw-removebg-preview.png" id="2_peesi"]
 
 [node name="inner_peace_meter" type="Node2D"]
 script = ExtResource("1_0q4nb")
