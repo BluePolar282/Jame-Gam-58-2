@@ -1,126 +1,206 @@
-[gd_scene load_steps=33 format=3 uid="uid://cedmi77yo3ej"]
+[gd_scene load_steps=41 format=3 uid="uid://cedmi77yo3ej"]
 
 [ext_resource type="PackedScene" uid="uid://bx4u72kmieiup" path="res://Jame-Gam-58/Utilities/scenes/bullet_spawner.tscn" id="1_ox7t7"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scenes/main_scene.gd" id="1_p41wq"]
 [ext_resource type="PackedScene" uid="uid://guryynls3o1l" path="res://Jame-Gam-58/Objects/scenes/tower.tscn" id="2_7mml0"]
-[ext_resource type="Texture2D" uid="uid://byobtri63orhw" path="res://Jame-Gam-58/Utilities/assets/Glow-PNG-File.png" id="2_ko6oc"]
+[ext_resource type="Texture2D" uid="uid://bjcmsxyajqlcl" path="res://Jame-Gam-58/Utilities/assets/Glow-PNG-File.png" id="2_ko6oc"]
 [ext_resource type="PackedScene" uid="uid://dwi8nac8a67fu" path="res://Jame-Gam-58/Objects/scenes/shield.tscn" id="3_gvl8j"]
+[ext_resource type="Texture2D" uid="uid://bkvh31vpw17gu" path="res://Jame-Gam-58/Objects/assets/sky1/1.png" id="3_havjh"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/point_light_2d.gd" id="4_40aq8"]
+[ext_resource type="Texture2D" uid="uid://b64x41851u5gl" path="res://Jame-Gam-58/Objects/assets/win-background/[DIRECTION]moon.png" id="4_qb0ff"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/balanceBar.gd" id="5_5dlt0"]
-[ext_resource type="Texture2D" uid="uid://34m50dj66vc" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="5_07asn"]
-[ext_resource type="Texture2D" uid="uid://cy3q253kcbkte" path="res://Jame-Gam-58/Objects/earlyAssets/earlyHead.png" id="5_15ev6"]
-[ext_resource type="Texture2D" uid="uid://6dypwcvhrg7y" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="6_e1ag4"]
-[ext_resource type="AudioStream" uid="uid://uqefcxbb0dyp" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
+[ext_resource type="Texture2D" uid="uid://d3ubar2ck7mo6" path="res://Jame-Gam-58/Utilities/assets/Black-Fade-PNG-Isolated-File.png" id="5_07asn"]
+[ext_resource type="Texture2D" uid="uid://ce25g3gk7fm43" path="res://Jame-Gam-58/Objects/earlyAssets/earlyHead.png" id="5_15ev6"]
+[ext_resource type="Texture2D" uid="uid://cg2wwhylmi1p6" path="res://Jame-Gam-58/Objects/assets/sky3/1.png" id="6_e1ag4"]
+[ext_resource type="Texture2D" uid="uid://drm3cvldn141i" path="res://Jame-Gam-58/Objects/assets/sky1/3.png" id="6_e3s4q"]
+[ext_resource type="AudioStream" uid="uid://b43q3f0xy2xar" path="res://Jame-Gam-58/Objects/earlyAssets/mao zedong propaganda music Red Sun in the Sky.mp3" id="6_pfejq"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/GameClock.gd" id="6_wvpes"]
-[ext_resource type="Texture2D" uid="uid://dnea5e4ounek6" path="res://Jame-Gam-58/Objects/assets/sky3/4.png" id="7_6dmrp"]
-[ext_resource type="Texture2D" uid="uid://b772y0530ttt1" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]sun.png" id="7_v57xl"]
-[ext_resource type="Texture2D" uid="uid://b0sh36q67ihu0" path="res://Jame-Gam-58/Objects/assets/sky2/5.png" id="8_bkwjl"]
+[ext_resource type="Texture2D" uid="uid://chw8dogriqu2x" path="res://Jame-Gam-58/Objects/assets/win-background/[DIRECTION]night-mts-back.png" id="7_4otj3"]
+[ext_resource type="Texture2D" uid="uid://brs6d7i48m0y8" path="res://Jame-Gam-58/Objects/assets/sky3/4.png" id="7_6dmrp"]
+[ext_resource type="Texture2D" uid="uid://kmy6k4wiuhlr" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]sun.png" id="7_v57xl"]
+[ext_resource type="Texture2D" uid="uid://c7cs0bfx5awiq" path="res://Jame-Gam-58/Objects/assets/sky2/5.png" id="8_bkwjl"]
 [ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/stage_label.gd" id="8_twnem"]
-[ext_resource type="Texture2D" uid="uid://bksob503bacv3" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]back-mountains.png" id="9_isqnq"]
-[ext_resource type="Texture2D" uid="uid://gnrt0kyv6lgk" path="res://Jame-Gam-58/Objects/assets/sky2/6.png" id="9_l0trq"]
-[ext_resource type="Texture2D" uid="uid://dtm2jr1mbqumy" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]front-mts.png" id="10_bp5yb"]
-[ext_resource type="Texture2D" uid="uid://bpko5chmu2sv" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]middle-mts.png" id="11_vrwlp"]
-[ext_resource type="Texture2D" uid="uid://bsqoxyi11fx1d" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]needle-rock.png" id="12_ek5rd"]
+[ext_resource type="Texture2D" uid="uid://co34m3nslje6l" path="res://Jame-Gam-58/Objects/assets/win-background/[DIRECTION]night-mts-front.png" id="8_vqaxk"]
+[ext_resource type="Texture2D" uid="uid://dnha6omycqk8l" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]back-mountains.png" id="9_isqnq"]
+[ext_resource type="Texture2D" uid="uid://daqasjeho5sva" path="res://Jame-Gam-58/Objects/assets/sky2/6.png" id="9_l0trq"]
+[ext_resource type="Texture2D" uid="uid://cpvoyxpft4ola" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]front-mts.png" id="10_bp5yb"]
+[ext_resource type="Texture2D" uid="uid://dmthkmqrw5n7v" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]middle-mts.png" id="11_vrwlp"]
+[ext_resource type="Texture2D" uid="uid://bwdf354osqre" path="res://Jame-Gam-58/Objects/assets/background/[DIRECTION]needle-rock.png" id="12_ek5rd"]
 [ext_resource type="Texture2D" uid="uid://wg73nj0rxsk6" path="res://Jame-Gam-58/Objects/earlyAssets/early_bar.png" id="14_xabkf"]
 [ext_resource type="LabelSettings" uid="uid://cv60yr3d4fomp" path="res://Jame-Gam-58/UI/scripts/main_manu.tres" id="15_fadg7"]
-[ext_resource type="Texture2D" uid="uid://dxl6g44qqmxoy" path="res://Jame-Gam-58/Utilities/assets/bottomlevel.png" id="16_t2ylf"]
-[ext_resource type="Texture2D" uid="uid://dhq0gvonmebma" path="res://Jame-Gam-58/Utilities/assets/toplevel.png" id="17_jcoml"]
-[ext_resource type="Texture2D" uid="uid://dwwmc1jrry60d" path="res://Jame-Gam-58/Utilities/assets/midlevel.png" id="18_ktaw0"]
-[ext_resource type="AudioStream" uid="uid://bqsceh1v03dc4" path="res://Jame-Gam-58/Utilities/assets/fallSound_temp.mp3" id="19_nq8ia"]
+[ext_resource type="Texture2D" uid="uid://caworamdqyy2e" path="res://Jame-Gam-58/Utilities/assets/bottomlevel.png" id="16_t2ylf"]
+[ext_resource type="Texture2D" uid="uid://j6buwenepirq" path="res://Jame-Gam-58/Utilities/assets/toplevel.png" id="17_jcoml"]
+[ext_resource type="Texture2D" uid="uid://n328qrqm30or" path="res://Jame-Gam-58/Utilities/assets/midlevel.png" id="18_ktaw0"]
+[ext_resource type="AudioStream" uid="uid://cjdpn4jfc86c6" path="res://Jame-Gam-58/Utilities/assets/fallSound_temp.mp3" id="19_nq8ia"]
 [ext_resource type="PackedScene" uid="uid://byws6lghtmj7l" path="res://Jame-Gam-58/UI/scenes/inner_peace_meter.tscn" id="19_p3fk7"]
-[ext_resource type="AudioStream" uid="uid://dwnmhtw7ovbv8" path="res://Jame-Gam-58/Utilities/sfx/cartoonFall.mp3" id="22_tviit"]
-[ext_resource type="AudioStream" uid="uid://cdftq1xifmogv" path="res://Jame-Gam-58/Utilities/sfx/ShieldBlock.mp3" id="24_8lxd2"]
+[ext_resource type="AudioStream" uid="uid://ddn0yaymgpmuc" path="res://Jame-Gam-58/Utilities/sfx/cartoonFall.mp3" id="22_tviit"]
+[ext_resource type="AudioStream" uid="uid://djks1icytvuad" path="res://Jame-Gam-58/Utilities/sfx/ShieldBlock.mp3" id="24_8lxd2"]
 [ext_resource type="Script" path="res://Jame-Gam-58/UI/scripts/camera_2d.gd" id="24_50550"]
-[ext_resource type="AudioStream" uid="uid://c3pnlo45demrr" path="res://Jame-Gam-58/Utilities/sfx/Asia sounds (looping).mp3" id="26_kvl8q"]
+[ext_resource type="AudioStream" uid="uid://d2dsj6cv8imr3" path="res://Jame-Gam-58/Utilities/sfx/Asia sounds (looping).mp3" id="26_kvl8q"]
+[ext_resource type="Script" path="res://Jame-Gam-58/UI/scenes/asia_sounds(looping).gd" id="38_k64m3"]
+[ext_resource type="AudioStream" uid="uid://da3qxck177cm5" path="res://Jame-Gam-58/Utilities/sfx/Night Ambience Loop ｜ Free Sound Effects ｜ Ambient Sounds - Free Sounds Library (youtube).mp3" id="39_rhl2o"]
+[ext_resource type="Script" path="res://Jame-Gam-58/UI/scenes/asia_sounds(looping)night.gd" id="40_e50bj"]
 
 [node name="main scene" type="Node2D"]
-position = Vector2(578, 387)
+position = Vector2(578, 405)
 script = ExtResource("1_p41wq")
+metadata/_edit_horizontal_guides_ = [-104.0]
 
 [node name="background music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_pfejq")
 volume_db = -22.299
 
-[node name="parallax layers" type="Node2D" parent="."]
+[node name="nightTime" type="Node2D" parent="."]
+position = Vector2(-587, -388)
+
+[node name="sky" type="Parallax2D" parent="nightTime"]
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(12.55, 0)
+repeat_times = 221
+
+[node name="Sprite2D" type="Sprite2D" parent="nightTime/sky"]
+position = Vector2(578.5, 325.5)
+scale = Vector2(1.99826, 2.00926)
+texture = ExtResource("3_havjh")
+
+[node name="moon" type="Parallax2D" parent="nightTime"]
+scroll_offset = Vector2(-100, 124)
+
+[node name="Sprite2D" type="Sprite2D" parent="nightTime/moon"]
+position = Vector2(574, 322)
+scale = Vector2(2, 2)
+texture = ExtResource("4_qb0ff")
+
+[node name="light" type="Sprite2D" parent="nightTime/moon"]
+modulate = Color(0.906015, 0.96822, 1, 1)
+self_modulate = Color(0.2448, 0.520427, 0.68, 0.352941)
+position = Vector2(714.14, 245.255)
+scale = Vector2(0.615, 0.615)
+texture = ExtResource("2_ko6oc")
+
+[node name="clouds" type="Parallax2D" parent="nightTime"]
+repeat_size = Vector2(2150, 0)
+autoscroll = Vector2(0.025, 0)
+repeat_times = 151
+
+[node name="Sprite2D" type="Sprite2D" parent="nightTime/clouds"]
+position = Vector2(1600, 328)
+scale = Vector2(2, 2)
+texture = ExtResource("6_e3s4q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="nightTime/clouds"]
+position = Vector2(576, 328)
+scale = Vector2(2, 2)
+texture = ExtResource("6_e3s4q")
+
+[node name="mts back" type="Parallax2D" parent="nightTime"]
+
+[node name="Sprite2D" type="Sprite2D" parent="nightTime/mts back"]
+position = Vector2(576.778, 373)
+scale = Vector2(2.00617, 2.00617)
+texture = ExtResource("7_4otj3")
+flip_h = true
+
+[node name="mts front" type="Parallax2D" parent="nightTime"]
+
+[node name="Sprite2D" type="Sprite2D" parent="nightTime/mts front"]
+position = Vector2(576, 372)
+scale = Vector2(2, 2)
+texture = ExtResource("8_vqaxk")
+flip_h = true
+
+[node name="light2" type="Sprite2D" parent="nightTime"]
+modulate = Color(0.144431, 0.771938, 1, 1)
+self_modulate = Color(0.36, 0.36, 0.36, 0.290196)
+position = Vector2(254, 382)
+texture = ExtResource("2_ko6oc")
+
+[node name="Sprite2D" type="Sprite2D" parent="nightTime"]
+position = Vector2(550, 370)
+scale = Vector2(2, 2)
+texture = ExtResource("12_ek5rd")
+
+[node name="sunSet" type="Node2D" parent="."]
+visible = false
 position = Vector2(-578, -387)
 
-[node name="Parallax2D" type="Parallax2D" parent="parallax layers"]
+[node name="Parallax2D" type="Parallax2D" parent="sunSet"]
 repeat_size = Vector2(2200, 0)
 autoscroll = Vector2(24.425, 0)
 repeat_times = 50
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D"]
+[node name="Sprite2D" type="Sprite2D" parent="sunSet/Parallax2D"]
 position = Vector2(0, 272)
 scale = Vector2(2, 2)
 texture = ExtResource("6_e1ag4")
 
-[node name="Sprite2D2" type="Sprite2D" parent="parallax layers/Parallax2D"]
+[node name="Sprite2D2" type="Sprite2D" parent="sunSet/Parallax2D"]
 position = Vector2(1132, 273)
 scale = Vector2(2, 2)
 texture = ExtResource("6_e1ag4")
 flip_h = true
 
-[node name="sun" type="Sprite2D" parent="parallax layers"]
+[node name="sun" type="Sprite2D" parent="sunSet"]
 position = Vector2(577, 340)
 scale = Vector2(1.782, 1.655)
 texture = ExtResource("7_v57xl")
 
-[node name="Parallax2D2" type="Parallax2D" parent="parallax layers"]
+[node name="Parallax2D2" type="Parallax2D" parent="sunSet"]
 repeat_size = Vector2(1152, 0)
 autoscroll = Vector2(10.51, 0)
 repeat_times = 50
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="sunSet/Parallax2D2"]
 position = Vector2(578, 323)
 scale = Vector2(2, 2)
 texture = ExtResource("7_6dmrp")
 
-[node name="Parallax2D7" type="Parallax2D" parent="parallax layers"]
+[node name="Parallax2D7" type="Parallax2D" parent="sunSet"]
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D7"]
+[node name="Sprite2D" type="Sprite2D" parent="sunSet/Parallax2D7"]
 position = Vector2(578, 387)
 scale = Vector2(2, 2)
 texture = ExtResource("8_bkwjl")
 
-[node name="Parallax2D8" type="Parallax2D" parent="parallax layers"]
+[node name="Parallax2D8" type="Parallax2D" parent="sunSet"]
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D8"]
+[node name="Sprite2D" type="Sprite2D" parent="sunSet/Parallax2D8"]
 position = Vector2(575, 306)
 scale = Vector2(2, 2)
 texture = ExtResource("9_l0trq")
 
-[node name="Parallax2D3" type="Parallax2D" parent="parallax layers"]
+[node name="Parallax2D3" type="Parallax2D" parent="sunSet"]
 scroll_offset = Vector2(578, 387)
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="sunSet/Parallax2D3"]
 position = Vector2(0, 23.43)
 scale = Vector2(2, 2)
 texture = ExtResource("9_isqnq")
 
-[node name="Parallax2D4" type="Parallax2D" parent="parallax layers"]
+[node name="Parallax2D4" type="Parallax2D" parent="sunSet"]
 scroll_offset = Vector2(578, 387)
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="sunSet/Parallax2D4"]
 position = Vector2(0, -0.48)
 scale = Vector2(2, 2)
 texture = ExtResource("10_bp5yb")
 
-[node name="Parallax2D5" type="Parallax2D" parent="parallax layers"]
+[node name="Parallax2D5" type="Parallax2D" parent="sunSet"]
 scroll_offset = Vector2(578, 407)
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D5"]
+[node name="Sprite2D" type="Sprite2D" parent="sunSet/Parallax2D5"]
 position = Vector2(0, 24.175)
 scale = Vector2(2, 2)
 texture = ExtResource("11_vrwlp")
 
-[node name="Sprite2D4" type="Sprite2D" parent="parallax layers"]
+[node name="Sprite2D4" type="Sprite2D" parent="sunSet"]
 position = Vector2(571, 637)
 texture = ExtResource("5_07asn")
 
-[node name="Parallax2D6" type="Parallax2D" parent="parallax layers"]
+[node name="Parallax2D6" type="Parallax2D" parent="sunSet"]
 scroll_offset = Vector2(568, 391)
 
-[node name="Sprite2D" type="Sprite2D" parent="parallax layers/Parallax2D6"]
+[node name="Sprite2D" type="Sprite2D" parent="sunSet/Parallax2D6"]
 position = Vector2(-27, -22)
 scale = Vector2(2, 2)
 texture = ExtResource("12_ek5rd")
@@ -237,6 +317,12 @@ ignore_rotation = false
 zoom = Vector2(1.065, 1.065)
 script = ExtResource("24_50550")
 
-[node name="ambience" type="AudioStreamPlayer2D" parent="."]
+[node name="AsiaSounds(looping)" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("26_kvl8q")
-autoplay = true
+volume_db = -4.685
+script = ExtResource("38_k64m3")
+
+[node name="AsiaSounds(looping)night" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("39_rhl2o")
+volume_db = -19.55
+script = ExtResource("40_e50bj")

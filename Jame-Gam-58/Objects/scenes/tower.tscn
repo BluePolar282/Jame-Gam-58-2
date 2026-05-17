@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://guryynls3o1l"]
+[gd_scene load_steps=15 format=3 uid="uid://guryynls3o1l"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/tower.gd" id="1_3nbm1"]
 [ext_resource type="Texture2D" uid="uid://bifpgv5wet0rq" path="res://Jame-Gam-58/Objects/assets/player/DIRECTIONmonk3.png" id="2_hp6j3"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Objects/scenes/playerAnimation.gd" id="3_ip0ej"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_em3vl"]
 atlas = ExtResource("2_hp6j3")
@@ -54,6 +55,68 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_3mkvr"]
+resource_name = "playerAnimation"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(2, 2), Vector2(1.95, 2.05), Vector2(2, 2), Vector2(1.95, 2.05), Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -62), Vector2(0, -63.55), Vector2(0, -62), Vector2(0, -63.55), Vector2(0, -62)]
+}
+
+[sub_resource type="Animation" id="Animation_do7nk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(2, 2)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -62)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7xkwx"]
+_data = {
+"RESET": SubResource("Animation_do7nk"),
+"playerAnimation": SubResource("Animation_3mkvr")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvna0"]
 size = Vector2(68, 76)
 
@@ -71,6 +134,12 @@ script = ExtResource("1_3nbm1")
 position = Vector2(0, -62)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bm1pb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_7xkwx")
+}
+script = ExtResource("3_ip0ej")
 
 [node name="Area2D" type="Area2D" parent="." groups=["Tower"]]
 position = Vector2(0, -39)

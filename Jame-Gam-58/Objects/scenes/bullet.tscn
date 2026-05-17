@@ -1,9 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://birhplnauwxjp"]
+[gd_scene load_steps=18 format=3 uid="uid://birhplnauwxjp"]
 
 [ext_resource type="Script" path="res://Jame-Gam-58/Objects/scripts/bullet.gd" id="1_fnqk2"]
-[ext_resource type="Texture2D" uid="uid://bemm58xle748g" path="res://Jame-Gam-58/Objects/assets/[DIRECTION]bird1.png" id="2_yuxki"]
 [ext_resource type="Texture2D" uid="uid://b1ueskurvgscb" path="res://Jame-Gam-58/UI/assets/partical textures/feather.png" id="2_018an"]
 [ext_resource type="Texture2D" uid="uid://dkpdvxiymdgbb" path="res://Jame-Gam-58/Objects/assets/[DIRECTION]bird1.png" id="2_yuxki"]
+[ext_resource type="Script" path="res://Jame-Gam-58/Utilities/scripts/bird_animation.gd" id="4_h6oqd"]
 
 [sub_resource type="Curve" id="Curve_4j5x7"]
 min_value = -360.0
@@ -65,6 +65,43 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_iuqcg"]
+resource_name = "bird flight"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0.97, 1.03), Vector2(1.03, 0.97), Vector2(0.97, 1.03)]
+}
+
+[sub_resource type="Animation" id="Animation_0tamp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_llsun"]
+_data = {
+"RESET": SubResource("Animation_0tamp"),
+"bird flight": SubResource("Animation_iuqcg")
+}
+
 [node name="bullet" type="CharacterBody2D" groups=["Bullet"]]
 script = ExtResource("1_fnqk2")
 
@@ -90,9 +127,14 @@ disabled = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6km6e")
 autoplay = "default"
-frame_progress = 0.53858
-frame = 1
-frame_progress = 0.722159
+frame_progress = 0.352714
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_llsun")
+}
+speed_scale = 2.265
+script = ExtResource("4_h6oqd")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
